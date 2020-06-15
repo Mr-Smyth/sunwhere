@@ -1,39 +1,70 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# SunWhere?
 
-Welcome USER_NAME,
+SunWhere is a browser based application designed to help the user decide which destination to choose for a weekend away, based on predicted weather.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+# UX
+## User Stories
+The Application is intended for users of any age who are deciding on a location for their mini break, or even just a day out.
 
-## Gitpod Reminders
+The following user stories have been identified:
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+1.  As a user, I want the home screen to be inviting and with information relevant to my location. 
+2.  As a user, I want to quickly and easily understand the purpose of the application.
+3.  As a user, I want to easily understand what i have to do.
+4.  As a user, I want to easily enter my information.
+5.  As a user, I want to see an obvious and quick way to get my results.
+6.  As a user, I want to be able to see an obvious comparison of predicted weather for my entered locations, including my home or current location.
+7.  As a user, I would like to select my preferred location from the results, and see places of interest for that location.
 
-`python3 -m http.server`
+<br>
 
-A blue button should appear to click: *Make Public*,
+## Opportunities arising from user stories:
 
-Another blue button should appear to click: *Open Browser*.
+<div align="center">
+ 
+|Opportunities | Importance | Viability / Feasibility
+|-----|:------:|:-----:|
+|**Clean Visually Appealing Interface** | 5 | 5 |
+|**Purpose of Application Explained** | 5 | 5 |
+|**Clear Simple Instructions** | 5 | 5 |
+|**Easy Location Input** | 5 | 5 |
+|**Simple Submission and Viewing of Results Procedure**| 4 | 5 |
+|**Clearly Defined Results** | 4 | 5 |
+|**Suggest Places of Interest** | 4 | 5 |
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+</div>
 
-A blue button should appear to click: *Make Public*,
+<br>
 
-Another blue button should appear to click: *Open Browser*.
+## UI Structure
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
+### Structure
 
-## Updates Since The Instructional Video
+Considering the above user stories, i have decided upon the following UI Structure and styling:
 
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
+* Home Page:
+  * User will be requested to allow geo-location.
+  * A clear spacious area with the weather for the users current location displayed, with relevant weather icon.
+  * Below the current weather will be a Introduction and explanation, with an area below this for submitting locations.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+* Results Page:
+  * Reachable upon submission of the locations.
+  * Containing the results from the 4 user locations and the results for the users current location.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+* Information Page:
+  * Reachable upon clicking on a result, the page will provide a map of places of interest. 
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+* Common:
+  *  A Site logo at the top of the page will provide a link to this home page from subsequent pages, and will represent the only required site navigation.
+  *  The Footer will provide copyright information only.
+  
+### Styling
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+Considering the purpose of the site, The following styled theme was decided upon.
 
---------
-
-Happy coding!
+* Colours:
+  * linear gradient blue/white/orange TBD
+* Wireframes: 
+  * Home Page
+  * Results Page
+  * Information Page 
