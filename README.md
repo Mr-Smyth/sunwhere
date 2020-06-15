@@ -1,6 +1,7 @@
 # SunWhere?
 
 SunWhere is a browser based application designed to help the user decide which destination to choose for a weekend away, based on predicted weather.
+It returns a weather score or rating for the predicted weather, for each of the user entered locations.
 
 # UX
 ## User Stories
@@ -15,6 +16,7 @@ The following user stories have been identified:
 5.  As a user, I want to see an obvious and quick way to get my results.
 6.  As a user, I want to be able to see an obvious comparison of predicted weather for my entered locations, including my home or current location.
 7.  As a user, I would like to select my preferred location from the results, and see places of interest for that location.
+8.  As a user, it would be helpful to get a wildcard location returned, for a place not on the list, but which has a good rating for the next weekend.
 
 <br>
 
@@ -31,6 +33,7 @@ The following user stories have been identified:
 |**Simple Submission and Viewing of Results Procedure**| 4 | 5 |
 |**Clearly Defined Results** | 4 | 5 |
 |**Suggest Places of Interest** | 4 | 5 |
+|**Return WildCard Location** | 2 | 3 |
 
 </div>
 
