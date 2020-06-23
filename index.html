@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>SunWhere</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="assets/css/style.css" type="css/text">
-	<title>SunWhere</title>
-</head>
+  <body>
+    <header>
+      <div id="logo-container">
+        <a href="index.html"
+          ><img
+            src="assets/images/sunwhere-logo.png"
+            alt="Sun Where logo image"
+        /></a>
+      </div>
+    </header>
+    <main>
+      <div id="weatherBackgroundContainer">
+        <div id="weatherInfoContainer">
+          <div id="informationNotification">notification</div>
+          <h1 id="weatherInfoName">weatherInfoName</h1>
+          <div id="weatherMainDetailsContainer">
+            <div id="weatherTemp">Temp</div>
+            <div id="weatherDescription">Description</div>
+          </div>
+          <div id="weatherSmallDetailsContainer">
+            <div id="weatherRainfall">rainfall</div>
+            <div id="weatherHumidity">humidity</div>
+            <div id="weatherWindSpeed">wind</div>
+          </div>
+        </div>
+      </div>
+    </main>
 
-<body>
-	<header>
-		<div id="logo-container">
-			<a href="index.html"><img src="assets/images/sunwhere-logo.png" alt="Sun Where logo image"></a>
-		</div>
-	</header>
-	<main>
-		<div id="weatherBackgroundContainer">
-			<div id="weatherInfoContainer">
-                <h1 id="weatherInfoName"></h1>
-                <div id="weatherMainDetailsContainer">
-                    <div id="weatherTemp"></div>
-                    <div id="weatherDescription"></div>
-                </div>
-                <div id="weatherSmallDetailsContainer">
-                    <div id="weatherRainfall"></div>
-                    <div id="weatherHumidity"></div>
-                    <div id="weatherWindSpeed"></div>
-                </div>
-            </div>
-		</div>
-	</main>
-
-
-	<script src="assets/js/script.js"></script>
-</body>
-
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"
+    ></script>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
