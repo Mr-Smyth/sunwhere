@@ -70,4 +70,4 @@ Considering the purpose of the site, The following styled theme was decided upon
 * Wireframes: 
   * [Home Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Home-Page.pdf)
   * Results Page
-  * Information Page 
+  
