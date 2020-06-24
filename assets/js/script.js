@@ -3,33 +3,35 @@ const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
 let lat, lon;
 const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`;
-let apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`;
 
 // GLOBAL OBJECTS
 const homeWeather = {};
 
 // GETS CURRENT WEATHER FROM GEOLOCATION, UPDATES homeWeather{} AND PASSES ONTO displayWeather()
 function fetchCurrentWeather(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`)
+  const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`;
+  fetch(apiCurrent)
     .then(function (response) {
       return response.json(); // return the results to me in .JSON
     })
     .then(function (data) {
-        homeWeather.feelsLike = data.main.feels_like;
-        homeWeather.humidity = data.main.humidity;
-        homeWeather.tempInCelsius = Math.floor(data.main.temp - kelvin);
-        homeWeather.tempInFahrenheit = Math.floor((data.main.temp - kelvin) * (9/5) + 32);
-        homeWeather.name = data.name;
-        homeWeather.clouds = data.clouds.all;
-        homeWeather.description = data.weather[0].description;
-        homeWeather.weatherIcon = data.weather[0].icon;
-        homeWeather.windDirection = data.wind.deg;
-        homeWeather.windSpeed = data.wind.speed;
-        homeWeather.feelsLike = data.feels_like;
-        displayWeather(data);
+      homeWeather.feelsLike = data.main.feels_like;
+      homeWeather.humidity = data.main.humidity;
+      homeWeather.tempInCelsius = Math.floor(data.main.temp - kelvin);
+      homeWeather.tempInFahrenheit = Math.floor(
+        (data.main.temp - kelvin) * (9 / 5) + 32
+      );
+      homeWeather.name = data.name;
+      homeWeather.clouds = data.clouds.all;
+      homeWeather.description = data.weather[0].description;
+      homeWeather.weatherIcon = data.weather[0].icon;
+      homeWeather.windDirection = data.wind.deg;
+      homeWeather.windSpeed = data.wind.speed;
+      homeWeather.feelsLike = data.feels_like;
+      displayWeather(data);
     })
     .catch(function (error) {
-      console.log("ERROR !"+ error.message);
+      console.log("ERROR !" + error.message);
     });
 }
 
