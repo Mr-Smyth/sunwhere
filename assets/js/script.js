@@ -11,6 +11,7 @@ if ("geolocation" in navigator) {
     "<p>Your Browser does not support Geolocation, please allow Geolocation and reload the page.</p>";
 }
 
+
 function thisLocation(location) {
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
