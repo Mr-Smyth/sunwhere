@@ -17,14 +17,18 @@
         /></a>
       </div>
     </header>
-    <main>
+    <section>
       <div id="weatherBackgroundContainer">
         <div id="weatherCurrentInfoContainer">
           <div id="informationNotification"></div>
+          <div id="dateTimeContainer">
+            <div id="date">Current Date</div>
+            <div id="currentTime">Current Time</div>
+          </div>
           <h1 id="weatherCurrentInfoName">weatherInfoName</h1>
           <div id="weatherMainDetailsContainer">
             <div>
-                <img id="weatherCurrentIcon" alt="Weather Icon">
+              <img id="weatherCurrentIcon" alt="Weather Icon" />
             </div>
             <div id="weatherCurrentTemp">Temp</div>
             <div id="weatherCurrentDescription">Description</div>
@@ -35,8 +39,30 @@
             <div id="weatherCurrentWindSpeed">wind</div>
           </div>
         </div>
+        <div id="introduction">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+            quisquam rerum omnis quod facere nesciunt reprehenderit fuga at
+            dignissimos odio nisi labore praesentium eos ut debitis consequuntur
+            dolores, ab itaque.
+          </p>
+        </div>
+        <div id="locationInputContainer" class="">
+          <form class="locationForm">
+            <input id="location1" name="location1" placeholder="Please Enter Location 1" aria-placeholder="Please Enter Location 1" type="text" />
+            <input id="location2" name="location2" placeholder="Please Enter Location 2" aria-placeholder="Please Enter Location 2" type="text" />
+            <input id="location3" name="location3" placeholder="Please Enter Location 3" aria-placeholder="Please Enter Location 3" type="text" />
+            <input id="location4" name="location4" placeholder="Please Enter Location 4" aria-placeholder="Please Enter Location 4" type="text" />
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
-    </main>
+    </section>
+
+    <section>
+      <div></div>
+    </section>
 
     <script
       type="text/javascript"

@@ -12,6 +12,8 @@ const displayCurrentFeelsLike = document.getElementById("weatherCurrentFeelsLike
 /* const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`; */
 
 // GLOBAL OBJECTS
+/* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
+MORE THAN ONCE FROM MORE THAN ONE FUNCTION  */
 const homeWeather = {};
 
 // THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, TO UPDATE THE homeWeather{} OBJECT.
