@@ -1,12 +1,31 @@
 // SELECTORS
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
-const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`;
+/* const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`; */
 
 // GLOBAL OBJECTS
 const homeWeather = {};
 
-// GETS CURRENT WEATHER FROM GEOLOCATION, UPDATES homeWeather{} AND PASSES ONTO displayWeather()
+// THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, TO UPDATE THE homeWeather{} OBJECT.
+function updateHomeWeather(data) {
+  homeWeather.latitude = data.coord.lat;
+  homeWeather.longitude = data.coord.lon;
+  homeWeather.feelsLike = Math.floor(data.main.feels_like - kelvin)
+  homeWeather.humidity = data.main.humidity;
+  homeWeather.tempInCelsius = Math.floor(data.main.temp - kelvin);
+  homeWeather.tempInFahrenheit = Math.floor(
+    (data.main.temp - kelvin) * (9 / 5) + 32
+  );
+  homeWeather.name = data.name;
+  homeWeather.clouds = data.clouds.all;
+  homeWeather.description = data.weather[0].description;
+  homeWeather.weatherIcon = data.weather[0].icon;
+  homeWeather.windDirection = data.wind.deg;
+  homeWeather.windSpeed = data.wind.speed;
+  console.log(homeWeather);
+}
+
+// GETS CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather OBJECT AND PASSES ONTO displayHomeWeather()
 function fetchCurrentWeather(lat, lon) {
   const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`;
   fetch(apiCurrent)
@@ -14,20 +33,7 @@ function fetchCurrentWeather(lat, lon) {
       return response.json(); // return the results to me in .JSON
     })
     .then(function (data) {
-      homeWeather.feelsLike = data.main.feels_like;
-      homeWeather.humidity = data.main.humidity;
-      homeWeather.tempInCelsius = Math.floor(data.main.temp - kelvin);
-      homeWeather.tempInFahrenheit = Math.floor(
-        (data.main.temp - kelvin) * (9 / 5) + 32
-      );
-      homeWeather.name = data.name;
-      homeWeather.clouds = data.clouds.all;
-      homeWeather.description = data.weather[0].description;
-      homeWeather.weatherIcon = data.weather[0].icon;
-      homeWeather.windDirection = data.wind.deg;
-      homeWeather.windSpeed = data.wind.speed;
-      homeWeather.feelsLike = data.feels_like;
-      displayWeather(data);
+      updateHomeWeather(data)
     })
     .catch(function (error) {
       console.log("ERROR !" + error.message);
@@ -48,8 +54,6 @@ if ("geolocation" in navigator) {
 function getCoords(location) {
   let latitude = location.coords.latitude;
   let longitude = location.coords.longitude;
-  homeWeather.latitude = location.coords.latitude;
-  homeWeather.longitude = location.coords.longitude;
 
   fetchCurrentWeather(latitude, longitude);
 }
