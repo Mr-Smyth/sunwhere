@@ -45,3 +45,27 @@
         * Error message was present when required.
         * No errors detected.
 
+* #### fetchCurrentWeather(lat, lon):
+
+  The fetchCurrentWeather(lat, lon) function, gets the current weather and, using the response, stored within the variable 'data' it 
+  updates the homeWeather{} object.
+
+  It then calls the displayCurrentWeather function.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * No errors detected.
+        * 10 warnings to do with ES6 syntax, let, const and template literal usage.
+        * 3 undefined variables lat, lon and displayWeather. These will be used in subsequent functions.
+  2. Console.logged the homeWeather Object.
+        * No errors detected.
+        * Object displayed as expected.
+  3. Console.logged the data Object
+        * No errors detected.
+        * Object displayed as expected.
+  4. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Objects always displayed as expected.
+
+

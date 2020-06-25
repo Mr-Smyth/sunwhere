@@ -1,7 +1,6 @@
 // SELECTORS
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
-let lat, lon;
 const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`;
 
 // GLOBAL OBJECTS
