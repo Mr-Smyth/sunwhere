@@ -17,7 +17,7 @@
   2.  Refreshed page multiple times to see if any errors occurred.
       - No errors detected.
 
-   **Observations:**
+   **Known Issues:**
 
   1.  It would only occaisionally return my correct location, on the 
   other occaisions it would return a location which was 
@@ -84,3 +84,22 @@
         * No errors detected.
         * Objects always displayed as expected.
 
+* #### displayCurrentWeather():
+
+  The displayCurrentWeather() function uses the homeWeather object to display the current
+  weather for the current users location.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * 1 missing semicolon on displayCurrentIcon assignment - Fixed.
+  2. Checked the index.html rendered page, was displaying correct information.
+        * Page rendered as expected with all information.
+  4. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Page always displayed as expected.
+
+   **Known Issues:**
+
+  1.  Location was incorrect, but this was due to issue with returned data from geolocation, which is out of my control. However i 
+  do expect this issue to be less obvious on a mobile platform.     

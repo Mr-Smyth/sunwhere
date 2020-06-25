@@ -36,9 +36,9 @@ function updateHomeWeather(data) {
 // THIS FUNCTION DISPLAYS THE CURRENT LOCATIONS WEATHER TO HOME SCREEN
 function displayCurrentWeather(weatherObject) {
 displayCurrentLocation.innerText = weatherObject.name;
-displayCurrentIcon.src = `http://openweathermap.org/img/wn/${weatherObject.weatherIcon}@4x.png`
+displayCurrentIcon.src = `http://openweathermap.org/img/wn/${weatherObject.weatherIcon}@4x.png`;
 displayCurrentTemp.innerHTML = weatherObject.tempInCelsius + `&#176 C`;
-displayCurrentDesc.innerText = weatherObject.description.charAt(0).toUpperCase() + weatherObject.description.slice(1);
+displayCurrentDesc.innerText = weatherObject.description.charAt(0).toUpperCase() + weatherObject.description.slice(1); // SET FIRST LETTER TO UPPERCASE
 displayCurrentHumidity.innerText = `Humidity: ${weatherObject.humidity}%`;
 displayCurrentWind.innerText = `Wind Speed: ${weatherObject.windSpeed}m/s`;
 displayCurrentFeelsLike.innerHTML = `Feels Like: ${weatherObject.feelsLike} &#176 C`;
