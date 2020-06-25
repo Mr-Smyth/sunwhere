@@ -21,7 +21,7 @@
 
   1.  It would only occaisionally return my correct location, on the 
   other occaisions it would return a location which was 
-  between 50 and 25 KM's away. After some research i was able to find that this 
+  between 25 and 175 KM's away . After some research i was able to find that this 
   is a problem that can occur in Googles database or Routers, and its ability
   to pinpoint the correct one.
 
@@ -43,14 +43,15 @@
   3. Set the browsers Geolocation setting to off, to check returned error 
   message to the broser was present.
         * Error message was present when required.
+        * This also proved that the function call was being made correctly.
         * No errors detected.
 
 * #### fetchCurrentWeather(lat, lon):
 
-  The fetchCurrentWeather(lat, lon) function, gets the current weather and, using the response, stored within the variable 'data' it 
-  updates the homeWeather{} object.
+  The fetchCurrentWeather(lat, lon) function, gets the current weather.
 
-  It then calls the displayCurrentWeather function.
+    It then calls the updateHomeWeather() function
+    It then calls the displayCurrentWeather function.
 
   The following tests were carried out:
 
@@ -58,14 +59,28 @@
         * No errors detected.
         * 10 warnings to do with ES6 syntax, let, const and template literal usage.
         * 3 undefined variables lat, lon and displayWeather. These will be used in subsequent functions.
-  2. Console.logged the homeWeather Object.
+  2. Console.logged the data Object
         * No errors detected.
         * Object displayed as expected.
-  3. Console.logged the data Object
-        * No errors detected.
-        * Object displayed as expected.
-  4. Refreshed page multiple times to see if any errors occurred.
+        * This also proved that the function call was being made correctly.
+  3. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Objects always displayed as expected.
 
+* #### updateHomeWeather(data):
+
+  The updateHomeWeather(data) function, gets the data which is the response of the fetchCurrentWeather() function
+   and updates the homeWeather{} object.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * 1 missing semicolon on feels_like assignment - Fixed.
+  2. Console.logged the homeWeather Object.
+        * No errors detected.
+        * Object displayed as expected.
+        * This also proved that the function call was being made correctly.
+  4. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Objects always displayed as expected.
 
