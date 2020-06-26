@@ -155,3 +155,21 @@
   3. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Objects always displayed as expected.
+
+
+* #### findWeatherDayIndex():
+
+  The findWeatherDayIndex() function uses an object to return the correct days to target, to get 
+  the weather for the next weekend.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * Missing semicolon to close days object.
+  2. Console.logged the returned dayResult from within the updateWeekendWeather() function.
+        * No errors detected.
+        * dayResult array displayed as expected.
+        * This also proved that the function call was being made correctly.
+  3. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Objects always displayed as expected.

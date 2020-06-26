@@ -59,7 +59,7 @@ function findWeatherDayIndex() {
         '4': [1, 2, 3],
         '5': [0, 1, 2],
         '6': [6, 7, 8]
-    }
+    };
 
     const dayResult = daysToNextWeekend[dayToday];
     return dayResult;
