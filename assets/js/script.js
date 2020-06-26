@@ -19,14 +19,10 @@ const displayCurrentFeelsLike = document.getElementById(
 );
 const locationInputArray = ["location1", "location2", "location3", "location4"];
 
-/* const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`; */
-
 // GLOBAL OBJECTS
 /* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
 MORE THAN ONCE FROM MORE THAN ONE FUNCTION  */
 const homeWeather = {};
-
-
 
 // THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, TO UPDATE THE homeWeather{} OBJECT.
 function updateHomeWeather(data) {
@@ -47,50 +43,67 @@ function updateHomeWeather(data) {
   console.log(homeWeather);
 }
 
-
-
 // DISPLAYS THE WEATHER BACKGROUND IMAGE
 function getBackground() {
-    switch(homeWeather.weatherIcon){
-        case "01d": displayBackgroundImage.src = "assets/images/clear-skyd.jpg";
-        break;
-        case "02d": displayBackgroundImage.src = "assets/images/few-cloudsd.jpg";
-        break;
-        case "03d": displayBackgroundImage.src = "assets/images/scattered-cloudsd.jpg";
-        break;
-        case "04d": displayBackgroundImage.src = "assets/images/broken-cloudsd.jpg";
-        break;
-        case "09d": displayBackgroundImage.src = "assets/images/raind.jpg";
-        break;
-        case "10d": displayBackgroundImage.src = "assets/images/raind.jpg";
-        break;
-        case "11d": displayBackgroundImage.src = "assets/images/thunderstormd.jpg";
-        break;
-        case "13d": displayBackgroundImage.src = "assets/images/snowd.jpg";
-        break;
-        case "50d": displayBackgroundImage.src = "assets/images/mistd.jpg";
-        break;
-        case "01n": displayBackgroundImage.src = "assets/images/clear-skyn.jpg";
-        break;
-        case "02n": displayBackgroundImage.src = "assets/images/few-cloudsn.jpg";
-        break;
-        case "03n": displayBackgroundImage.src = "assets/images/cloudsn.jpg";
-        break;
-        case "04n": displayBackgroundImage.src = "assets/images/cloudsn.jpg";
-        break;
-        case "09n": displayBackgroundImage.src = "assets/images/rainn.jpg";
-        break;
-        case "10n": displayBackgroundImage.src = "assets/images/rainn.jpg";
-        break;
-        case "11n": displayBackgroundImage.src = "assets/images/thunderstormn.jpg";
-        break;
-        case "13n": displayBackgroundImage.src = "assets/images/snown.jpg";
-        break;
-        case "50n": displayBackgroundImage.src = "assets/images/mistn.jpg";
-        break;
-        default: displayBackgroundImage.src = "assets/images/clear-skyd1.jpg";
-        break;
-    }
+  switch (homeWeather.weatherIcon) {
+    case "01d":
+      displayBackgroundImage.src = "assets/images/clear-skyd.jpg";
+      break;
+    case "02d":
+      displayBackgroundImage.src = "assets/images/few-cloudsd.jpg";
+      break;
+    case "03d":
+      displayBackgroundImage.src = "assets/images/scattered-cloudsd.jpg";
+      break;
+    case "04d":
+      displayBackgroundImage.src = "assets/images/broken-cloudsd.jpg";
+      break;
+    case "09d":
+      displayBackgroundImage.src = "assets/images/raind.jpg";
+      break;
+    case "10d":
+      displayBackgroundImage.src = "assets/images/raind.jpg";
+      break;
+    case "11d":
+      displayBackgroundImage.src = "assets/images/thunderstormd.jpg";
+      break;
+    case "13d":
+      displayBackgroundImage.src = "assets/images/snowd.jpg";
+      break;
+    case "50d":
+      displayBackgroundImage.src = "assets/images/mistd.jpg";
+      break;
+    case "01n":
+      displayBackgroundImage.src = "assets/images/clear-skyn.jpg";
+      break;
+    case "02n":
+      displayBackgroundImage.src = "assets/images/few-cloudsn.jpg";
+      break;
+    case "03n":
+      displayBackgroundImage.src = "assets/images/cloudsn.jpg";
+      break;
+    case "04n":
+      displayBackgroundImage.src = "assets/images/cloudsn.jpg";
+      break;
+    case "09n":
+      displayBackgroundImage.src = "assets/images/rainn.jpg";
+      break;
+    case "10n":
+      displayBackgroundImage.src = "assets/images/rainn.jpg";
+      break;
+    case "11n":
+      displayBackgroundImage.src = "assets/images/thunderstormn.jpg";
+      break;
+    case "13n":
+      displayBackgroundImage.src = "assets/images/snown.jpg";
+      break;
+    case "50n":
+      displayBackgroundImage.src = "assets/images/mistn.jpg";
+      break;
+    default:
+      displayBackgroundImage.src = "assets/images/clear-skyd1.jpg";
+      break;
+  }
 }
 
 // THIS FUNCTION DISPLAYS THE CURRENT LOCATIONS WEATHER TO HOME SCREEN
@@ -124,6 +137,22 @@ function fetchCurrentWeather(lat, lon) {
     });
 }
 
+function fetchLocationWeather(lat, lon, thisLocation) {
+  let apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`;
+
+  // FETCH FROM OPENWEATHER API 7 DAY ONE CALL, EXCLUDING CURRENT, MINUTE AND HOURLY
+  fetch(apiWeekend)
+    .then(function (response) {
+      return response.json(); // return the results to me in .JSON
+    })
+    .then(function (data) {
+      // this is what we will do with the results.
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.log("ERROR !" + error.message);
+    });
+}
 
 // FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
 // WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER
@@ -148,33 +177,24 @@ function geolocationError(error) {
   infoMessageElement.innerHTML = `<p> ${error.message} </p>`;
 }
 
-
-
-
-
-// HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX 
+// HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX
 locationInputArray.forEach(function (location) {
+  // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
+  const input = document.getElementById(location); // target and store the value in location, in input
+  const searchRes = new google.maps.places.SearchBox(input); // pass that search into places
+  searchRes.addListener("places_changed", function () {
+    const location = searchRes.getPlaces()[0]; // we just need index 0, getPlaces() Returns the details of the Place selected by user.
+    if (location == null) {
+      return;
+    }
+    const thisLocation = location.address_components[0].long_name; // LOCATIONS NAME
+    const latitude = location.geometry.location.lat();
+    const longitude = location.geometry.location.lng();
 
-     // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
-    const input = document.getElementById(location); // target and store the value in location, in input
-    const searchRes = new google.maps.places.SearchBox(input); // pass that search into places
-    searchRes.addListener('places_changed', function () { 
-        const location = searchRes.getPlaces()[0]; // we just need index 0, getPlaces() Returns the details of the Place selected by user.
-        if (location == null) {
-            return;
-        }
+    /* GOING TO SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME, to fetchLocationWeather().
+        AS I WILL USE THIS TO BUILD AN OBJECT OF WEATHER INFORMATION FOR EACH LOCATION. 
+        THIS WILL BE USEFUL FOR SCORE CALCULATIONS AND FOR DISPLAYING ANY LOCATIONS WEATHER IF NEEDED */
 
-
-        console.log(searchRes);
-        const thisLocation = location.address_components[0].long_name;
-        console.log(thisLocation);
-        const latitude = location.geometry.location.lat();
-        const longitude = location.geometry.location.lng();
-
-        /* GOING TO SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME.
-        aS I WILL USE THIS TO BUILD AN OBJECT OF WEATHER INFORMATION FOR EACH LOCATION. 
-        THIS WILL BE USEFUL FOR SCORE CALCULATIONS AND FOR DISPLAYING ANY LOCATIONS WEATHER IF NEEDED */ 
-        getLocationWeather(latitude, longitude, thisLocation); 
-
-    });
+    fetchLocationWeather(latitude, longitude, thisLocation);
+  });
 });
