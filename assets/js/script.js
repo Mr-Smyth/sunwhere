@@ -47,12 +47,12 @@ function updateHomeWeather(data) {
 }
 
 function getBackground() {
-    switch(homeWeather.weatherIcon){
+    switch("50n"/* homeWeather.weatherIcon */){
         case "01d": displayBackgroundImage.src = "assets/images/clear-skyd.jpg";
         break;
         case "02d": displayBackgroundImage.src = "assets/images/few-cloudsd.jpg";
         break;
-        case "03d": displayBackgroundImage.src = "assets/images/scattered-clouds.jpg";
+        case "03d": displayBackgroundImage.src = "assets/images/scattered-cloudsd.jpg";
         break;
         case "04d": displayBackgroundImage.src = "assets/images/broken-cloudsd.jpg";
         break;
@@ -84,7 +84,7 @@ function getBackground() {
         break;
         case "50n": displayBackgroundImage.src = "assets/images/mistn.jpg";
         break;
-        default: displayBackgroundImage.src = assets/images/clear-skyd1.jpg
+        default: displayBackgroundImage.src = "assets/images/clear-skyd1.jpg";
         break;
     }
 }

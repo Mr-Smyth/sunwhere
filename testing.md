@@ -80,7 +80,7 @@
         * No errors detected.
         * Object displayed as expected.
         * This also proved that the function call was being made correctly.
-  4. Refreshed page multiple times to see if any errors occurred.
+  3. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Objects always displayed as expected.
 
@@ -95,7 +95,7 @@
         * 1 missing semicolon on displayCurrentIcon assignment - Fixed.
   2. Checked the index.html rendered page, was displaying correct information.
         * Page rendered as expected with all information.
-  4. Refreshed page multiple times to see if any errors occurred.
+  3. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Page always displayed as expected.
 
@@ -103,3 +103,23 @@
 
   1.  Location was incorrect, but this was due to issue with returned data from geolocation, which is out of my control. However i 
   do expect this issue to be less obvious on a mobile platform.     
+
+
+* #### getBackground():
+
+  The getBackground() function uses a switch statement to get the value of the weather icon within the homeWeather{} object,
+   and set the appropriate background image.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * 1 missing semicolon and parenthesis on the default switch condition - Fixed.
+        * Cyclonic complexity was 19, as there were 19 options, will possibly attempt to refactor this function at a later stage.
+  2. Checked the index.html rendered page, was displaying correct information.
+        * Page rendered with the correct Image to match the current weather icon.
+  3. Manually set the weather icon to test all 19 possibilities
+        * Page rendered with the correct Image to match the current weather icon, each time.
+  . Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Page always displayed as expected.
+
