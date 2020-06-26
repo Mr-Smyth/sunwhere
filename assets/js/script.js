@@ -155,15 +155,16 @@ function geolocationError(error) {
 // HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX 
 locationInputArray.forEach(function (location) {
 
+     // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
     const input = document.getElementById(location); // target and store the value in location, in input
     const searchRes = new google.maps.places.SearchBox(input); // pass that search into places
-
-    // addListener RUNS A CALLBACK AND IS ADVISED IN GOOGLE DOCS.
     searchRes.addListener('places_changed', function () { 
         const location = searchRes.getPlaces()[0]; // we just need index 0, getPlaces() Returns the details of the Place selected by user.
         if (location == null) {
             return;
         }
+
+
         console.log(searchRes);
         const thisLocation = location.address_components[0].long_name;
         console.log(thisLocation);
