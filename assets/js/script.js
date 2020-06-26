@@ -17,6 +17,7 @@ const displayCurrentWind = document.getElementById("weatherCurrentWindSpeed");
 const displayCurrentFeelsLike = document.getElementById(
   "weatherCurrentFeelsLike"
 );
+const locationInputArray = ["location1", "location2", "location3", "location4"];
 
 /* const apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`; */
 
@@ -46,8 +47,11 @@ function updateHomeWeather(data) {
   console.log(homeWeather);
 }
 
+
+
+// DISPLAYS THE WEATHER BACKGROUND IMAGE
 function getBackground() {
-    switch("50n"/* homeWeather.weatherIcon */){
+    switch(homeWeather.weatherIcon){
         case "01d": displayBackgroundImage.src = "assets/images/clear-skyd.jpg";
         break;
         case "02d": displayBackgroundImage.src = "assets/images/few-cloudsd.jpg";
@@ -120,6 +124,7 @@ function fetchCurrentWeather(lat, lon) {
     });
 }
 
+
 // FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
 // WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER
 if ("geolocation" in navigator) {
@@ -142,3 +147,33 @@ function getCoords(location) {
 function geolocationError(error) {
   infoMessageElement.innerHTML = `<p> ${error.message} </p>`;
 }
+
+
+
+
+
+// HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX 
+locationInputArray.forEach(function (location) {
+
+    const input = document.getElementById(location); // target and store the value in location, in input
+    const searchRes = new google.maps.places.SearchBox(input); // pass that search into places
+
+    // addListener RUNS A CALLBACK AND IS ADVISED IN GOOGLE DOCS.
+    searchRes.addListener('places_changed', function () { 
+        const location = searchRes.getPlaces()[0]; // we just need index 0, getPlaces() Returns the details of the Place selected by user.
+        if (location == null) {
+            return;
+        }
+        console.log(searchRes);
+        const thisLocation = location.address_components[0].long_name;
+        console.log(thisLocation);
+        const latitude = location.geometry.location.lat();
+        const longitude = location.geometry.location.lng();
+
+        /* GOING TO SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME.
+        aS I WILL USE THIS TO BUILD AN OBJECT OF WEATHER INFORMATION FOR EACH LOCATION. 
+        THIS WILL BE USEFUL FOR SCORE CALCULATIONS AND FOR DISPLAYING ANY LOCATIONS WEATHER IF NEEDED */ 
+        getLocationWeather(latitude, longitude, thisLocation); 
+
+    });
+});
