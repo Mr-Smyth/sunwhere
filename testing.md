@@ -119,7 +119,39 @@
         * Page rendered with the correct Image to match the current weather icon.
   3. Manually set the weather icon to test all 19 possibilities
         * Page rendered with the correct Image to match the current weather icon, each time.
-  . Refreshed page multiple times to see if any errors occurred.
+  4. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Page always displayed as expected.
 
+
+* #### Getting the Location data from user, using google places searchBox:
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * No errors detected.
+  2. Checked the index.html rendered page, was providing autocomplete functionality in the location input boxes.
+        * Autocomplete worked perfectly on all 4 inputs.
+  3. Checked that the extracted object for each location contained correct information, by using console.log's
+        * Correct information was displayed in the console.
+  4. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Page always displayed as expected.
+
+
+* #### fetchLocationWeather(lat, lon):
+
+  The fetchLocationWeather() function, gets the weather for the user entered locations, and 
+  will be used to generate a result for best location.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * No errors detected.
+  2. Console.logged the data Object
+        * No errors detected.
+        * Object displayed as expected.
+        * This also proved that the function call was being made correctly.
+  3. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Objects always displayed as expected.
