@@ -19,6 +19,7 @@ const displayCurrentFeelsLike = document.getElementById(
 );
 const locationInputArray = ["location1", "location2", "location3", "location4"];
 
+
 // GLOBAL OBJECTS
 /* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
 MORE THAN ONCE FROM MORE THAN ONE FUNCTION  */
@@ -42,6 +43,35 @@ function updateHomeWeather(data) {
   homeWeather.windSpeed = data.wind.speed;
   console.log(homeWeather);
 }
+
+
+// function to return index of days needed from weather api object, for weekend rating computations.
+function findWeatherDayIndex() {
+
+    const today = new Date();
+    const dayToday = today.getDay(); // get what day number today is
+
+    const daysToNextWeekend = { /* object represents - 'weekday#' : [day numbers to use to calculate weather for next weekend]*/
+        '0': [5, 6, 7], // IF TODAY IS SUNDAY, DAYS 5,6 AND 7 FROM THE API RESPONSE DATA WILL BE NEEDED.
+        '1': [4, 5, 6],
+        '2': [3, 4, 5],
+        '3': [2, 3, 4],
+        '4': [1, 2, 3],
+        '5': [0, 1, 2],
+        '6': [6, 7, 8]
+    }
+
+    const dayResult = daysToNextWeekend[dayToday];
+    return dayResult;
+}
+
+
+
+function updateWeekendWeather(data, dayIndexes){
+    console.log(data);
+    console.log(dayIndexes);
+}
+
 
 // DISPLAYS THE WEATHER BACKGROUND IMAGE
 function getBackground() {
@@ -148,6 +178,8 @@ function fetchLocationWeather(lat, lon, thisLocation) {
     .then(function (data) {
       // this is what we will do with the results.
       console.log(data);
+      updateWeekendWeather(data, findWeatherDayIndex());
+      calculateRating(data, findWeatherDayIndex());
     })
     .catch(function (error) {
       console.log("ERROR !" + error.message);
