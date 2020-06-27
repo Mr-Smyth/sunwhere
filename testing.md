@@ -26,7 +26,6 @@
   to pinpoint the correct one.
 
 
-
 * #### geolocationError(error):
 
   In the case that  Geolocation is unable to get location data, the geolocationError(error) 

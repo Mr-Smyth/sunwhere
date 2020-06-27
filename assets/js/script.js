@@ -17,16 +17,42 @@ const displayCurrentWind = document.getElementById("weatherCurrentWindSpeed");
 const displayCurrentFeelsLike = document.getElementById(
   "weatherCurrentFeelsLike"
 );
-const locationInputArray = ["location1", "location2", "location3", "location4"];
-
+const locationInputArray = ["location2", "location3", "location4", "location5"];
 
 // GLOBAL OBJECTS
 /* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
 MORE THAN ONCE FROM MORE THAN ONE FUNCTION  */
 const homeWeather = {};
+const weekendWeather = {
+  location1: {
+    Friday: {},
+    Saturday: {},
+    Sunday: {},
+  },
+  location2: {
+    Friday: {},
+    Saturday: {},
+    Sunday: {},
+  },
+  location3: {
+    Friday: {},
+    Saturday: {},
+    Sunday: {},
+  },
+  location4: {
+    Friday: {},
+    Saturday: {},
+    Sunday: {},
+  },
+  location5: {
+    Friday: {},
+    Saturday: {},
+    Sunday: {},
+  },
+};
 
 // THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, TO UPDATE THE homeWeather{} OBJECT.
-function updateHomeWeather(data) {
+function updateHomeWeather(data, id) {
   homeWeather.latitude = data.coord.lat;
   homeWeather.longitude = data.coord.lon;
   homeWeather.feelsLike = Math.floor(data.main.feels_like - kelvin);
@@ -41,37 +67,56 @@ function updateHomeWeather(data) {
   homeWeather.weatherIcon = data.weather[0].icon;
   homeWeather.windDirection = data.wind.deg;
   homeWeather.windSpeed = data.wind.speed;
-  console.log(homeWeather);
 }
-
 
 // function to return index of days needed from weather api object, for weekend rating computations.
 function findWeatherDayIndex() {
+  const today = new Date();
+  const dayToday = today.getDay(); // get what day number today is
 
-    const today = new Date();
-    const dayToday = today.getDay(); // get what day number today is
+  const daysToNextWeekend = {
+    /* object represents - 'weekday#' : [day numbers to use to calculate weather for next weekend]*/
+    "0": [5, 6, 7], // IF TODAY IS SUNDAY, DAYS 5,6 AND 7 FROM THE API RESPONSE DATA WILL BE NEEDED.
+    "1": [4, 5, 6],
+    "2": [3, 4, 5],
+    "3": [2, 3, 4],
+    "4": [1, 2, 3],
+    "5": [0, 1, 2],
+    "6": [0, 1, 2],
+  };
 
-    const daysToNextWeekend = { /* object represents - 'weekday#' : [day numbers to use to calculate weather for next weekend]*/
-        '0': [5, 6, 7], // IF TODAY IS SUNDAY, DAYS 5,6 AND 7 FROM THE API RESPONSE DATA WILL BE NEEDED.
-        '1': [4, 5, 6],
-        '2': [3, 4, 5],
-        '3': [2, 3, 4],
-        '4': [1, 2, 3],
-        '5': [0, 1, 2],
-        '6': [6, 7, 8]
-    };
-
-    const dayResult = daysToNextWeekend[dayToday];
-    return dayResult;
+  const dayResult = daysToNextWeekend[dayToday];
+  return dayResult;
 }
 
+function updateWeekendWeather(data, thisLocation, id) {
+  dayIndexes = findWeatherDayIndex();
+  const weekend = ["Friday", "Saturday", "Sunday"];
+  data = data.daily;
+  console.log(data);
+ 
+  for (let i = 0; i < 3; i++){
+      weekendWeather[id][weekend[i]].placeName = thisLocation;
+      weekendWeather[id][weekend[i]].tempInCelsius = Math.floor(data[dayIndexes[i]].temp.day - kelvin);
+      weekendWeather[id][weekend[i]].feelsLike = Math.floor(data[dayIndexes[i]].feels_like.day - kelvin);
+      weekendWeather[id][weekend[i]].description = data[dayIndexes[i]].weather[0].description;
+      weekendWeather[id][weekend[i]].tempInFahrenheit = Math.floor((data[dayIndexes[i]].temp.day- kelvin) * (9 / 5) + 32);
+      weekendWeather[id][weekend[i]].clouds = data[dayIndexes[i]].clouds;
+      weekendWeather[id][weekend[i]].humidity = data[dayIndexes[i]].humidity;
+      weekendWeather[id][weekend[i]].rain = data[dayIndexes[i]].rain;
+      weekendWeather[id][weekend[i]].windSpeed = data[dayIndexes[i]].wind_speed;
+      weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
+  }
+  
+console.log(weekendWeather);
 
 
-function updateWeekendWeather(data, dayIndexes){
-    console.log(data);
-    console.log(dayIndexes);
 }
 
+function calculateRating(data, dayIndexes) {
+  console.log(data);
+  console.log(dayIndexes);
+}
 
 // DISPLAYS THE WEATHER BACKGROUND IMAGE
 function getBackground() {
@@ -151,23 +196,23 @@ function displayCurrentWeather(weatherObject) {
 }
 
 // HERE WE GET CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather OBJECT AND PASSES ONTO displayHomeWeather()
-function fetchCurrentWeather(lat, lon) {
+function fetchCurrentWeather(lat, lon, id) {
   const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`;
   fetch(apiCurrent)
     .then(function (response) {
       return response.json(); // return the results to me in .JSON
     })
     .then(function (data) {
-      console.log(data);
-      updateHomeWeather(data);
+      updateHomeWeather(data, id);
       displayCurrentWeather(homeWeather);
+      fetchWeekendWeather(homeWeather.latitude, homeWeather.longitude, homeWeather.name, id);
     })
     .catch(function (error) {
       console.log("ERROR !" + error.message);
     });
 }
 
-function fetchLocationWeather(lat, lon, thisLocation) {
+function fetchWeekendWeather(lat, lon, thisLocation, id) {
   let apiWeekend = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&APPID=f195187b93a30f3dfcbe6e136431d58b`;
 
   // FETCH FROM OPENWEATHER API 7 DAY ONE CALL, EXCLUDING CURRENT, MINUTE AND HOURLY
@@ -177,9 +222,7 @@ function fetchLocationWeather(lat, lon, thisLocation) {
     })
     .then(function (data) {
       // this is what we will do with the results.
-      console.log(data);
-      updateWeekendWeather(data, findWeatherDayIndex());
-      calculateRating(data, findWeatherDayIndex());
+      updateWeekendWeather(data, thisLocation, id);
     })
     .catch(function (error) {
       console.log("ERROR !" + error.message);
@@ -198,10 +241,11 @@ if ("geolocation" in navigator) {
 
 // RECEIVE THE GEOLOCATION POSITION OBJECT AS INPUT, UPDATE OBJECT AND GET THE WEATHER.
 function getCoords(location) {
-  let latitude = location.coords.latitude;
-  let longitude = location.coords.longitude;
+  const latitude = location.coords.latitude;
+  const longitude = location.coords.longitude;
+  const id = "location1";
 
-  fetchCurrentWeather(latitude, longitude);
+  fetchCurrentWeather(latitude, longitude, id);
 }
 
 // IF THINGS GO WRONG WITH GEOLOCATION, GO HERE
@@ -211,7 +255,10 @@ function geolocationError(error) {
 
 // HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX
 locationInputArray.forEach(function (location) {
+  let id = document.getElementById(location).attributes["id"].value;
+
   // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
+
   const input = document.getElementById(location); // target and store the value in location, in input
   const searchRes = new google.maps.places.SearchBox(input); // pass that search into places
   searchRes.addListener("places_changed", function () {
@@ -219,6 +266,7 @@ locationInputArray.forEach(function (location) {
     if (location == null) {
       return;
     }
+
     const thisLocation = location.address_components[0].long_name; // LOCATIONS NAME
     const latitude = location.geometry.location.lat();
     const longitude = location.geometry.location.lng();
@@ -227,6 +275,6 @@ locationInputArray.forEach(function (location) {
         AS I WILL USE THIS TO BUILD AN OBJECT OF WEATHER INFORMATION FOR EACH LOCATION. 
         THIS WILL BE USEFUL FOR SCORE CALCULATIONS AND FOR DISPLAYING ANY LOCATIONS WEATHER IF NEEDED */
 
-    fetchLocationWeather(latitude, longitude, thisLocation);
+    fetchWeekendWeather(latitude, longitude, thisLocation, id);
   });
 });
