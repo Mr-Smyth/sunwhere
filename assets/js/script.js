@@ -255,7 +255,7 @@ function geolocationError(error) {
 
 // HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX
 locationInputArray.forEach(function (location) {
-  let id = document.getElementById(location).attributes["id"].value;
+  let id = document.getElementById(location).attributes.id.value;
 
   // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
 

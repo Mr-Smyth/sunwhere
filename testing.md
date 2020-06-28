@@ -172,3 +172,21 @@
   3. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Objects always displayed as expected.
+
+* #### fetchWeekendWeather():
+
+  The fetchWeekendWeather() function updates the weekendWeather{} object, with the current
+  weather and the weather from the 4 user entered locations. The weekendWeather{} object stores this
+  information for later use in scoring and weather display.
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * No errors detected.
+  2. Console.logged the object with various inputs from all locations.
+        * No errors detected.
+        * weekendWeather{} object displayed as expected.
+        * This also proved that all the relevant function call was being made correctly.
+  3. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * Object always displayed as expected.
