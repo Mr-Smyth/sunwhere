@@ -190,3 +190,27 @@
   3. Refreshed page multiple times to see if any errors occurred.
         * No errors detected.
         * Object always displayed as expected.
+
+* #### calculateRating():
+
+  The calculateRating() function calculates the weekend score and also updates the weekendWeather{} object.
+  It relies on calls to :
+  
+    * weekendRainScore(loc);
+    * weekendCloudsScore(loc);
+    * weekendWindScore(loc);
+    * weekendHumidityScore(loc);
+    * weekendTempScore(loc); 
+
+  The following tests were carried out:
+
+  1. Passed the function block through JSHint, to check for errors.
+        * No errors detected.
+  2. Used various mock object inputs from all locations, logged result to console.
+        * No errors detected.
+        * expected scores displayed for all locations.
+        * weekendWeather{} object updated as expected.
+        * This also proved that all the relevant function call was being made correctly.
+  3. Refreshed page multiple times to see if any errors occurred.
+        * No errors detected.
+        * console results always displayed as expected.
