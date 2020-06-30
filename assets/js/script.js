@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 // GLOBAL VARIABLES
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
@@ -18,6 +20,7 @@ const displayCurrentFeelsLike = document.getElementById(
   "weatherCurrentFeelsLike"
 );
 const locationInputArray = ["location2", "location3", "location4", "location5"];
+const weekend = ["Friday", "Saturday", "Sunday"];
 
 // GLOBAL OBJECTS
 /* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
@@ -90,32 +93,73 @@ function findWeatherDayIndex() {
 }
 
 function updateWeekendWeather(data, thisLocation, id) {
-  dayIndexes = findWeatherDayIndex();
-  const weekend = ["Friday", "Saturday", "Sunday"];
+  const dayIndexes = findWeatherDayIndex();
+
   data = data.daily;
   console.log(data);
- 
-  for (let i = 0; i < 3; i++){
-      weekendWeather[id][weekend[i]].placeName = thisLocation;
-      weekendWeather[id][weekend[i]].tempInCelsius = Math.floor(data[dayIndexes[i]].temp.day - kelvin);
-      weekendWeather[id][weekend[i]].feelsLike = Math.floor(data[dayIndexes[i]].feels_like.day - kelvin);
-      weekendWeather[id][weekend[i]].description = data[dayIndexes[i]].weather[0].description;
-      weekendWeather[id][weekend[i]].tempInFahrenheit = Math.floor((data[dayIndexes[i]].temp.day- kelvin) * (9 / 5) + 32);
-      weekendWeather[id][weekend[i]].clouds = data[dayIndexes[i]].clouds;
-      weekendWeather[id][weekend[i]].humidity = data[dayIndexes[i]].humidity;
-      weekendWeather[id][weekend[i]].rain = data[dayIndexes[i]].rain;
-      weekendWeather[id][weekend[i]].windSpeed = data[dayIndexes[i]].wind_speed;
-      weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
+
+  for (let i = 0; i < 3; i++) {
+    weekendWeather[id][weekend[i]].placeName = thisLocation;
+    weekendWeather[id][weekend[i]].tempInCelsius = Math.floor(
+      data[dayIndexes[i]].temp.day - kelvin
+    );
+    weekendWeather[id][weekend[i]].feelsLike = Math.floor(
+      data[dayIndexes[i]].feels_like.day - kelvin
+    );
+    weekendWeather[id][weekend[i]].description =
+      data[dayIndexes[i]].weather[0].description;
+    weekendWeather[id][weekend[i]].tempInFahrenheit = Math.floor(
+      (data[dayIndexes[i]].temp.day - kelvin) * (9 / 5) + 32
+    );
+    weekendWeather[id][weekend[i]].clouds = data[dayIndexes[i]].clouds;
+    weekendWeather[id][weekend[i]].humidity = data[dayIndexes[i]].humidity;
+    weekendWeather[id][weekend[i]].rain = data[dayIndexes[i]].rain;
+    weekendWeather[id][weekend[i]].windSpeed = data[dayIndexes[i]].wind_speed;
+    weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
   }
-  
-console.log(weekendWeather);
-
-
 }
 
-function calculateRating(data, dayIndexes) {
-  console.log(data);
-  console.log(dayIndexes);
+function weekendRainScore(loc) {
+  let score = 0;
+  weekend.forEach(function (day, index) {
+    let rain = weekendWeather[loc][day].rain;
+    if (rain <= 0) {
+      score += 20;
+    } else if (rain > 0 && rain <= 1) {
+      score += 10;
+    } else if (rain > 1 && rain <= 3) {
+      score += 0;
+    } else if (rain > 3 && rain <= 8) {
+      score -= 10;
+    } else if (rain > 8 && rain <= 16) {
+      score -= 20;
+    } else if (rain > 16) {
+      score -= 40;
+    } else {
+      score += 0;
+    }
+  });
+  return score;
+}
+
+function calculateRating() {
+  console.log(weekendWeather);
+  const allLocations = [
+    "location1",
+    "location2",
+    "location3",
+    "location4",
+    "location5",
+  ];
+
+  for (let loc of allLocations) {
+    let score = 0;
+    score += weekendRainScore(loc);
+
+    console.log(`Score for ${loc} is : ${score}`);
+    weekendWeather[loc].score = score;
+  }
+  console.log(weekendWeather);
 }
 
 // DISPLAYS THE WEATHER BACKGROUND IMAGE
@@ -205,7 +249,12 @@ function fetchCurrentWeather(lat, lon, id) {
     .then(function (data) {
       updateHomeWeather(data, id);
       displayCurrentWeather(homeWeather);
-      fetchWeekendWeather(homeWeather.latitude, homeWeather.longitude, homeWeather.name, id);
+      fetchWeekendWeather(
+        homeWeather.latitude,
+        homeWeather.longitude,
+        homeWeather.name,
+        id
+      );
     })
     .catch(function (error) {
       console.log("ERROR !" + error.message);
@@ -223,6 +272,7 @@ function fetchWeekendWeather(lat, lon, thisLocation, id) {
     .then(function (data) {
       // this is what we will do with the results.
       updateWeekendWeather(data, thisLocation, id);
+      calculateRating();
     })
     .catch(function (error) {
       console.log("ERROR !" + error.message);
@@ -273,7 +323,8 @@ locationInputArray.forEach(function (location) {
 
     /* GOING TO SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME, to fetchLocationWeather().
         AS I WILL USE THIS TO BUILD AN OBJECT OF WEATHER INFORMATION FOR EACH LOCATION. 
-        THIS WILL BE USEFUL FOR SCORE CALCULATIONS AND FOR DISPLAYING ANY LOCATIONS WEATHER IF NEEDED */
+        THIS WILL BE USEFUL FOR SCORE CALCULATIONS AND FOR DISPLAYING ANY LOCATIONS WEATHER IF NEEDED 
+        AN ID WILL BE USED TO ORGANISE THEM IN THE WEEKENDWEATHER OBJECT*/
 
     fetchWeekendWeather(latitude, longitude, thisLocation, id);
   });
