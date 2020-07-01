@@ -261,61 +261,61 @@ function calculateRating() {
 function getBackground() {
     switch (homeWeather.weatherIcon) {
         case "01d":
-            displayBackgroundImage.src = "assets/images/clear-skyd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/clear-skyd.jpg")';
             break;
         case "02d":
-            displayBackgroundImage.src = "assets/images/few-cloudsd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/few-cloudsd.jpg")';
             break;
         case "03d":
-            displayBackgroundImage.src = "assets/images/scattered-cloudsd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/scattered-cloudsd.jpg")';
             break;
         case "04d":
-            displayBackgroundImage.src = "assets/images/broken-cloudsd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/broken-cloudsd.jpg")';
             break;
         case "09d":
-            displayBackgroundImage.src = "assets/images/raind.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/raind.jpg")';
             break;
         case "10d":
-            displayBackgroundImage.src = "assets/images/raind.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/raind.jpg")';
             break;
         case "11d":
-            displayBackgroundImage.src = "assets/images/thunderstormd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/thunderstormd.jpg")';
             break;
         case "13d":
-            displayBackgroundImage.src = "assets/images/snowd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/snowd.jpg")';
             break;
         case "50d":
-            displayBackgroundImage.src = "assets/images/mistd.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/mistd.jpg")';
             break;
         case "01n":
-            displayBackgroundImage.src = "assets/images/clear-skyn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/clear-skyn.jpg")';
             break;
         case "02n":
-            displayBackgroundImage.src = "assets/images/few-cloudsn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/few-cloudsn.jpg")';
             break;
         case "03n":
-            displayBackgroundImage.src = "assets/images/cloudsn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/cloudsn.jpg")';
             break;
         case "04n":
-            displayBackgroundImage.src = "assets/images/cloudsn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/cloudsn.jpg")';
             break;
         case "09n":
-            displayBackgroundImage.src = "assets/images/rainn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/rainn.jpg")';
             break;
         case "10n":
-            displayBackgroundImage.src = "assets/images/rainn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/rainn.jpg")';
             break;
         case "11n":
-            displayBackgroundImage.src = "assets/images/thunderstormn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/thunderstormn.jpg")';
             break;
         case "13n":
-            displayBackgroundImage.src = "assets/images/snown.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/snown.jpg")';
             break;
         case "50n":
-            displayBackgroundImage.src = "assets/images/mistn.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/mistn.jpg")';
             break;
         default:
-            displayBackgroundImage.src = "assets/images/clear-skyd1.jpg";
+            displayBackgroundImage.style.backgroundImage = 'url("../assets/images/clear-skyd1.jpg")';
             break;
     }
 }

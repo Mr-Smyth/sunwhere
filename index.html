@@ -12,6 +12,8 @@
       <div id="logo-container">
         <a href="index.html"
           ><img
+            id="logo-image"
+            ;
             src="assets/images/sunwhere-logo.png"
             alt="Sun Where logo image"
         /></a>
@@ -19,45 +21,69 @@
     </header>
     <section>
       <div id="weatherBackgroundContainer">
-        <img id="weatherBackgroundImage" src="" alt="Background weather image">
-        <div id="weatherCurrentInfoContainer">
-          <div id="informationNotification"></div>
-          <div id="dateTimeContainer">
-            <div id="date">Current Date</div>
-            <div id="currentTime">Current Time</div>
-          </div>
-          <h1 id="weatherCurrentInfoName">weatherInfoName</h1>
-          <div id="weatherMainDetailsContainer">
-            <div>
-              <img id="weatherCurrentIcon" alt="Weather Icon" />
-            </div>
-            <div id="weatherCurrentTemp">Temp</div>
-            <div id="weatherCurrentDescription">Description</div>
-          </div>
-          <div id="weatherSmallDetailsContainer">
-            <div id="weatherCurrentFeelsLike">Feels like</div>
-            <div id="weatherCurrentHumidity">humidity</div>
-            <div id="weatherCurrentWindSpeed">wind</div>
-          </div>
+        <img id="weatherBackgroundImage" />
+      </div>
+      <div id="weatherCurrentInfoContainer">
+        <div id="informationNotification"></div>
+        <div id="dateTimeContainer">
+          <div id="date">Current Date</div>
+          <div id="currentTime">Current Time</div>
         </div>
-        <div id="introduction">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
-            quisquam rerum omnis quod facere nesciunt reprehenderit fuga at
-            dignissimos odio nisi labore praesentium eos ut debitis consequuntur
-            dolores, ab itaque.
-          </p>
+        <h1 id="weatherCurrentInfoName">weatherInfoName</h1>
+        <div id="weatherMainDetailsContainer">
+          <div>
+            <img id="weatherCurrentIcon" alt="Weather Icon" />
+          </div>
+          <div id="weatherCurrentTemp">Temp</div>
+          <div id="weatherCurrentDescription">Description</div>
         </div>
-        <div id="locationInputContainer" class="">
-          <form class="locationForm">
-            <input id="location2" name="location2-name" placeholder="Please Enter Location" aria-placeholder="Please Enter Location" type="text" />
-            <input id="location3" name="location3-name" placeholder="Please Enter Location" aria-placeholder="Please Enter Location" type="text" />
-            <input id="location4" name="location4-name" placeholder="Please Enter Location" aria-placeholder="Please Enter Location" type="text" />
-            <input id="location5" name="location5-name" placeholder="Please Enter Location" aria-placeholder="Please Enter Location" type="text" />
+        <div id="weatherSmallDetailsContainer">
+          <div id="weatherCurrentFeelsLike">Feels like</div>
+          <div id="weatherCurrentHumidity">humidity</div>
+          <div id="weatherCurrentWindSpeed">wind</div>
+        </div>
+      </div>
+      <div id="introduction">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quisquam
+          rerum omnis quod facere nesciunt reprehenderit fuga at dignissimos
+          odio nisi labore praesentium eos ut debitis consequuntur dolores, ab
+          itaque.
+        </p>
+      </div>
+      <div id="locationInputContainer" class="">
+        <form class="locationForm">
+          <input
+            id="location2"
+            name="location2-name"
+            placeholder="Please Enter Location"
+            aria-placeholder="Please Enter Location"
+            type="text"
+          />
+          <input
+            id="location3"
+            name="location3-name"
+            placeholder="Please Enter Location"
+            aria-placeholder="Please Enter Location"
+            type="text"
+          />
+          <input
+            id="location4"
+            name="location4-name"
+            placeholder="Please Enter Location"
+            aria-placeholder="Please Enter Location"
+            type="text"
+          />
+          <input
+            id="location5"
+            name="location5-name"
+            placeholder="Please Enter Location"
+            aria-placeholder="Please Enter Location"
+            type="text"
+          />
 
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
+          <input type="submit" value="Submit" />
+        </form>
       </div>
     </section>
 
