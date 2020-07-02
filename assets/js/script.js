@@ -324,7 +324,7 @@ function getBackground() {
 function displayCurrentWeather(weatherObject) {
     getBackground();
     displayCurrentLocation.innerText = weatherObject.name;
-    displayCurrentIcon.src = `http://openweathermap.org/img/wn/${weatherObject.weatherIcon}@4x.png`;
+    displayCurrentIcon.src = `http://openweathermap.org/img/wn/${weatherObject.weatherIcon}@2x.png`;
     displayCurrentTemp.innerHTML = weatherObject.tempInCelsius +`&#176C`;
     displayCurrentDesc.innerText = weatherObject.description.charAt(0).toUpperCase() +
         weatherObject.description.slice(1); // SET FIRST LETTER TO UPPERCASE
@@ -432,3 +432,15 @@ locationInputArray.forEach(function (location) {
     });
 });
 
+// CODE TO FADE OUT LOGO - CREDIT ONLINE TUTORIALS YOUTUBE.
+let lastScrollTop = 0;
+let logo = document.getElementById("logo-container");
+window.addEventListener("scroll", function(){
+    let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        logo.style.top = "-100px";
+    } else {
+        logo.style.top ="20px";
+    }
+    lastScrollTop = scrollTop
+}) 
