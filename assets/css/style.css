@@ -42,16 +42,75 @@ body {
 }
 
 #weatherCurrentInfoContainer {
-  display: inline-flex;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
   position: absolute;
+  align-items: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
+  width: 50%;
+  max-width: 500px;
+  min-width: 300px;
   border-radius: 20px;
 
   background-color: rgba(192, 192, 192, 0.85);
   -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
+}
+
+#informationNotification {
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(49, 2, 2);
+}
+
+#dateTimeContainer {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#currentDate,
+#currentTime {
+  align-self: center;
+}
+
+#weatherMainDetailsContainer {
+    margin-bottom: 20px;
+}
+
+#weatherCurrentInfoName {
+  font-size: 3rem;
+}
+
+#weatherCurrentTemp {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+#weatherCurrentDescription {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+
+#weatherSmallDetailsContainer {
+    width: 95%;
+    height: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    
+}
+
+#weatherCurrentFeelsLike,
+#weatherCurrentHumidity,
+#weatherCurrentWindSpeed {
+    text-align: center;
 }
