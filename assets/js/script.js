@@ -11,6 +11,8 @@ const displayCurrentDesc = document.getElementById("weatherCurrentDescription");
 const displayCurrentHumidity = document.getElementById("weatherCurrentHumidity");
 const displayCurrentWind = document.getElementById("weatherCurrentWindSpeed");
 const displayCurrentFeelsLike = document.getElementById("weatherCurrentFeelsLike");
+const displayCurrentDate = document.getElementById("currentDate");
+const displayCurrentTime = document.getElementById("currentTime");
 const locationInputArray = ["location2", "location3", "location4", "location5"];
 const weekend = ["Friday", "Saturday", "Sunday"];
 
@@ -331,6 +333,8 @@ function displayCurrentWeather(weatherObject) {
     displayCurrentHumidity.innerText = `Humidity: ${weatherObject.humidity}%`;
     displayCurrentWind.innerText = `Wind Speed: ${weatherObject.windSpeed}m/s`;
     displayCurrentFeelsLike.innerHTML = `Feels Like: ${weatherObject.feelsLike}&#176C`;
+    displayCurrentDate.innerHTML = currentDate();
+    displayCurrentTime.innerHTML = currentTime();
 }
 
 /* HERE WE GET CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather 
@@ -431,6 +435,53 @@ locationInputArray.forEach(function (location) {
         fetchWeekendWeather(latitude, longitude, thisLocation, id);
     });
 });
+
+// GET AND FORMAT CURRENT DATE
+function currentDate() {
+    const today = new Date();
+    const currDate = today.getDate();
+    const currDay = getDayName(today.getDate());
+    const currMonth = getMonthName(today.getMonth());
+    const currYear = today.getUTCFullYear();
+    const suffixArray = ["st","nd","rd","th"];
+    let suffix = suffixArray[3];
+    if (currDate === 1) {
+        suffix = suffixArray[0];
+    } else if (currDate === 2) {
+        suffix = suffixArray[1];
+    } else if (currDate === 3) {
+        suffix = suffixArray[2];
+    }
+    let date = currDay+' '+currDate+suffix+' of '+currMonth+'  '+currYear;
+    return date;
+}
+
+// GET AND FORMAT CURRENT TIME
+function currentTime() {
+    const today = new Date();
+    let hours = today.getHours();
+    const mins = today.getMinutes();
+    let ampm = "am";
+    
+    if (hours >= 12){
+        ampm = "pm"; 
+    }
+    hours = hours % 12;
+    let time = hours+":"+mins+ampm;
+    return time;
+}
+
+// HELPER FUNCTION TO PROVIDE MONTH NAME
+function getMonthName(month) {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return months[month];
+}
+
+// HELPER FUNCTION TO PROVIDE DAY NAME
+function getDayName(day) {
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    return days[day];
+}
 
 // CODE TO FADE OUT LOGO - CREDIT ONLINE TUTORIALS YOUTUBE.
 let lastScrollTop = 0;

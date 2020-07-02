@@ -54,9 +54,9 @@ body {
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 5%;
-  right: 5%;
-  /* transform: translate(-10%, -80%); */
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%);
   width: 50%;
   max-width: 500px;
   min-width: 300px;
