@@ -445,7 +445,7 @@ window.onload = function() {
     getGeolocation();
     getLocationsFromUser();
   }
-}
+};
 
 // GET AND FORMAT CURRENT DATE
 function currentDate() {
