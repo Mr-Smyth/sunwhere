@@ -331,8 +331,8 @@ function displayCurrentWeather(weatherObject) {
     displayCurrentDesc.innerText = weatherObject.description.charAt(0).toUpperCase() +
         weatherObject.description.slice(1); // SET FIRST LETTER TO UPPERCASE
     displayCurrentHumidity.innerText = `Humidity: ${weatherObject.humidity}%`;
-    displayCurrentWind.innerText = `Wind Speed: ${weatherObject.windSpeed}m/s`;
-    displayCurrentFeelsLike.innerHTML = `Feels Like: ${weatherObject.feelsLike}&#176C`;
+    displayCurrentWind.innerText = `Wind: ${weatherObject.windSpeed}m/s`;
+    displayCurrentFeelsLike.innerHTML = `Feels: ${weatherObject.feelsLike}&#176C`;
     displayCurrentDate.innerHTML = currentDate();
     displayCurrentTime.innerHTML = currentTime();
 }
@@ -381,6 +381,7 @@ function fetchWeekendWeather(lat, lon, thisLocation, id) {
 
 // FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
 // WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER
+function getGeolocation(){
 if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(getCoords, geolocationError);
 } else {
@@ -388,6 +389,7 @@ if ("geolocation" in navigator) {
     infoMessageElement.innerHTML =
         `<p>Your Browser does not support Geolocation, please allow 
     Geolocation and reload the page.</p>`;
+}
 }
 
 /* RECEIVE THE GEOLOCATION POSITION OBJECT AS INPUT, UPDATE OBJECT AND GET THE 
@@ -406,6 +408,7 @@ function geolocationError(error) {
 }
 
 // HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX
+function getLocationsFromUser(){
 locationInputArray.forEach(function (location) {
     let id = document.getElementById(location).attributes.id.value;
 
@@ -435,6 +438,14 @@ locationInputArray.forEach(function (location) {
         fetchWeekendWeather(latitude, longitude, thisLocation, id);
     });
 });
+}
+
+window.onload = function() {
+  if (window.location.href.indexOf('index.html') > -1) {
+    getGeolocation();
+    getLocationsFromUser();
+  }
+}
 
 // GET AND FORMAT CURRENT DATE
 function currentDate() {
@@ -483,15 +494,27 @@ function getDayName(day) {
     return days[day];
 }
 
-// CODE TO FADE OUT LOGO - CREDIT ONLINE TUTORIALS YOUTUBE.
+// CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
+// EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
 let lastScrollTop = 0;
 let logo = document.getElementById("logo-container");
 window.addEventListener("scroll", function(){
     let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
-        logo.style.top = "-100px";
+        logo.style.top = "50px";
+        logo.style.left = "50px";
+        logo.style.transform = "translate(0%)";
+        logo.style.width = "100%";
+        logo.style.maxWidth = "1px";
+        logo.style.opacity = "0.01";
     } else {
         logo.style.top ="20px";
+        logo.style.left = "50%";
+        logo.style.transform = "translate(-50%)";
+        logo.style.width = "100%";
+        logo.style.maxWidth = "200px";
+        logo.style.opacity = "1";
     }
-    lastScrollTop = scrollTop
+    /* lastScrollTop = scrollTop */
 }) 
+

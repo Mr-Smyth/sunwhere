@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,6 +11,20 @@
 body {
   color: rgb(15, 15, 15);
   font-size: 16px;
+  height: 300vh;
+}
+
+p {
+  text-align: center;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  line-height: 18px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: rgb(98, 85, 8);
 }
 
 #logo-container {
@@ -16,6 +34,7 @@ body {
   transform: translate(-50%);
   width: 100%;
   max-width: 200px;
+  opacity: 1;
   transition: 1.5s;
 }
 
@@ -29,7 +48,6 @@ body {
 }
 
 .fadeOut {
-
 }
 
 #weatherBackgroundContainer {
@@ -123,4 +141,49 @@ body {
 #weatherCurrentHumidity,
 #weatherCurrentWindSpeed {
   text-align: center;
+}
+
+#introduction {
+  padding: 10px;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 50%;
+  max-width: 500px;
+  min-width: 300px;
+  border-radius: 20px;
+
+  background-color: rgba(192, 192, 192, 0.85);
+  -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
+  box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
+}
+
+#locationInputContainer {
+  margin-top: 50px;
+
+  flex-direction: column;
+}
+
+#locationInputContainer p {
+  font-size: 1.2rem;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 25px;
+}
+
+.locationForm {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  
+}
+
+#locationForm input {
+ 
 }
