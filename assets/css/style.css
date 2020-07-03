@@ -120,6 +120,7 @@ a {
   text-align: center;
   font-size: 4rem;
   font-weight: 900;
+  cursor: pointer;
 }
 
 #weatherCurrentDescription {

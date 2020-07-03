@@ -323,16 +323,16 @@ function getBackground() {
 }
 
 // THIS FUNCTION DISPLAYS THE CURRENT LOCATIONS WEATHER TO HOME SCREEN
-function displayCurrentWeather(weatherObject) {
+function displayCurrentWeather(homeWeather) {
     getBackground();
-    displayCurrentLocation.innerText = weatherObject.name;
-    displayCurrentIcon.src = `http://openweathermap.org/img/wn/${weatherObject.weatherIcon}@2x.png`;
-    displayCurrentTemp.innerHTML = weatherObject.tempInCelsius +`&#176C`;
-    displayCurrentDesc.innerText = weatherObject.description.charAt(0).toUpperCase() +
-        weatherObject.description.slice(1); // SET FIRST LETTER TO UPPERCASE
-    displayCurrentHumidity.innerText = `Humidity: ${weatherObject.humidity}%`;
-    displayCurrentWind.innerText = `Wind: ${weatherObject.windSpeed}m/s`;
-    displayCurrentFeelsLike.innerHTML = `Feels: ${weatherObject.feelsLike}&#176C`;
+    displayCurrentLocation.innerText = homeWeather.name;
+    displayCurrentIcon.src = `http://openweathermap.org/img/wn/${homeWeather.weatherIcon}@2x.png`;
+    displayCurrentTemp.innerHTML = homeWeather.tempInCelsius +`&#176<span id="tempUnit">C</span>`;
+    displayCurrentDesc.innerText = homeWeather.description.charAt(0).toUpperCase() +
+        homeWeather.description.slice(1); // SET FIRST LETTER TO UPPERCASE
+    displayCurrentHumidity.innerText = `Humidity: ${homeWeather.humidity}%`;
+    displayCurrentWind.innerText = `Wind: ${homeWeather.windSpeed}m/s`;
+    displayCurrentFeelsLike.innerHTML = `Feels: ${homeWeather.feelsLike}&#176<span>C</span>`;
     displayCurrentDate.innerHTML = currentDate();
     displayCurrentTime.innerHTML = currentTime();
 }
@@ -440,12 +440,6 @@ locationInputArray.forEach(function (location) {
 });
 }
 
-window.onload = function() {
-  if (window.location.href.indexOf('index.html') <1) {
-    getGeolocation();
-    getLocationsFromUser();
-  }
-};
 
 // GET AND FORMAT CURRENT DATE
 function currentDate() {
@@ -518,3 +512,25 @@ window.addEventListener("scroll", function(){
     /* lastScrollTop = scrollTop */
 }) 
 
+// CHANGES THE TEMPERATURE UNIT
+function changeUnit(){
+    let tempUnit = document.getElementById("tempUnit").innerText;
+    if (tempUnit === null) {
+        return;
+    } else if (tempUnit === "C") {
+        displayCurrentTemp.innerHTML = homeWeather.tempInFahrenheit +`&#176<span id="tempUnit">F</span>`;
+    } else if (tempUnit === "F") {
+        displayCurrentTemp.innerHTML = homeWeather.tempInCelsius +`&#176<span id="tempUnit">C</span>`;
+    }  
+}
+
+
+
+window.onload = function() {
+  if (document.URL.includes('index.html')) {
+    getGeolocation();
+    getLocationsFromUser();
+    // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
+    document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
+  }
+};
