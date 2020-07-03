@@ -441,7 +441,7 @@ locationInputArray.forEach(function (location) {
 }
 
 window.onload = function() {
-  if (window.location.href.indexOf('index.html') > -1) {
+  if (window.location.href.indexOf('index.html') <1) {
     getGeolocation();
     getLocationsFromUser();
   }
