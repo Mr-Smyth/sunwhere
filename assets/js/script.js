@@ -74,7 +74,7 @@ function findWeatherDayIndex() {
     const dayToday = today.getDay();
 
     const daysToNextWeekend = {
-        
+
         /* "0": [5, 6, 7],: IF TODAY IS SUNDAY, DAYS 5,6 AND 7 FROM 
         THE API RESPONSE DATA WILL BE NEEDED.
         IF THE CURRENT DAY IS FRIDAY OR SATURDAY - WE WILL STILL
@@ -119,6 +119,36 @@ function updateWeekendWeather(data, thisLocation, id) {
         weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
     }
 }
+
+
+function sortLocationScores() {
+    let resultsArray = [];
+    let locArray = [];
+    let i = 0;
+
+    for (let location in weekendWeather) {
+        let result = weekendWeather[location]["score"];
+        if (weekendWeather.hasOwnProperty(location)) {
+            resultsArray.push(result);
+            locArray.push(location);
+        }
+    }
+    for (let i = 0; i < resultsArray.length; i++) {
+        for (let j = i; j < resultsArray.length; j++){
+            if (resultsArray[i] < resultsArray[j]){ // checks if this (i) number in array is less than prev.
+                let resHolder = resultsArray[i]; // if it is then hold this number
+                let locHolder = locArray[i]; // hold matching location
+                resultsArray[i] = resultsArray[j]; // make the bigger num the first number of the array
+                locArray[i] = locArray[j]; // loc moves to match
+                resultsArray[j] = resHolder; // place the smaller number in after the bigger number
+                locArray[j] = locHolder; // loc moves to match
+            }
+        }
+    }
+    console.log(resultsArray);
+    console.log(locArray);
+}
+
 
 // CALCULATE RAIN SCORE
 function weekendRainScore(loc) {
@@ -253,10 +283,9 @@ function calculateRating() {
         score += weekendHumidityScore(loc);
         score += weekendTempScore(loc);
 
-        console.log(`Score for ${loc} is : ${score}`);
+        /* console.log(`Score for ${loc} is : ${score}`); */
         weekendWeather[loc].score = score;
     }
-    console.log(weekendWeather);
 }
 
 // DISPLAYS THE WEATHER BACKGROUND IMAGE
@@ -327,7 +356,7 @@ function displayCurrentWeather(homeWeather) {
     getBackground();
     displayCurrentLocation.innerText = homeWeather.name;
     displayCurrentIcon.src = `http://openweathermap.org/img/wn/${homeWeather.weatherIcon}@2x.png`;
-    displayCurrentTemp.innerHTML = homeWeather.tempInCelsius +`&#176<span id="tempUnit">C</span>`;
+    displayCurrentTemp.innerHTML = homeWeather.tempInCelsius + `&#176<span id="tempUnit">C</span>`;
     displayCurrentDesc.innerText = homeWeather.description.charAt(0).toUpperCase() +
         homeWeather.description.slice(1); // SET FIRST LETTER TO UPPERCASE
     displayCurrentHumidity.innerText = `Humidity: ${homeWeather.humidity}%`;
@@ -381,15 +410,15 @@ function fetchWeekendWeather(lat, lon, thisLocation, id) {
 
 // FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
 // WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER
-function getGeolocation(){
-if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(getCoords, geolocationError);
-} else {
-    // IF NOT, SEND AN ERROR NOTIFICATION TO WEATHER WINDOW
-    infoMessageElement.innerHTML =
-        `<p>Your Browser does not support Geolocation, please allow 
+function getGeolocation() {
+    if ("geolocation" in navigator) {
+        navigator.geolocation.getCurrentPosition(getCoords, geolocationError);
+    } else {
+        // IF NOT, SEND AN ERROR NOTIFICATION TO WEATHER WINDOW
+        infoMessageElement.innerHTML =
+            `<p>Your Browser does not support Geolocation, please allow 
     Geolocation and reload the page.</p>`;
-}
+    }
 }
 
 /* RECEIVE THE GEOLOCATION POSITION OBJECT AS INPUT, UPDATE OBJECT AND GET THE 
@@ -408,36 +437,36 @@ function geolocationError(error) {
 }
 
 // HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX
-function getLocationsFromUser(){
-locationInputArray.forEach(function (location) {
-    let id = document.getElementById(location).attributes.id.value;
+function getLocationsFromUser() {
+    locationInputArray.forEach(function (location) {
+        let id = document.getElementById(location).attributes.id.value;
 
-    // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
+        // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
 
-    /* TARGET AND STORE THE LOCATION IN INPUT */
-    const input = document.getElementById(location);
-    // PASS THE SEARCH INTO GOOGLE PLACES:
-    const searchRes = new google.maps.places.SearchBox(input);
-    /* WE JUST NEED INDEX 0, getPlaces()
-     RETURNS THE DETAILS OF THE LOCATION SELECTED BY THE USER. */
-    searchRes.addListener("places_changed", function () {
-        const location = searchRes.getPlaces()[0];
-        if (location == null) {
-            return;
-        }
+        /* TARGET AND STORE THE LOCATION IN INPUT */
+        const input = document.getElementById(location);
+        // PASS THE SEARCH INTO GOOGLE PLACES:
+        const searchRes = new google.maps.places.SearchBox(input);
+        /* WE JUST NEED INDEX 0, getPlaces()
+         RETURNS THE DETAILS OF THE LOCATION SELECTED BY THE USER. */
+        searchRes.addListener("places_changed", function () {
+            const location = searchRes.getPlaces()[0];
+            if (location == null) {
+                return;
+            }
 
-        // LOCATIONS NAME
-        const thisLocation = location.address_components[0].long_name;
-        const latitude = location.geometry.location.lat();
-        const longitude = location.geometry.location.lng();
+            // LOCATIONS NAME
+            const thisLocation = location.address_components[0].long_name;
+            const latitude = location.geometry.location.lat();
+            const longitude = location.geometry.location.lng();
 
-        /*  SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME, AND ID to 
-        fetchLocationWeather(). THIS WILL BE USED TO BUILD AN OBJECT OF WEATHER 
-        INFORMATION FOR EACH LOCATION.*/
+            /*  SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME, AND ID to 
+            fetchLocationWeather(). THIS WILL BE USED TO BUILD AN OBJECT OF WEATHER 
+            INFORMATION FOR EACH LOCATION.*/
 
-        fetchWeekendWeather(latitude, longitude, thisLocation, id);
+            fetchWeekendWeather(latitude, longitude, thisLocation, id);
+        });
     });
-});
 }
 
 
@@ -448,7 +477,7 @@ function currentDate() {
     const currDay = getDayName(today.getDate());
     const currMonth = getMonthName(today.getMonth());
     const currYear = today.getUTCFullYear();
-    const suffixArray = ["st","nd","rd","th"];
+    const suffixArray = ["st", "nd", "rd", "th"];
     let suffix = suffixArray[3];
     if (currDate === 1) {
         suffix = suffixArray[0];
@@ -457,7 +486,7 @@ function currentDate() {
     } else if (currDate === 3) {
         suffix = suffixArray[2];
     }
-    let date = currDay+' '+currDate+suffix+' of '+currMonth+'  '+currYear;
+    let date = currDay + ' ' + currDate + suffix + ' of ' + currMonth + '  ' + currYear;
     return date;
 }
 
@@ -467,12 +496,12 @@ function currentTime() {
     let hours = today.getHours();
     const mins = today.getMinutes();
     let ampm = "am";
-    
-    if (hours >= 12){
-        ampm = "pm"; 
+
+    if (hours >= 12) {
+        ampm = "pm";
     }
     hours = hours % 12;
-    let time = hours+":"+mins+ampm;
+    let time = hours + ":" + mins + ampm;
     return time;
 }
 
@@ -492,7 +521,7 @@ function getDayName(day) {
 // EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
 let lastScrollTop = 0;
 let logo = document.getElementById("logo-container");
-window.addEventListener("scroll", function(){
+window.addEventListener("scroll", function () {
     let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
         logo.style.top = "50px";
@@ -502,7 +531,7 @@ window.addEventListener("scroll", function(){
         logo.style.maxWidth = "1px";
         logo.style.opacity = "0.01";
     } else {
-        logo.style.top ="20px";
+        logo.style.top = "20px";
         logo.style.left = "50%";
         logo.style.transform = "translate(-50%)";
         logo.style.width = "100%";
@@ -510,27 +539,28 @@ window.addEventListener("scroll", function(){
         logo.style.opacity = "1";
     }
     /* lastScrollTop = scrollTop */
-}) 
+})
 
 // CHANGES THE TEMPERATURE UNIT
-function changeUnit(){
+function changeUnit() {
     let tempUnit = document.getElementById("tempUnit").innerText;
     if (tempUnit === null) {
         return;
     } else if (tempUnit === "C") {
-        displayCurrentTemp.innerHTML = homeWeather.tempInFahrenheit +`&#176<span id="tempUnit">F</span>`;
+        displayCurrentTemp.innerHTML = homeWeather.tempInFahrenheit + `&#176<span id="tempUnit">F</span>`;
     } else if (tempUnit === "F") {
-        displayCurrentTemp.innerHTML = homeWeather.tempInCelsius +`&#176<span id="tempUnit">C</span>`;
-    }  
+        displayCurrentTemp.innerHTML = homeWeather.tempInCelsius + `&#176<span id="tempUnit">C</span>`;
+    }
 }
 
 
 
-window.onload = function() {
-  if (document.URL.includes('index.html')) {
-    getGeolocation();
-    getLocationsFromUser();
-    // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
-    document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
-  }
+window.onload = function () {
+    if (document.URL.includes('index.html')) {
+        getGeolocation();
+        getLocationsFromUser();
+        // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
+        document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
+        document.getElementById('clickForResults').addEventListener('click', sortLocationScores);
+    }
 };
