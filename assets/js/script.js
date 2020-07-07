@@ -97,7 +97,6 @@ function updateWeekendWeather(data, thisLocation, id) {
     const dayIndexes = findWeatherDayIndex();
 
     data = data.daily;
-    console.log(data);
 
     for (let i = 0; i < 3; i++) {
         weekendWeather[id][weekend[i]].placeName = thisLocation;
@@ -118,17 +117,36 @@ function updateWeekendWeather(data, thisLocation, id) {
         weekendWeather[id][weekend[i]].windSpeed = data[dayIndexes[i]].wind_speed;
         weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
     }
+    
+}
+
+
+function displayLocationsResults(loc, weekendWeatherDeserialized){
+    /* console.log(loc); */
+    document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Friday.placeName;
+    document.getElementById('resultlocation1').innerHTML = weekendWeatherDeserialized[loc[0]].score;
+    document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Friday.placeName;
+    document.getElementById('resultlocation2').innerHTML = weekendWeatherDeserialized[loc[1]].score;
+    document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Friday.placeName;
+    document.getElementById('resultlocation3').innerHTML = weekendWeatherDeserialized[loc[2]].score;
+    document.getElementById('nameLocation4').innerHTML = weekendWeatherDeserialized[loc[3]].Friday.placeName;
+    document.getElementById('resultlocation4').innerHTML = weekendWeatherDeserialized[loc[3]].score;
+    document.getElementById('nameLocation5').innerHTML = weekendWeatherDeserialized[loc[4]].Friday.placeName;
+    document.getElementById('resultlocation5').innerHTML = weekendWeatherDeserialized[loc[4]].score;
+
 }
 
 
 function sortLocationScores() {
+    let weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
+    console.log(weekendWeatherDeserialized);
     let resultsArray = [];
     let locArray = [];
     let i = 0;
 
-    for (let location in weekendWeather) {
-        let result = weekendWeather[location]["score"];
-        if (weekendWeather.hasOwnProperty(location)) {
+    for (let location in weekendWeatherDeserialized) {
+        let result = weekendWeatherDeserialized[location]["score"];
+        if (weekendWeatherDeserialized.hasOwnProperty(location)) {
             resultsArray.push(result);
             locArray.push(location);
         }
@@ -145,8 +163,7 @@ function sortLocationScores() {
             }
         }
     }
-    console.log(resultsArray);
-    console.log(locArray);
+    displayLocationsResults(locArray, weekendWeatherDeserialized);
 }
 
 
@@ -285,6 +302,8 @@ function calculateRating() {
 
         /* console.log(`Score for ${loc} is : ${score}`); */
         weekendWeather[loc].score = score;
+        let weekendWeatherSerial = JSON.stringify(weekendWeather);
+        localStorage.setItem("weekendWeather", weekendWeatherSerial);
     }
 }
 
