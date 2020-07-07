@@ -121,52 +121,6 @@ function updateWeekendWeather(data, thisLocation, id) {
 }
 
 
-function displayLocationsResults(loc, weekendWeatherDeserialized){
-    /* console.log(loc); */
-    document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Friday.placeName;
-    document.getElementById('resultlocation1').innerHTML = weekendWeatherDeserialized[loc[0]].score;
-    document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Friday.placeName;
-    document.getElementById('resultlocation2').innerHTML = weekendWeatherDeserialized[loc[1]].score;
-    document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Friday.placeName;
-    document.getElementById('resultlocation3').innerHTML = weekendWeatherDeserialized[loc[2]].score;
-    document.getElementById('nameLocation4').innerHTML = weekendWeatherDeserialized[loc[3]].Friday.placeName;
-    document.getElementById('resultlocation4').innerHTML = weekendWeatherDeserialized[loc[3]].score;
-    document.getElementById('nameLocation5').innerHTML = weekendWeatherDeserialized[loc[4]].Friday.placeName;
-    document.getElementById('resultlocation5').innerHTML = weekendWeatherDeserialized[loc[4]].score;
-
-}
-
-
-function sortLocationScores() {
-    let weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
-    console.log(weekendWeatherDeserialized);
-    let resultsArray = [];
-    let locArray = [];
-    let i = 0;
-
-    for (let location in weekendWeatherDeserialized) {
-        let result = weekendWeatherDeserialized[location]["score"];
-        if (weekendWeatherDeserialized.hasOwnProperty(location)) {
-            resultsArray.push(result);
-            locArray.push(location);
-        }
-    }
-    for (let i = 0; i < resultsArray.length; i++) {
-        for (let j = i; j < resultsArray.length; j++){
-            if (resultsArray[i] < resultsArray[j]){ // checks if this (i) number in array is less than prev.
-                let resHolder = resultsArray[i]; // if it is then hold this number
-                let locHolder = locArray[i]; // hold matching location
-                resultsArray[i] = resultsArray[j]; // make the bigger num the first number of the array
-                locArray[i] = locArray[j]; // loc moves to match
-                resultsArray[j] = resHolder; // place the smaller number in after the bigger number
-                locArray[j] = locHolder; // loc moves to match
-            }
-        }
-    }
-    displayLocationsResults(locArray, weekendWeatherDeserialized);
-}
-
-
 // CALCULATE RAIN SCORE
 function weekendRainScore(loc) {
     let score = 0;
@@ -283,7 +237,6 @@ function weekendTempScore(loc) {
 
 // CALCULATE EACH LOCATIONS SCORE
 function calculateRating() {
-    console.log(weekendWeather);
     const allLocations = [
         "location1",
         "location2",
@@ -302,7 +255,7 @@ function calculateRating() {
 
         /* console.log(`Score for ${loc} is : ${score}`); */
         weekendWeather[loc].score = score;
-        let weekendWeatherSerial = JSON.stringify(weekendWeather);
+        const weekendWeatherSerial = JSON.stringify(weekendWeather);
         localStorage.setItem("weekendWeather", weekendWeatherSerial);
     }
 }
@@ -580,6 +533,5 @@ window.onload = function () {
         getLocationsFromUser();
         // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
         document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
-        document.getElementById('clickForResults').addEventListener('click', sortLocationScores);
-    }
+    } 
 };

@@ -188,3 +188,20 @@ a {
 #locationForm input {
  
 }
+
+
+#resultsContainer {
+  background: rgb(34,193,195);
+  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(38,137,216,1) 36%, rgba(41,96,234,1) 67%, rgba(45,150,253,1) 100%);
+  height: 100vh;
+  
+
+}
+
+#resultLocationContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
