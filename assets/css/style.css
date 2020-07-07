@@ -180,28 +180,27 @@ a {
 
 .locationForm {
   display: flex;
+  width: 300px;
   flex-direction: column;
-  flex: 1 0 auto;
-  
+  margin: 0 auto;  
 }
 
-#locationForm input {
- 
-}
-
-
-#resultsContainer {
-  background: rgb(34,193,195);
-  background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(38,137,216,1) 36%, rgba(41,96,234,1) 67%, rgba(45,150,253,1) 100%);
-  height: 100vh;
-  
-
-}
-
-#resultLocationContainer {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 100px;
+#location2,
+#location3,
+#location4,
+#location5 {
+  margin-top: 20px;
+  font-size: 1.6rem;
   text-align: center;
+}
+
+#clickForResults {
+  margin-top: 50px;
+  text-align: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 50px;
+  align-content: center;
+  justify-content: center;
+
 }

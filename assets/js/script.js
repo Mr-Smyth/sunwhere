@@ -446,7 +446,6 @@ function getLocationsFromUser() {
 function currentDate() {
     const today = new Date();
     const currDate = today.getDate();
-    const currDay = getDayName(today.getDate());
     const currMonth = getMonthName(today.getMonth());
     const currYear = today.getUTCFullYear();
     const suffixArray = ["st", "nd", "rd", "th"];
@@ -458,7 +457,7 @@ function currentDate() {
     } else if (currDate === 3) {
         suffix = suffixArray[2];
     }
-    let date = currDay + ' ' + currDate + suffix + ' of ' + currMonth + '  ' + currYear;
+    let date = currDate + suffix + ' of ' + currMonth + '  ' + currYear;
     return date;
 }
 
@@ -466,11 +465,14 @@ function currentDate() {
 function currentTime() {
     const today = new Date();
     let hours = today.getHours();
-    const mins = today.getMinutes();
+    let mins = today.getMinutes();
     let ampm = "am";
 
     if (hours >= 12) {
         ampm = "pm";
+    }
+    if (mins < 10) {
+        mins = '0' + mins;
     }
     hours = hours % 12;
     let time = hours + ":" + mins + ampm;
