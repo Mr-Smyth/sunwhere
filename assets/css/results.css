@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
 html {
     scroll-behavior: smooth;
   }
@@ -8,8 +10,10 @@ html {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
+
   body {
     font-size: 16px;
+    font-family: 'Lato', sans-serif;
     background: rgb(34,193,195);
     background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(38,137,216,1) 36%, rgba(41,96,234,1) 67%, rgba(45,150,253,1) 100%);
     height: 100vh;
@@ -57,12 +61,16 @@ html {
     display: flex;
     flex-direction: column;
     position: relative;
+    width: 300px;
     top: 100px;
     text-align: center;
-    
-  
+    margin: 0 auto;
   }
   
   .resultLocationContainer {
     
+  }
+
+  h3{
+      margin-top: 2rem;
   }
