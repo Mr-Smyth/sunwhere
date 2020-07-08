@@ -1,121 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <title>SunWhere</title>
-  </head>
 
-  <body>
-    <header>
-      <div id="logo-container">
-        <a href="index.html"
-          ><img
-            id="logo-image"
-            ;
-            src="assets/images/sunwhere-logo.png"
-            alt="Sun Where logo image"
-        /></a>
-      </div>
-    </header>
-    <section>
-      <div id="weatherBackgroundContainer">
-        <img id="weatherBackgroundImage" />
-      </div>
-      <div id="weatherCurrentInfoContainer">
-        <div id="informationNotification"></div>
-        <div id="dateTimeContainer">
-          <div id="currentDate">--/--/--</div>
-          <div id="currentTime">--:--</div>
-        </div>
-        <h1 id="weatherCurrentInfoName">-</h1>
-        <div id="weatherMainDetailsContainer">
-          <div id="weatherCurrentTemp">-</div>
-          <div>
-            <img id="weatherCurrentIcon" alt="Weather Icon" />
-          </div>
-        </div>
-        <div id="weatherCurrentDescription">-</div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>SunWhere</title>
+</head>
 
-        <div id="weatherSmallDetailsContainer">
-          <div id="weatherCurrentFeelsLike"></div>
-          <div id="weatherCurrentHumidity"></div>
-          <div id="weatherCurrentWindSpeed"></div>
+<body>
+  <header>
+    <div id="logo-container">
+      <a href="index.html"><img id="logo-image" ; src="assets/images/sunwhere-logo.png"
+          alt="Sun Where logo image" /></a>
+    </div>
+  </header>
+  <section>
+    <div id="weatherBackgroundContainer">
+      <img id="weatherBackgroundImage" />
+    </div>
+    <div id="weatherCurrentInfoContainer">
+      <div id="informationNotification"></div>
+      <div id="dateTimeContainer">
+        <div id="currentDate">--/--/--</div>
+        <div id="currentTime">--:--</div>
+      </div>
+      <h1 id="weatherCurrentInfoName">-</h1>
+      <div id="weatherMainDetailsContainer">
+        <div id="weatherCurrentTemp">-</div>
+        <div>
+          <img id="weatherCurrentIcon" alt="Weather Icon" />
         </div>
       </div>
-      <div id="introduction">
-        <h2>Compare the Weather</h2>
-        <br />
-        <p>
-          Need help deciding where best to spend your precious weekend away?<br /><br />
-          Hotel ratings can help you pick the right hotel, but what you really
-          want to know is where will have the best weather!
-        </p>
-        <br />
-        <p>
-          SunWhere can help! Simply scroll down or
-          <a href="#locationInputInformation">CLICK HERE </a>for more
-          information
-        </p>
+      <div id="weatherCurrentDescription">-</div>
+
+      <div id="weatherSmallDetailsContainer">
+        <div id="weatherCurrentFeelsLike"></div>
+        <div id="weatherCurrentHumidity"></div>
+        <div id="weatherCurrentWindSpeed"></div>
       </div>
-      <div id="locationInputContainer" class="">
-        <h2 id="locationInputInformation"></h2>
-        <p>
-          So you have narrowed your weekend away down to 4 locations. You have
-          done your research and picked your hotels, But you just cannot decide
-          between them. Fear not, because SunWhere is here to lend a helping
-          hand.
-        </p>
-        <br />
-        <p>
-          Simply enter your 4 locations below, click on
-          <strong>"Show Results"</strong>, and hey presto! SunWhere will provide
-          you with a clear score for each location based on the forecasted
-          weather for next weekend.
-        </p>
-        <form class="locationForm">
-          <input
-            id="location2"
-            name="location2-name"
-            placeholder="Please Enter Location"
-            aria-placeholder="Please Enter Location"
-            type="text"
-          />
-          <input
-            id="location3"
-            name="location3-name"
-            placeholder="Please Enter Location"
-            aria-placeholder="Please Enter Location"
-            type="text"
-          />
-          <input
-            id="location4"
-            name="location4-name"
-            placeholder="Please Enter Location"
-            aria-placeholder="Please Enter Location"
-            type="text"
-          />
-          <input
-            id="location5"
-            name="location5-name"
-            placeholder="Please Enter Location"
-            aria-placeholder="Please Enter Location"
-            type="text"
-            
-          />
+    </div>
+    <div id="introduction">
+      <h2>Compare the Weather</h2>
+      <br />
+      <p>
+        We help you pick your best weekend away destination!
+      </p>
+      <br />
+      <p>
+        Just
+        <a href="#locationInputInformation"><strong> CLICK HERE </strong></a>or scroll down for more
+        information
+      </p>
+    </div>
+    <div id="locationInputContainer" class="">
+      <h2 id="locationInputInformation"></h2>
+      <p>
+        Need help deciding where best to spend your precious weekend away?<br /><br />
+        Hotel ratings can help you pick the right hotel, but what you really
+        want to know is where will have the best weather! <br /> You have narrowed your weekend away down to 4
+        locations. You have
+        done your research and picked your hotels, But you just cannot decide
+        between them. Fear not, because SunWhere is here to lend a helping
+        hand.
+      </p>
+      <br />
+      <p>
+        Simply enter your 4 locations below, click on
+        <strong>"Show Results"</strong>, and hey presto! SunWhere will provide
+        you with a clear score for each location based on the forecasted
+        weather for next weekend.
+      </p>
+      <form class="locationForm">
+        <input id="location2" name="location2-name" placeholder="Please Enter Location"
+          aria-placeholder="Please Enter Location" type="text" />
+        <input id="location3" name="location3-name" placeholder="Please Enter Location"
+          aria-placeholder="Please Enter Location" type="text" />
+        <input id="location4" name="location4-name" placeholder="Please Enter Location"
+          aria-placeholder="Please Enter Location" type="text" />
+        <input id="location5" name="location5-name" placeholder="Please Enter Location"
+          aria-placeholder="Please Enter Location" type="text" />
 
-          <a href="results.html" type="submit" id="clickForResults">Click to see Results</a>
-        </form>
-      </div>
-    </section>
+        <a href="results.html" type="submit" id="clickForResults">Click to see Results</a>
+      </form>
+    </div>
+  </section>
 
-    
 
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"
-    ></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"></script>
+  <script src="assets/js/script.js"></script>
+</body>
+
 </html>
