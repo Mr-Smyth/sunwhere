@@ -1,6 +1,9 @@
-function displayLocationsResults(loc, weekendWeatherDeserialized){
-    document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Friday.placeName;
-    document.getElementById('resultlocation1').innerHTML = weekendWeatherDeserialized[loc[0]].score;
+function displayLocationsResults(loc, weekendWeatherDeserialized) {
+    if (weekendWeatherDeserialized[loc[0]].Friday.placeName !== null) {
+        document.getElementById("resultsContainer").style.visibility = "visible";
+        document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Friday.placeName;
+        document.getElementById('resultlocation1').innerHTML = weekendWeatherDeserialized[loc[0]].score;
+    }
     document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Friday.placeName;
     document.getElementById('resultlocation2').innerHTML = weekendWeatherDeserialized[loc[1]].score;
     document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Friday.placeName;
@@ -27,8 +30,8 @@ function sortLocationScores() {
         }
     }
     for (let i = 0; i < resultsArray.length; i++) {
-        for (let j = i; j < resultsArray.length; j++){
-            if (resultsArray[i] < resultsArray[j]){ // checks if this (i) number in array is less than prev.
+        for (let j = i; j < resultsArray.length; j++) {
+            if (resultsArray[i] < resultsArray[j]) { // checks if this (i) number in array is less than prev.
                 let resHolder = resultsArray[i]; // if it is then hold this number
                 let locHolder = locArray[i]; // hold matching location
                 resultsArray[i] = resultsArray[j]; // make the bigger num the first number of the array

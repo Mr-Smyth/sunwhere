@@ -1,41 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/results.css" />
-    <title>SunWhere - Results</title>
-  </head>
 
-  <body>
-    <header>
-      <div id="logo-container">
-        <a href="index.html"
-          ><img
-            id="logo-image"
-            ;
-            src="assets/images/sunwhere-logo.png"
-            alt="Sun Where logo image"
-        /></a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="assets/css/results.css" />
+  <title>SunWhere - Results</title>
+</head>
+
+<body>
+  <header>
+    <div id="logo-container">
+      <a href="index.html"><img id="logo-image" ; src="assets/images/sunwhere-logo.png"
+          alt="Sun Where logo image" /></a>
+    </div>
+  </header>
+
+  <section>
+    <div id="resultsContainer">
+      <h1>From your selected locations we calculated the following scores:</h1>
+      <div id="resultBestLocation" class="box-shadow">
+        <h2>The best location is <span id="nameLocation1"></span> with a rating of: <span id="resultlocation1"></span>
+        </h2>
       </div>
-    </header>
-
-    <section>
-      <div id="resultsContainer">
-        <div class="resultLocationContainer">
-          <h2>The best location is <span id="nameLocation1"></span> with a rating of: <span id="resultlocation1"></span></h2>
-          <h3>The 2nd best location is <span id="nameLocation2"></span> with a rating of: <span id="resultlocation2"></span></h3>
-          <h3>The 3rd best location is <span id="nameLocation3"></span> with a rating of: <span id="resultlocation3"></span></h3>
-          <h3>The 4th best location is <span id="nameLocation4"></span> with a rating of: <span id="resultlocation4"></span></h3>
-          <h3>The 5th best location is <span id="nameLocation5"></span> with a rating of: <span id="resultlocation5"></span></h3>
-        </div>
+      <div class="resultLocation box-shadow">
+        <h3>The 2nd best location is <span id="nameLocation2"></span> with a rating of: <span
+            id="resultlocation2"></span>
+        </h3>
       </div>
-    </section>
+      <div class="resultLocation box-shadow">
+        <h3>The 3rd best location is <span id="nameLocation3"></span> with a rating of: <span
+            id="resultlocation3"></span>
+        </h3>
+      </div>
+      <div class="resultLocation box-shadow">
+        <h3>The 4th best location is <span id="nameLocation4"></span> with a rating of: <span
+            id="resultlocation4"></span>
+        </h3>
+      </div>
+      <div class="resultLocation box-shadow">
+        <h3>The 5th best location is <span id="nameLocation5"></span> with a rating of: <span
+            id="resultlocation5"></span>
+        </h3>
+      </div>
+    </div>
+  </section>
 
-    <script
-      type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"
-    ></script>
-    <script src="assets/js/results.js"></script>
-  </body>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"></script>
+  <script src="assets/js/results.js"></script>
+</body>
+
 </html>
