@@ -11,6 +11,7 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
   color: rgb(15, 15, 15);
   font-size: 16px;
@@ -146,6 +147,7 @@ a {
 #weatherCurrentHumidity,
 #weatherCurrentWindSpeed {
   text-align: center;
+  padding: 10px;
 }
 
 #introduction {
