@@ -528,7 +528,6 @@ function changeUnit() {
 }
 
 
-
 window.onload = function () {
     if (document.URL.includes('index.html')) {
         getGeolocation();

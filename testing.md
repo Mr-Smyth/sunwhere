@@ -224,3 +224,46 @@
         -  The functions were not being called in results.html.
   3. Refreshed page multiple times to see if any errors occurred.
      - No errors detected.
+
+
+* #### changeUnit():
+
+  This function changes the temperature from celsius to Farenheit
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     - No errors detected.
+  2. Ran the page multiple times and clicked the temperature element:
+       - The temperature converted as expected.
+  3. Refreshed page multiple times to see if any errors occurred.
+     - No errors detected.
+
+   
+* #### currentDate():
+
+  This function creates a new date, and converts elements of the current date into a more readable format. then returns the date to the calling function.
+  This function calls 2 helper functions to get Month name and Day name.
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     - No errors detected.
+  2. Ran the page multiple times:
+       - The date always appeared as expected.
+  3. Refreshed page multiple times to see if any errors occurred.
+     - No errors detected.
+
+* #### currentTime():
+
+  This function creates a new Time, and converts elements of the current time into a more readable 12 hour format, adding in the am/pm suffix It then returns the formatted time to the calling function
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     - No errors detected.
+  2. Ran the page multiple times:
+       - Found that it was not displaying a 0 before a min value of less than 10, so added this as an if statement.
+       - The time always appeared as expected.
+  3. Refreshed page multiple times to see if any errors occurred.
+     - No errors detected.
