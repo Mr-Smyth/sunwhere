@@ -70,6 +70,8 @@ html {
     color: #c0c0c0;
     text-align: center;
     margin: 0 auto;
+    max-height: 90vh;
+    overflow: scroll;
 }
   
 #resultBestLocation {
