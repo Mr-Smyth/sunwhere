@@ -518,7 +518,7 @@ window.addEventListener("scroll", function () {
         logo.style.left = "50%";
         logo.style.transform = "translate(-50%)";
         logo.style.width = "100%";
-        logo.style.maxWidth = "200px";
+        logo.style.maxWidth = "100px";
         logo.style.opacity = "1";
     }
     /* lastScrollTop = scrollTop */

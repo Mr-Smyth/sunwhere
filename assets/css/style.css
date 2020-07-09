@@ -52,7 +52,7 @@ a {
   left: 50%;
   transform: translate(-50%);
   width: 100%;
-  max-width: 200px;
+  max-width: 100px;
   opacity: 1;
   transition: 1.5s;
 }
@@ -91,7 +91,7 @@ a {
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 100px;
+  top: 70px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
@@ -171,7 +171,7 @@ a {
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 400px;
+  top: 350px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
