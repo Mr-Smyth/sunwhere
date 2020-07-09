@@ -86,12 +86,12 @@ a {
 
 #weatherCurrentInfoContainer {
   padding: 10px;
-  max-height: 400px;
+  max-height: 40%;
   display: none;
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 150px;
+  top: 100px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
@@ -166,12 +166,12 @@ a {
 
 #introduction {
   padding: 10px;
-  max-height: 300px;
+  max-height: 30%;
   display: flex;
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 450px;
+  top: 400px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
