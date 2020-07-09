@@ -1,6 +1,5 @@
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
     if (weekendWeatherDeserialized[loc[0]].Friday.hasOwnProperty("placeName")) {
-    
         document.getElementById("resultBestLocation").style.display = "block";
         document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Friday.placeName;
         document.getElementById('resultlocation1').innerHTML = weekendWeatherDeserialized[loc[0]].score;

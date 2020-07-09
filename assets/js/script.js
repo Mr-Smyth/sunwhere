@@ -65,6 +65,7 @@ function updateHomeWeather(data, id) {
     homeWeather.weatherIcon = data.weather[0].icon;
     homeWeather.windDirection = data.wind.deg;
     homeWeather.windSpeed = data.wind.speed;
+    homeWeather.score = 0;
 }
 
 /* THIS FUNCTION RETURNS AN ARRAY OF THE DAYS WE NEED TO TARGET IN THE , 
@@ -79,11 +80,11 @@ function findWeatherDayIndex() {
         THE API RESPONSE DATA WILL BE NEEDED.
         IF THE CURRENT DAY IS FRIDAY OR SATURDAY - WE WILL STILL
         RETURN AN ARRAY TO TARGET CURRENT WEEKEND. */
-        "0": [5, 6, 7],
-        "1": [4, 5, 6],
-        "2": [3, 4, 5],
-        "3": [2, 3, 4],
-        "4": [1, 2, 3],
+        "0": [0, 5, 6, 7],
+        "1": [0, 4, 5, 6],
+        "2": [0, 3, 4, 5],
+        "3": [0, 2, 3, 4],
+        "4": [0, 1, 2, 3],
         "5": [0, 1, 2],
         "6": [0, 1, 2]
     };
@@ -117,7 +118,7 @@ function updateWeekendWeather(data, thisLocation, id) {
         weekendWeather[id][weekend[i]].windSpeed = data[dayIndexes[i]].wind_speed;
         weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
     }
-    
+
 }
 
 
@@ -252,12 +253,19 @@ function calculateRating() {
         score += weekendWindScore(loc);
         score += weekendHumidityScore(loc);
         score += weekendTempScore(loc);
-
-        /* console.log(`Score for ${loc} is : ${score}`); */
         weekendWeather[loc].score = score;
-        const weekendWeatherSerial = JSON.stringify(weekendWeather);
-        localStorage.setItem("weekendWeather", weekendWeatherSerial);
     }
+ /*    for (let loc of allLocations) {
+        let todaysScore = 0;
+        todaysScore += weekendRainScore(loc);
+        todaysScore += weekendCloudsScore(loc);
+        todaysScore += weekendWindScore(loc);
+        todaysScore += weekendHumidityScore(loc);
+        todaysScore += weekendTempScore(loc);
+        weekendWeather[loc].todaysScore = todaysScore;
+    } */
+    const weekendWeatherSerial = JSON.stringify(weekendWeather);
+    localStorage.setItem("weekendWeather", weekendWeatherSerial);
 }
 
 // DISPLAYS THE WEATHER BACKGROUND IMAGE
@@ -336,6 +344,7 @@ function displayCurrentWeather(homeWeather) {
     displayCurrentFeelsLike.innerHTML = `Feels: ${homeWeather.feelsLike}&#176<span>C</span>`;
     displayCurrentDate.innerHTML = currentDate();
     displayCurrentTime.innerHTML = currentTime();
+    document.getElementById("weatherCurrentInfoContainer").style.display = "flex";
 }
 
 /* HERE WE GET CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather 
@@ -534,5 +543,5 @@ window.onload = function () {
         getLocationsFromUser();
         // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
         document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
-    } 
+    }
 };

@@ -16,7 +16,7 @@ body {
   color: rgb(15, 15, 15);
   font-size: 16px;
   font-family: 'Lato', sans-serif;
-  height: 300vh;
+  height: 100%;
   background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,180,252,1) 100%);
 }
@@ -26,6 +26,18 @@ p {
   letter-spacing: 1px;
   word-spacing: 3px;
   line-height: 18px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0 1px 6px 0 rgb(46,21,27);
+  box-shadow: 0 1px 6px 0 rgb(46,21,27);
 }
 
 a {
@@ -75,11 +87,11 @@ a {
 #weatherCurrentInfoContainer {
   padding: 10px;
   max-height: 400px;
-  display: flex;
+  display: none;
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 16%;
+  top: 150px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
@@ -159,7 +171,7 @@ a {
   flex-direction: column;
   position: absolute;
   align-items: center;
-  top: 65%;
+  top: 450px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
@@ -174,15 +186,22 @@ a {
 }
 
 #locationInputContainer {
-  margin-top: 50px;
+  margin-top: 20px;
   flex-direction: column;
+  padding: 10px;
 }
 
 #locationInputContainer p {
-  font-size: 1.2rem;
+  color: #d1cccc;
+  font-size: 0.9rem;
   width: 90%;
-  margin: 0 auto;
-  line-height: 25px;
+  margin: 5px auto;
+}
+
+#locationInputContainer h3 {
+  color: #d1cccc;
+  margin-bottom: 20px;
+
 }
 
 .locationForm {
@@ -209,7 +228,7 @@ a {
 #location4:hover,
 #location5:hover {
   border: solid;
-  border-color: rgb(9, 32, 160);
+  border-color: rgb(233, 248, 23);
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -219,9 +238,24 @@ a {
 #location3:focus,
 #location4:focus,
 #location5:focus {
-  background-color: #98bfe4d7;
+  background: rgb(180,162,58);
+  background: linear-gradient(90deg, rgba(180,162,58,1) 0%, rgba(253,251,29,1) 50%, rgba(251,252,69,1) 100%);
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item-query {
+  padding-right: 10px;
+  font-size: 1.2rem;
+}
+
+.pac-item {
+  padding: 10px;
+  font-size: 1.2rem;
 }
 
 #clickForResults {
@@ -236,4 +270,16 @@ a {
   background: rgb(251,183,63);
   background: radial-gradient(circle, rgba(251,183,63,1) 0%, rgba(252,204,70,1) 100%);
 
+}
+
+footer {
+  margin-top: 80px;
+  min-height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#copyright{
+  margin: auto;
 }
