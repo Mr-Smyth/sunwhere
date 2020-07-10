@@ -215,6 +215,8 @@ function weekendTempScore(loc) {
     let score = 0;
     weekend.forEach(function (day, index) {
         let temp = weekendWeather[loc][day].tempInCelsius;
+        // add tempInFahrenheit to score to help eliminate duplicate scores
+        score += weekendWeather[loc][day].tempInFahrenheit;
         if (temp > 0 && temp <= 15) {
             score += 0;
         } else if (temp > 15 && temp <= 20) {
@@ -236,6 +238,11 @@ function weekendTempScore(loc) {
     return score;
 }
 
+function calculatePercent(score){
+    let result = (score/702)*100;
+    return result;
+}
+
 // CALCULATE EACH LOCATIONS SCORE
 function calculateRating() {
     const allLocations = [
@@ -253,17 +260,11 @@ function calculateRating() {
         score += weekendWindScore(loc);
         score += weekendHumidityScore(loc);
         score += weekendTempScore(loc);
-        weekendWeather[loc].score = score;
+        weekendWeather[loc].score = Math.floor(calculatePercent(score));
     }
- /*    for (let loc of allLocations) {
-        let todaysScore = 0;
-        todaysScore += weekendRainScore(loc);
-        todaysScore += weekendCloudsScore(loc);
-        todaysScore += weekendWindScore(loc);
-        todaysScore += weekendHumidityScore(loc);
-        todaysScore += weekendTempScore(loc);
-        weekendWeather[loc].todaysScore = todaysScore;
-    } */
+    /* HIGHEST ACHIEVABLE SCORE BASED ON A TEMP OF 40 DEG CELSIUS IS 702
+    tEMPS IN EXCESS OF 40 ARE SUBJECT TO DEDUCTIONS AND AS A RESULT
+    DO NOT EXCEED THIS SCORE OR 702*/
     const weekendWeatherSerial = JSON.stringify(weekendWeather);
     localStorage.setItem("weekendWeather", weekendWeatherSerial);
 }
