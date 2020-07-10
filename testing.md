@@ -24,7 +24,8 @@
 * [changeUnit](#changeUnit)
 * [currentDate](#currentDate)
 * [currentTime](#currentTime)
-* [sortLocationScores](#sortLocationScores)
+* [sortLocationScores](#sortLocationScores)  
+* [displayLocationsResults](#displayLocationsResults)  
 
 </li>
 </ul>
@@ -294,8 +295,6 @@
        * The time always appeared as expected.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
-
-
 
 #### sortLocationScores()
 

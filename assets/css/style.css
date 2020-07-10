@@ -36,6 +36,9 @@ h2,
 h3,
 h4 {
   text-align: center;
+  /* background: -webkit-linear-gradient(rgb(200, 160, 25), rgb(231, 247, 13));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
 
 .box-shadow {
@@ -46,7 +49,10 @@ h4 {
 a {
   text-decoration: none;
   cursor: pointer;
-  color: rgb(116, 63, 4);
+}
+
+strong {
+  color:  #fbc000;
 }
 
 #logo-container {
@@ -197,9 +203,11 @@ a {
 }
 
 #locationInputContainer h2 {
-  color: #d1cccc;
   margin-bottom: 20px;
   font-weight: 900;
+  background: -webkit-linear-gradient(rgb(200, 160, 25), rgb(231, 247, 13));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
 
