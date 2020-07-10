@@ -91,7 +91,7 @@ a {
   flex-direction: column;
   position: relative;
   align-items: center;
-  top: 100px;
+  top: 80px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
@@ -172,7 +172,7 @@ a {
   flex-direction: column;
   position: relative;
   align-items: center;
-  top: 150px;
+  top: 120px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
