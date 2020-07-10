@@ -3,7 +3,7 @@
 // GLOBAL VARIABLES
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
-const displayBackgroundImage = document.getElementById("weatherBackgroundImage");
+const displayBackgroundImage = document.getElementById("weatherBackgroundContainer");
 const displayCurrentLocation = document.getElementById("weatherCurrentInfoName");
 const displayCurrentIcon = document.getElementById("weatherCurrentIcon");
 const displayCurrentTemp = document.getElementById("weatherCurrentTemp");

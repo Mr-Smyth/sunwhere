@@ -16,6 +16,7 @@ body {
   color: rgb(15, 15, 15);
   font-size: 16px;
   font-family: 'Lato', sans-serif;
+  text-transform: initial;
   height: 100%;
   background: rgb(63,94,251);
   background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,180,252,1) 100%);
@@ -69,19 +70,18 @@ a {
 .fadeOut {
 }
 
-#weatherBackgroundContainer {
-  height: 100vh;
-}
 
-#weatherBackgroundImage {
-  background-color: #464646;
-  background-image: url("assets/images/clear-sky1.jpg");
-  width: 100%;
-  height: 100vh;
+
+#weatherBackgroundContainer {
+ /*  background-color: #464646; */
+  background-image: url("");
+  min-height: 100vh;
+  height: 100%;
   background-position: center, center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  overflow: auto;
 }
 
 #weatherCurrentInfoContainer {
@@ -89,9 +89,9 @@ a {
   max-height: 300px;
   display: none;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   align-items: center;
-  top: 70px;
+  top: 100px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
@@ -99,7 +99,7 @@ a {
   min-width: 300px;
   border-radius: 20px;
 
-  background-color: rgba(192, 192, 192, 0.85);
+  background-color: rgba(192, 192, 192, 0.65);
   -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
@@ -164,29 +164,45 @@ a {
   padding: 10px;
 }
 
+/* STYLING FOR - COMPARE THE WEATHER INTRODUCTION BOX */
 #introduction {
   padding: 10px;
   max-height: 200px;
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   align-items: center;
-  top: 350px;
+  top: 150px;
   left: 50%;
   transform: translate(-50%);
   width: 50%;
   max-width: 500px;
   min-width: 300px;
+  margin-bottom: 20px;
   border-radius: 20px;
 
-  background-color: rgba(192, 192, 192, 0.85);
+  background-color: rgba(192, 192, 192, 0.65);
   -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
 }
 
+#introduction h2{
+  margin-bottom: 10px;
+}
+
+#introduction p{
+  margin-bottom: 5px;
+}
+
+#locationInputContainer h3 {
+  color: #d1cccc;
+  margin-bottom: 20px;
+
+}
+
 #locationInputContainer {
-  margin-top: 20px;
+  display: flex;
   flex-direction: column;
   padding: 10px;
 }
@@ -195,13 +211,7 @@ a {
   color: #d1cccc;
   font-size: 0.9rem;
   width: 90%;
-  margin: 5px auto;
-}
-
-#locationInputContainer h3 {
-  color: #d1cccc;
-  margin-bottom: 20px;
-
+  margin: 10px auto;
 }
 
 .locationForm {
