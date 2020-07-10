@@ -495,11 +495,7 @@ function getMonthName(month) {
     return months[month];
 }
 
-// HELPER FUNCTION TO PROVIDE DAY NAME
-function getDayName(day) {
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    return days[day];
-}
+
 
 // CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
 // EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
@@ -523,7 +519,7 @@ window.addEventListener("scroll", function () {
         logo.style.opacity = "1";
     }
     /* lastScrollTop = scrollTop */
-})
+});
 
 // CHANGES THE TEMPERATURE UNIT
 function changeUnit() {

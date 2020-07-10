@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
     if (weekendWeatherDeserialized[loc[0]].Friday.hasOwnProperty("placeName")) {
         document.getElementById("resultBestLocation").style.display = "block";
@@ -32,10 +34,9 @@ function sortLocationScores() {
     console.log(weekendWeatherDeserialized);
     let resultsArray = [];
     let locArray = [];
-    let i = 0;
 
     for (let location in weekendWeatherDeserialized) {
-        let result = weekendWeatherDeserialized[location]["score"];
+        let result = weekendWeatherDeserialized[location].score;
         if (weekendWeatherDeserialized.hasOwnProperty(location)) {
             resultsArray.push(result);
             locArray.push(location);

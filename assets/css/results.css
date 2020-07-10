@@ -14,8 +14,10 @@ html {
   body {
     font-size: 16px;
     font-family: 'Lato', sans-serif;
-    background: rgb(34,193,195);
-    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(38,137,216,1) 36%, rgba(41,96,234,1) 67%, rgba(45,150,253,1) 100%);
+    background: #24C6DC;  /* FALLBACK FOR OLDER BROWSERS */
+    background: -webkit-linear-gradient(to top, #24C6DC,#514A9D);
+    background: linear-gradient(to top, #24C6DC,#514A9D);
+    
     height: 100vh;
   }
 
@@ -50,7 +52,6 @@ html {
   
   #logo-image {
     width: 100%;
-    max-width: auto;
     border-radius: 5px;
     -webkit-box-shadow: 0px 0px 3px 5px #ecdb43;
     -moz-box-shadow: 0px 0px 3px 5px #ecdb43;

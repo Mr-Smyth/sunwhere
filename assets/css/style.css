@@ -18,8 +18,10 @@ body {
   font-family: 'Lato', sans-serif;
   text-transform: initial;
   height: 100%;
-  background: rgb(63,94,251);
-  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(70,180,252,1) 100%);
+  background: #24C6DC;  /* FALLBACK FOR OLDER BROWSERS */
+  background: -webkit-linear-gradient(to top, #24C6DC,#635bb4,#514A9D);
+  background: linear-gradient(to top, #24C6DC,#635bb4,#514A9D);
+
 }
 
 p {
@@ -59,8 +61,8 @@ a {
 }
 
 #logo-image {
-  width: 100%;
-  max-width: auto;
+ 
+  max-width: 100%;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 3px 5px #ecdb43;
   -moz-box-shadow: 0px 0px 3px 5px #ecdb43;
@@ -73,7 +75,6 @@ a {
 
 
 #weatherBackgroundContainer {
- /*  background-color: #464646; */
   background-image: url("");
   min-height: 100vh;
   height: 100%;

@@ -11,8 +11,7 @@
 <body>
   <header>
     <div id="logo-container">
-      <a href="index.html"><img id="logo-image" ; src="assets/images/sunwhere-logo.png"
-          alt="Sun Where logo image" /></a>
+      <a href="index.html"><img id="logo-image" src="assets/images/sunwhere-logo.png" alt="Sun Where logo image" /></a>
     </div>
   </header>
   <section>
@@ -23,11 +22,11 @@
           <div id="currentDate"></div>
           <div id="currentTime"></div>
         </div>
-        <h1 id="weatherCurrentInfoName"></h1>
+        <h1 id="weatherCurrentInfoName">#</h1>
         <div id="weatherMainDetailsContainer">
           <div id="weatherCurrentTemp"></div>
           <div>
-            <img id="weatherCurrentIcon" alt="Weather Icon" />
+            <img id="weatherCurrentIcon" alt="Weather Icon" src="#" />
           </div>
         </div>
         <div id="weatherCurrentDescription"></div>
@@ -49,7 +48,9 @@
         </p>
       </div>
     </div>
+  </section>
 
+  <section>
     <div id="locationInputContainer">
       <div id="locationInputInformation">
         <h2>
@@ -73,21 +74,21 @@
           weather for the upcoming weekend..
         <p><strong>We include your current location by default:</strong></p>
 
-        </p>
-        <form class="locationForm">
-          <input id="location2" class="box-shadow" name="location2-name" placeholder="Please Enter Location"
+
+        <form class="locationForm" >
+          <input id="location2" role="searchbox" class="box-shadow" name="location2-name" placeholder="Please Enter Location"
             aria-placeholder="Please Enter Location" type="text" />
-          <input id="location3" class="box-shadow" name="location3-name" placeholder="Please Enter Location"
+          <input id="location3" role="searchbox" class="box-shadow" name="location3-name" placeholder="Please Enter Location"
             aria-placeholder="Please Enter Location" type="text" />
-          <input id="location4" class="box-shadow" name="location4-name" placeholder="Please Enter Location"
+          <input id="location4" role="searchbox" class="box-shadow" name="location4-name" placeholder="Please Enter Location"
             aria-placeholder="Please Enter Location" type="text" />
-          <input id="location5" class="box-shadow" name="location5-name" placeholder="Please Enter Location"
+          <input id="location5" role="searchbox" class="box-shadow" name="location5-name" placeholder="Please Enter Location"
             aria-placeholder="Please Enter Location" type="text" />
 
-          <a href="results.html" type="submit" class="box-shadow" id="clickForResults">Click to see Results</a>
+          <a href="results.html" class="box-shadow" id="clickForResults">Click to see Results</a>
         </form>
       </div>
-
+    </div>
   </section>
 
   <footer>
