@@ -57,7 +57,27 @@ function sortLocationScores() {
     displayLocationsResults(locArray, weekendWeatherDeserialized);
 }
 
+// HERE WE GET THE NAME OF THE LOCATION THE USER CLICKS
+function selectLocation() {
+    let clicked;
+    let selected;
+    let selection = document.querySelectorAll("a");
+    // LISTEN OUT FOR WHICH OF THE RESULTS IS CLICKED
+    for (let i = 0; i < selection.length; i++) {
+        selection[i].addEventListener("click", function () {
+            clicked = selection[i].id;
+            selected = document.getElementById(clicked).children[0].innerHTML;
+            console.log(selected);
+            window.localStorage.setItem('selectedLocation', JSON.stringify(selected));
+        }, true);
+        
+    }
 
+}
+
+// DO THIS FIRST
 window.onload = function () {
     sortLocationScores();
-};
+    selectLocation();
+}
+

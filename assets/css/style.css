@@ -241,6 +241,7 @@ strong {
   text-align: center;
   padding: 10px;
   border: solid transparent;
+  text-overflow: ellipsis;
 }
 
 #location2:hover,

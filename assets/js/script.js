@@ -94,7 +94,7 @@ function findWeatherDayIndex() {
 }
 
 // HERE WE UPDATE THE WEEKENDWEATHER OBJECT
-function updateWeekendWeather(data, thisLocation, id) {
+function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     const dayIndexes = findWeatherDayIndex();
 
     data = data.daily;
@@ -117,6 +117,8 @@ function updateWeekendWeather(data, thisLocation, id) {
         weekendWeather[id][weekend[i]].rain = data[dayIndexes[i]].rain;
         weekendWeather[id][weekend[i]].windSpeed = data[dayIndexes[i]].wind_speed;
         weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
+        weekendWeather[id].lat = lat;
+        weekendWeather[id].lon = lon;
     }
 
 }
@@ -382,7 +384,7 @@ function fetchWeekendWeather(lat, lon, thisLocation, id) {
         })
         .then(function (data) {
             // this is what we will do with the results.
-            updateWeekendWeather(data, thisLocation, id);
+            updateWeekendWeather(lat, lon, data, thisLocation, id);
             calculateRating();
         })
         .catch(function (error) {
