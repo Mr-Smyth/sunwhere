@@ -104,8 +104,9 @@ html {
 #resultPlaceholder4 a,
 #resultPlaceholder5 a {
 
-  font-size: .8rem;
+  font-size: 1rem;
   color: #c0c0c0;
+  height: auto;
 }
 
 
