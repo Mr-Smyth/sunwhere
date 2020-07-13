@@ -70,7 +70,7 @@ html {
   text-align: center;
   margin: 0 auto;
   max-height: 80vh;
-  overflow: hidden;
+  overflow: auto;
 }
   
 #resultBestLocation {
@@ -103,20 +103,10 @@ html {
 #resultPlaceholder3 a,
 #resultPlaceholder4 a,
 #resultPlaceholder5 a {
-  width: 100%;
-  height: 100%;
+
   font-size: .8rem;
   color: #c0c0c0;
 }
 
-footer {
-  position: fixed;
-  bottom: 20px;
-  width: 100%;
-  display: flex;
-}
-#copyright {
-  margin: auto;
-}
 
 
