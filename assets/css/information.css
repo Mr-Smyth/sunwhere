@@ -80,13 +80,49 @@ html {
 
 
 .locationDayContainer {
+    padding: 10px;
     position: relative;
     top: 70px;
-    margin: 0 auto ;
+    margin: 10px auto ;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    text-align: center;
+    width: 60%;
+    max-width: 500px;
+    
+    background-color: rgba(192, 192, 192, 0.65);
+  -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
+  box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
 }
+
+#ourLocation {
+    margin: 20px 0 10px;
+    position: relative;
+    text-align: center;
+    top: 55px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    max-width: 100px;
+    opacity: 1;
+   
+}
+
 
 .locationDate {
 
+}
+
+.locationMainDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.locationTemp {
+    font-size: 1rem;
 }
 
 .locationIcon {
@@ -95,7 +131,14 @@ html {
 }
 
 .locationDescription {
+    font-size: 1rem;
+}
 
+.locationSmallDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
 }
 
 .locationFeels {

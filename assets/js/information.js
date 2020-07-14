@@ -2,7 +2,7 @@
 
 
 // GLOBAL VARIABLES
-const FridayDate = document.getElementById("fridayDate");
+/* const FridayDate = document.getElementById("fridayDate");
 const SaturdayDate = document.getElementById("saturdayDate");
 const SundayDate = document.getElementById("sundayDate");
 const fridayTemp = document.getElementById("fridayTemp");
@@ -25,7 +25,7 @@ const saturdayHumidity = document.getElementById("saturdayHumidity");
 const sundayHumidity = document.getElementById("sundayHumidity");
 const fridayDescription = document.getElementById("fridayDescription");
 const saturdayDescription = document.getElementById("saturdayDescription");
-const sundayDescription = document.getElementById("sundayDescription");
+const sundayDescription = document.getElementById("sundayDescription"); */
 
 // GETTING THE LAT AND LON OF THE CHOSEN LOCATION
 function initData() {
@@ -230,7 +230,7 @@ function getMonthName(month) {
 }
 
 // GET AND FORMAT CURRENT DATE
-function currentDate(dayOffset) {
+function getWeekendDates(dayOffset) {
     if (dayOffset !== 0) {
         const today = new Date();
         const currDate = today.getDate() + dayOffset;
@@ -250,29 +250,28 @@ function currentDate(dayOffset) {
     }
 }
 
-
-
-
 function displayLocationWeather() {
     const location = getLocationChoice();
     let ourWeather = getOurWeatherObject();
     let daysToWeekend = getIndexArray();
     let weekendDates = [];
 
-    let weekend = ["Friday"]
+    let weekend = ["Friday","Saturday","Sunday"]
 
     console.log(ourWeather);
 
-    for (let day of weekend) {
-        for (let i = 1; i < daysToWeekend.length;i++) {
-            weekendDates.push(day + " the " + currentDate(daysToWeekend[i]));
-            console.log(weekendDates);
-        };
-        document.getElementById("FridayDate").innerHTML = weekendDates[1];
-/*         document.getElementById("SaturdayDate").innerHTML = weekendDates[2];
-        document.getElementById("SundayDate").innerHTML = weekendDates[3]; */
+    for (let i = 1; i < daysToWeekend.length;i++) {
+        weekendDates.push(getWeekendDates(daysToWeekend[i]));
+        console.log(weekendDates);
+    };
 
-        
+    document.getElementById('ourLocation').innerText = location;
+
+    document.getElementById("FridayDate").innerHTML = `Friday ${weekendDates[0]}`;
+    document.getElementById("SaturdayDate").innerHTML = `Saturday ${weekendDates[1]}`;
+    document.getElementById("SundayDate").innerHTML = `Sunday ${weekendDates[2]}`;
+
+    for (let day of weekend) {
         document.getElementById(`${day}Temp`).innerHTML = ourWeather[day].tempInCelsius + `&#176<span id="tempUnit">C</span>`;
         document.getElementById(`${day}Icon`).src = `http://openweathermap.org/img/wn/${ourWeather[day].icon}.png`;
         document.getElementById(`${day}WeatherDescription`).innerHTML = ourWeather[day].description;
