@@ -33,13 +33,23 @@
 * [displayLocationsResults](#displayLocationsResults) 
 * [selectLocation](#selectLocation)
 
+## [information.js testing](#information.js)
+
+* [initData](#initData)
+* [getLocationChoice](#initData)
+* [getWeatherObj](#initData)
+* [createMap](#createMap)
+* [createMarkers](#createMarkers)
+* [getOurWeatherObject](#getOurWeatherObject)
+
+
 </li>
 </ul>
 
 ---
 ## script.js
 
-* ### getCoords(location):
+* ### getCoords():
 
   Once Geolocation returns the location data, the getCoords function is called.
   The getCoords function updates the homeWeather Object and calls fetchCurrentWeather() with
@@ -60,7 +70,9 @@
       is a problem that can occur in Googles database or Routers, and its ability
       to pinpoint the correct one.
 
-* ### geolocationError(error):
+**[Back to index](#Table-of-Contents)**
+
+* ### geolocationError():
 
   In the case that Geolocation is unable to get location data, the geolocationError(error)
   function is called.
@@ -78,7 +90,9 @@
      _ Error message was present when required.
      _ This also proved that the function call was being made correctly. \* No errors detected.
 
-* ### fetchCurrentWeather(lat, lon):
+**[Back to index](#Table-of-Contents)**
+
+* ### fetchCurrentWeather():
 
   The fetchCurrentWeather(lat, lon) function, gets the current weather.
 
@@ -99,7 +113,10 @@
      * No errors detected.
      * Objects always displayed as expected.
 
-* ### updateHomeWeather(data):
+**[Back to index](#Table-of-Contents)**
+
+
+* ### updateHomeWeather():
 
   The updateHomeWeather(data) function, gets the data which is the response of the fetchCurrentWeather() function
   and updates the homeWeather{} object.
@@ -115,6 +132,8 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Objects always displayed as expected.
+
+**[Back to index](#Table-of-Contents)**
 
 * ### displayCurrentWeather():
 
@@ -136,6 +155,9 @@
   1.  Location was incorrect, but this was due to issue with returned data from geolocation, which is out of my control. However i
       do expect this issue to be less obvious on a mobile platform.
 
+**[Back to index](#Table-of-Contents)**
+
+
 * ### getBackground():
 
   The getBackground() function uses a switch statement to get the value of the weather icon within the homeWeather{} object,
@@ -154,6 +176,10 @@
      * No errors detected.
      * Page always displayed as expected.
 
+
+**[Back to index](#Table-of-Contents)**
+
+
 * ### Getting the Location data from user, using google places searchBox:
 
   The following tests were carried out:
@@ -167,6 +193,9 @@
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Page always displayed as expected.
+
+**[Back to index](#Table-of-Contents)**
+
 
 * ### fetchLocationWeather():
 
@@ -185,6 +214,8 @@
      * No errors detected.
      * Objects always displayed as expected.
 
+**[Back to index](#Table-of-Contents)**
+
 * ### findWeatherDayIndex():
 
   The findWeatherDayIndex() function uses an object to return the correct days to target, to get
@@ -201,6 +232,8 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Objects always displayed as expected.
+
+**[Back to index](#Table-of-Contents)**
 
 * ### fetchWeekendWeather():
 
@@ -219,6 +252,8 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Object always displayed as expected.
+
+**[Back to index](#Table-of-Contents)**
 
 * ### calculateRating():
 
@@ -244,6 +279,8 @@
      * No errors detected.
      * console results always displayed as expected.
 
+**[Back to index](#Table-of-Contents)**
+
 * ### getGeolocation() and getLocationsFromUser():
 
   These 3 functions were setup using existing code. They are to solve the issue of the 
@@ -260,6 +297,7 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
+**[Back to index](#Table-of-Contents)**
 
 * ### changeUnit():
 
@@ -273,6 +311,8 @@
        * The temperature converted as expected.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
+
+**[Back to index](#Table-of-Contents)**
 
 * ### currentDate():
 
@@ -288,6 +328,8 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
+**[Back to index](#Table-of-Contents)**
+
 * ### currentTime():
 
   This function creates a new Time, and converts elements of the current time into a more readable 12 hour format, adding in the am/pm suffix It then returns the formatted time to the calling function
@@ -301,6 +343,8 @@
        * The time always appeared as expected.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
+
+**[Back to index](#Table-of-Contents)**
 
 ---
 
@@ -321,6 +365,8 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
+**[Back to index](#Table-of-Contents)**
+
 #### displayLocationsResults()
 
   This function is called from sortLocationScores. It gets the sorted array of scores and the  weekendWeather object passed in.
@@ -338,9 +384,11 @@
      * No errors detected.
   4. All locations display in an ordered list, confirming correct calling of all associated functions.
 
+**[Back to index](#Table-of-Contents)**
+
 #### selectLocation()
 
-  This function is grabs which location the user selects, and saves it to local storage.
+  This function grabs which location the user selects, and saves it to local storage.
 
   The following tests were carried out:
 
@@ -354,5 +402,104 @@
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
+**[Back to index](#Table-of-Contents)**
+
 ---
 
+## information.js
+
+#### initData()
+
+  This function gets the data from local storage and then gets the latitude and longitude to hand to the map functions
+
+  I also included in the scope of the test, 2 helper functions 
+  *   **getLocationChoice**
+  *   **getWeatherObj()**
+  
+  These 2 functions collect information from local storage, the location chosen and the weather object respectively.
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+  2. Logged result to console:
+      * The results always matched the selection made from results, and lon and lat matched also.
+     * The results always showed as expected.  
+  3. Refreshed page multiple times to see if any errors occurred.
+     * No errors detected.
+
+**[Back to index](#Table-of-Contents)**
+
+#### createMap()
+
+  This function gets lat and lon for the chosen location and displays a map centered on that chosen location.   
+  **Credit Google Documentation** 
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+  2. Changed locations multiple times, viewed map on information.html and logged results of searches to console:
+     * The results always displayed as expected. 
+  3. Checked if search results were Bias to chosen location.
+     * Results appeared to be Bias.
+     * If a search for something not in the viewport is performed, the map will still mark that place. So if you are centered on London, and search for Berlin, a pin will be placed on Berlin. However the viewport will not change.
+     * This is my expected and desired behavior.
+  4. Refreshed page multiple times to see if any errors occurred.
+     * No errors detected.
+
+**[Back to index](#Table-of-Contents)**
+
+#### createMarkers()
+
+  This function creates the markers for the map search and preset query for tourist attractions.   
+  **Credit Google Documentation** 
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+  2. Viewed results on information.html
+     * The results always showed as expected.  
+  3. Refreshed page multiple times to see if any errors occurred.
+     * No errors detected.
+
+**[Back to index](#Table-of-Contents)**
+
+#### getOurWeatherObject()
+
+  This function isolates the weather for the chosen location only.  
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+  2. Logged the returned object to the console.
+     * The results always showed as expected.  
+  3. Refreshed page multiple times to see if any errors occurred.
+     * No errors detected.
+
+**[Back to index](#Table-of-Contents)**
+
+#### displayLocationWeather()
+
+  This function grabs the following data:  
+  *  The chosen location.
+  *  The weather for the chosen location.
+  *  the number of days to the weekend, by calling helper function **getIndexArray()**.
+  *  It also calls **getWeekendDates()** to get the dates for the upcoming weekend.
+
+It uses this information to display the resulting weather for the whole weekend.
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+  2. Logged the results to the console.
+     * The results always showed as expected.  
+  3. Viewed results on information.js.
+     * The page displayed with the correct information  
+  4. Refreshed page multiple times to see if any errors occurred.
+     * No errors detected.
+
+**[Back to index](#Table-of-Contents)**

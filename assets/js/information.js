@@ -217,7 +217,7 @@ function getOurWeatherObject() {
 
     for (let loc in weekendWeather) {
         if (location === weekendWeather[loc].Saturday.placeName) {
-            ourWeather = weekendWeather[loc]
+            ourWeather = weekendWeather[loc];
             return ourWeather;
 
         }
@@ -256,14 +256,14 @@ function displayLocationWeather() {
     let daysToWeekend = getIndexArray();
     let weekendDates = [];
 
-    let weekend = ["Friday","Saturday","Sunday"]
+    let weekend = ["Friday","Saturday","Sunday"];
 
     console.log(ourWeather);
 
     for (let i = 1; i < daysToWeekend.length;i++) {
         weekendDates.push(getWeekendDates(daysToWeekend[i]));
         console.log(weekendDates);
-    };
+    }
 
     document.getElementById('ourLocation').innerText = location;
 
