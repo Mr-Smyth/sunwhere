@@ -96,6 +96,7 @@ function findWeatherDayIndex() {
 // HERE WE UPDATE THE WEEKENDWEATHER OBJECT
 function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     const dayIndexes = findWeatherDayIndex();
+    window.localStorage.setItem('dayIndexesArray', JSON.stringify(dayIndexes));
 
     data = data.daily;
 

@@ -60,10 +60,9 @@ strong {
   top: 20px;
   left: 50%;
   transform: translate(-50%);
-  width: 100%;
   max-width: 100px;
   opacity: 1;
-  transition: 1.5s;
+  transition: 1s;
 }
 
 #logo-image {

@@ -1,28 +1,70 @@
 /*jshint esversion: 6 */
 
 
+// GLOBAL VARIABLES
+const FridayDate = document.getElementById("fridayDate");
+const SaturdayDate = document.getElementById("saturdayDate");
+const SundayDate = document.getElementById("sundayDate");
+const fridayTemp = document.getElementById("fridayTemp");
+const saturdayTemp = document.getElementById("saturdayTemp");
+const sundayTemp = document.getElementById("sundayTemp");
+const fridayIcon = document.getElementById("fridayIcon");
+const saturdayIcon = document.getElementById("saturdayIcon");
+const sundayIcon = document.getElementById("sundayIcon");
+const fridayFeels = document.getElementById("fridayFeels");
+const saturdayFeels = document.getElementById("saturdayFeels");
+const sundayFeels = document.getElementById("sundayFeels");
+const fridayRain = document.getElementById("fridayRain");
+const saturdayRain = document.getElementById("saturdayRain");
+const sundayRain = document.getElementById("sundayRain");
+const fridayWind = document.getElementById("fridayWind");
+const saturdayWind = document.getElementById("saturdayWind");
+const sundayWind = document.getElementById("sundayWind");
+const fridayHumidity = document.getElementById("fridayHumidity");
+const saturdayHumidity = document.getElementById("saturdayHumidity");
+const sundayHumidity = document.getElementById("sundayHumidity");
+const fridayDescription = document.getElementById("fridayDescription");
+const saturdayDescription = document.getElementById("saturdayDescription");
+const sundayDescription = document.getElementById("sundayDescription");
+
+// GETTING THE LAT AND LON OF THE CHOSEN LOCATION
 function initData() {
     let latitude = 0;
     let longitude = 0;
 
     // GET THE LOCATION THE USER SELECTED
-    let selectedLoc = JSON.parse(window.localStorage.getItem('selectedLocation'));
+    let selectedLoc = getLocationChoice();
     console.log(selectedLoc);
     // GET THE WEEKEND WEATHER OBJECT
-    const weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
-    console.log(weekendWeatherDeserialized);
+    const weekendWeather = getWeatherObj();
+    console.log(weekendWeather);
 
     // FIND THE LOCATION THAT MATCHES THE LOCATION CHOSEN AND PICK OUT THE LAT AND LON.
-    for (let location in weekendWeatherDeserialized) {
-        if (weekendWeatherDeserialized.hasOwnProperty(location)) {
-            if (selectedLoc === weekendWeatherDeserialized[location].Friday.placeName) {
-                latitude = weekendWeatherDeserialized[location].lat;
-                longitude = weekendWeatherDeserialized[location].lon;
+    for (let location in weekendWeather) {
+        if (weekendWeather.hasOwnProperty(location)) {
+            if (selectedLoc === weekendWeather[location].Friday.placeName) {
+                latitude = weekendWeather[location].lat;
+                longitude = weekendWeather[location].lon;
             }
         }
-
     }
     return { "lat": latitude, "lng": longitude };
+}
+
+// GET THE CHOSEN LOCATION FROM LOCAL STORAGE
+function getLocationChoice() {
+    let loc = JSON.parse(window.localStorage.getItem('selectedLocation'));
+    return loc;
+}
+// GET WEEKEND WEATHER OBJECT FROM LOCAL STORAGE
+function getWeatherObj() {
+    let obj = JSON.parse(localStorage.getItem("weekendWeather"));
+    return obj;
+}
+// GET DAY INDEX FROM LOCAL STORAGE
+function getIndexArray() {
+    let index = JSON.parse(localStorage.getItem("dayIndexesArray"));
+    return index;
 }
 
 // CREATE A MAP FOR THE SELECTED LOCATION
@@ -167,6 +209,83 @@ function createMarkers(places) {
 
 }
 
-// DO THIS FIRST
+// GET THE WEATHER OBJECT FOR THE LOCATION WE ARE INTERESTED IN ONLY
+function getOurWeatherObject() {
+    const weekendWeather = getWeatherObj();
+    const location = getLocationChoice();
+    let ourWeather;
 
-createMap();
+    for (let loc in weekendWeather) {
+        if (location === weekendWeather[loc].Saturday.placeName) {
+            ourWeather = weekendWeather[loc]
+            return ourWeather;
+
+        }
+    }
+}
+
+function getMonthName(month) {
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return months[month];
+}
+
+// GET AND FORMAT CURRENT DATE
+function currentDate(dayOffset) {
+    if (dayOffset !== 0) {
+        const today = new Date();
+        const currDate = today.getDate() + dayOffset;
+        const currMonth = getMonthName(today.getMonth());
+        const currYear = today.getUTCFullYear();
+        const suffixArray = ["st", "nd", "rd", "th"];
+        let suffix = suffixArray[3];
+        if (currDate === 1) {
+            suffix = suffixArray[0];
+        } else if (currDate === 2) {
+            suffix = suffixArray[1];
+        } else if (currDate === 3) {
+            suffix = suffixArray[2];
+        }
+        let date = currDate + suffix + ' of ' + currMonth + '  ' + currYear;
+        return date;
+    }
+}
+
+
+
+
+function displayLocationWeather() {
+    const location = getLocationChoice();
+    let ourWeather = getOurWeatherObject();
+    let daysToWeekend = getIndexArray();
+    let weekendDates = [];
+
+    let weekend = ["Friday"]
+
+    console.log(ourWeather);
+
+    for (let day of weekend) {
+        for (let i = 1; i < daysToWeekend.length;i++) {
+            weekendDates.push(day + " the " + currentDate(daysToWeekend[i]));
+            console.log(weekendDates);
+        };
+        document.getElementById("FridayDate").innerHTML = weekendDates[1];
+/*         document.getElementById("SaturdayDate").innerHTML = weekendDates[2];
+        document.getElementById("SundayDate").innerHTML = weekendDates[3]; */
+
+        
+        document.getElementById(`${day}Temp`).innerHTML = ourWeather[day].tempInCelsius + `&#176<span id="tempUnit">C</span>`;
+        document.getElementById(`${day}Icon`).src = `http://openweathermap.org/img/wn/${ourWeather[day].icon}.png`;
+        document.getElementById(`${day}WeatherDescription`).innerHTML = ourWeather[day].description;
+        document.getElementById(`${day}Feels`).innerHTML = `Feels:<br />${ourWeather[day].feelsLike}&#176<span>C</span>`;
+        document.getElementById(`${day}Humidity`).innerHTML = `Humidity:<br /> ${ourWeather[day].humidity}%`;
+        document.getElementById(`${day}Wind`).innerHTML = `Wind:<br />${ourWeather[day].windSpeed}m/s`;
+
+    }
+
+    console.log(getIndexArray());
+}
+
+
+
+
+displayLocationWeather();

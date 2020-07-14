@@ -1,29 +1,29 @@
 /*jshint esversion: 6 */
 
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
-    if (weekendWeatherDeserialized[loc[0]].Friday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[0]].Saturday.hasOwnProperty("placeName")) {
         document.getElementById("resultBestLocation").style.display = "block";
-        document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Friday.placeName;
+        document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Saturday.placeName;
         document.getElementById('resultlocation1').innerHTML = `${weekendWeatherDeserialized[loc[0]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[1]].Friday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[1]].Saturday.hasOwnProperty("placeName")) {
         document.getElementById("resultPlaceholder2").style.display = "block";
-        document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Friday.placeName;
+        document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Saturday.placeName;
         document.getElementById('resultlocation2').innerHTML = `${weekendWeatherDeserialized[loc[1]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[2]].Friday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[2]].Saturday.hasOwnProperty("placeName")) {
         document.getElementById("resultPlaceholder3").style.display = "block";
-        document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Friday.placeName;
+        document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Saturday.placeName;
         document.getElementById('resultlocation3').innerHTML = `${weekendWeatherDeserialized[loc[2]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[3]].Friday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[3]].Saturday.hasOwnProperty("placeName")) {
         document.getElementById("resultPlaceholder4").style.display = "block";
-        document.getElementById('nameLocation4').innerHTML = weekendWeatherDeserialized[loc[3]].Friday.placeName;
+        document.getElementById('nameLocation4').innerHTML = weekendWeatherDeserialized[loc[3]].Saturday.placeName;
         document.getElementById('resultlocation4').innerHTML = `${weekendWeatherDeserialized[loc[3]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[4]].Friday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[4]].Saturday.hasOwnProperty("placeName")) {
         document.getElementById("resultPlaceholder5").style.display = "block";
-        document.getElementById('nameLocation5').innerHTML = weekendWeatherDeserialized[loc[4]].Friday.placeName;
+        document.getElementById('nameLocation5').innerHTML = weekendWeatherDeserialized[loc[4]].Saturday.placeName;
         document.getElementById('resultlocation5').innerHTML = `${weekendWeatherDeserialized[loc[4]].score}%`;
     }
 }
