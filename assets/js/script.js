@@ -502,27 +502,23 @@ function getMonthName(month) {
 
 // CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
 // EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
-let lastScrollTop = 0;
+let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
+let headerMessage = document.getElementById("headerMessage");
 window.addEventListener("scroll", function () {
     let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
-        logo.style.top = "50px";
-        logo.style.left = "50px";
-        logo.style.transform = "translate(0%)";
-        logo.style.width = "100%";
-        logo.style.maxWidth = "1px";
-        logo.style.opacity = "0.01";
+        logo.style.backgroundColor = '#d0ecfd';
+        logo.style.opacity = "0.93";
+        logo.style.boxShadow = '0 1px 6px 0 rgb(236,219,65)';
     } else {
-        logo.style.top = "20px";
-        logo.style.left = "50%";
-        logo.style.transform = "translate(-50%)";
-        logo.style.width = "100%";
-        logo.style.maxWidth = "100px";
+        logo.style.backgroundColor = 'transparent';
+        logo.style.boxShadow = 'none';
         logo.style.opacity = "1";
     }
-    /* lastScrollTop = scrollTop */
 });
+
+
 
 // CHANGES THE TEMPERATURE UNIT
 function changeUnit() {

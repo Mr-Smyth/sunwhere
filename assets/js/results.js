@@ -2,27 +2,27 @@
 
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
     if (weekendWeatherDeserialized[loc[0]].Saturday.hasOwnProperty("placeName")) {
-        document.getElementById("resultBestLocation").style.display = "block";
+        document.getElementById("resultLink1").style.display = "block";
         document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Saturday.placeName;
         document.getElementById('resultlocation1').innerHTML = `${weekendWeatherDeserialized[loc[0]].score}%`;
     }
     if (weekendWeatherDeserialized[loc[1]].Saturday.hasOwnProperty("placeName")) {
-        document.getElementById("resultPlaceholder2").style.display = "block";
+        document.getElementById("resultLink2").style.display = "block";
         document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Saturday.placeName;
         document.getElementById('resultlocation2').innerHTML = `${weekendWeatherDeserialized[loc[1]].score}%`;
     }
     if (weekendWeatherDeserialized[loc[2]].Saturday.hasOwnProperty("placeName")) {
-        document.getElementById("resultPlaceholder3").style.display = "block";
+        document.getElementById("resultLink3").style.display = "block";
         document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Saturday.placeName;
         document.getElementById('resultlocation3').innerHTML = `${weekendWeatherDeserialized[loc[2]].score}%`;
     }
     if (weekendWeatherDeserialized[loc[3]].Saturday.hasOwnProperty("placeName")) {
-        document.getElementById("resultPlaceholder4").style.display = "block";
+        document.getElementById("resultLink4").style.display = "block";
         document.getElementById('nameLocation4').innerHTML = weekendWeatherDeserialized[loc[3]].Saturday.placeName;
         document.getElementById('resultlocation4').innerHTML = `${weekendWeatherDeserialized[loc[3]].score}%`;
     }
     if (weekendWeatherDeserialized[loc[4]].Saturday.hasOwnProperty("placeName")) {
-        document.getElementById("resultPlaceholder5").style.display = "block";
+        document.getElementById("resultLink5").style.display = "block";
         document.getElementById('nameLocation5').innerHTML = weekendWeatherDeserialized[loc[4]].Saturday.placeName;
         document.getElementById('resultlocation5').innerHTML = `${weekendWeatherDeserialized[loc[4]].score}%`;
     }
@@ -74,6 +74,23 @@ function selectLocation() {
     }
 
 }
+
+// CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
+// EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
+let lastScrollTop = 10;
+let logo = document.getElementById("logo-container");
+window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        logo.style.backgroundColor = '#d0ecfd';
+        logo.style.opacity = "0.96";
+        logo.style.boxShadow = '0 1px 6px 0 rgb(236,219,65)';
+    } else {
+        logo.style.backgroundColor = 'transparent';
+        logo.style.boxShadow = 'none';
+        logo.style.opacity = "1";
+    }
+});
 
 // DO THIS FIRST
 window.onload = function () {

@@ -85,7 +85,6 @@ function createMap() {
     });
     marker = new google.maps.Marker({
         position: coords,
-        /* label: "loc",  */
         animation: google.maps.Animation.DROP,
         map: map,
         label: {
@@ -95,8 +94,6 @@ function createMap() {
             fontSize: "20px"
         }
     });
-
-
 
 
     // CREATE THE SEARCH BOX AND POP IT ONTO THE MAP
@@ -265,7 +262,7 @@ function displayLocationWeather() {
         console.log(weekendDates);
     }
 
-    document.getElementById('ourLocation').innerText = location;
+    document.getElementById('ourLocation').innerText = `So, ${location} it is then!\n Lets just take a look at the weather line up before you go..`;
 
     document.getElementById("FridayDate").innerHTML = `Friday ${weekendDates[0]}`;
     document.getElementById("SaturdayDate").innerHTML = `Saturday ${weekendDates[1]}`;
@@ -281,10 +278,30 @@ function displayLocationWeather() {
 
     }
 
-    console.log(getIndexArray());
+    
+}
+
+// CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
+// EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
+let lastScrollTop = 10;
+let logo = document.getElementById("logo-container");
+window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        logo.style.backgroundColor = '#d0ecfd';
+        logo.style.opacity = "0.96";
+        logo.style.boxShadow = '0 1px 6px 0 rgb(236,219,65)';
+    } else {
+        logo.style.backgroundColor = 'transparent';
+        logo.style.boxShadow = 'none';
+        logo.style.opacity = "1";
+    }
+});
+
+// DO THIS FIRST
+window.onload = function () {
+    displayLocationWeather();
+    createMap();
 }
 
 
-
-
-displayLocationWeather();
