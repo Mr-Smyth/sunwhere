@@ -8,6 +8,7 @@
 <li>
 
 ## Javascript Functions  
+## [script.js Testing](#script.js)
 
 * [getCoords](#getCoords)
 * [geolocationError](#geolocationError)  
@@ -24,14 +25,19 @@
 * [changeUnit](#changeUnit)
 * [currentDate](#currentDate)
 * [currentTime](#currentTime)
+ 
+
+## [results.js testing](#results.js)
+
 * [sortLocationScores](#sortLocationScores)  
-* [displayLocationsResults](#displayLocationsResults)  
+* [displayLocationsResults](#displayLocationsResults) 
+* [selectLocation](#selectLocation)
 
 </li>
 </ul>
 
 ---
-
+## script.js
 
 * ### getCoords(location):
 
@@ -296,6 +302,10 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
+---
+
+## results.js
+
 #### sortLocationScores()
 
   This function is called once the results page has loaded. It gets the weekendWeather object from local storage and sorts the locations depending on their scores. Then it calls displayLocationsResults() and passes in the sorted array and the weekendWeather object.
@@ -327,3 +337,22 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
   4. All locations display in an ordered list, confirming correct calling of all associated functions.
+
+#### selectLocation()
+
+  This function is grabs which location the user selects, and saves it to local storage.
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+     * A Warning was returned "***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (selection)***" - After researching this warning on stack overflow, i found that using let and const gets around this problem, and as they are all declared and used within the scope of the function, there wont be a problem.
+  2. Made a selection multiple times and logged result to console:
+      * The results always matched the selection
+  3. Logged the result in another html page to make sure information was being correctly retrieved from local storage.
+     * The results always showed as expected.  
+  4. Refreshed page multiple times to see if any errors occurred.
+     * No errors detected.
+
+---
+
