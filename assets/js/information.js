@@ -278,6 +278,7 @@ function displayLocationWeather() {
 
     }
 
+    document.getElementById("mapIntroduction").innerText = ` We really hope you enjoy your time in ${location}.\nTo help you make the most of your time there here is a handy map with some points of interest. \n\nEnjoy!`
     
 }
 
