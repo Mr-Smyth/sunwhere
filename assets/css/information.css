@@ -85,42 +85,44 @@ h4 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
+
 }
 
+#weekendWeatherContainer{
+  position: relative;
+  top: 50px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-bottom: 20px;
+}
 
+#ourLocation {
+  width: 100%;
+  margin-bottom: 10px; 
+  padding: 10px; 
+}
 
 .locationDayContainer {
     padding: 10px;
     position: relative;
     display: flex;
     flex-direction: column;
-    top: 70px;
     margin: 10px auto ;
     border-radius: 10px;
     font-size: 0.7rem;
     text-align: center;
     width: 60%;
-    max-width: 500px;
+    max-width: 200px;
     
     background-color: rgba(192, 192, 192, 0.65);
   -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   -moz-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
   box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
-}
-
-#ourLocation {
-    margin: 20px 0 10px;
-    position: relative;
-    text-align: center;
-    top: 55px;
-    left: 50%;
-    transform: translate(-50%);
-    width: 80%;
-    min-width: 300px;
-    opacity: 1;
-   
 }
 
 
@@ -248,3 +250,11 @@ footer {
 #copyright{
   margin: auto;
 }
+
+/* @media (min-width:480px) {
+  #weekendWeatherContainer{
+    height: 100% ;
+    display: flex;
+    flex-direction: row;
+  }
+} */
