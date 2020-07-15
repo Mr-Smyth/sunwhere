@@ -162,13 +162,13 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 0 120px ;
+  padding: 0 20px ;
 }
 #mapIntroduction{
 background: -webkit-linear-gradient(rgb(200, 160, 25), rgb(231, 247, 13));
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
-font-size: 1.8rem;
+font-size: 1.6rem;
 }
  #mapContainer {
      display: -webkit-box;
