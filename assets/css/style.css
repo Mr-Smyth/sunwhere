@@ -47,6 +47,7 @@ h4 {
 a {
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 }
 
 strong {
@@ -313,6 +314,7 @@ strong {
 
 #clickForResults {
   margin-top: 50px;
+  color: #555555;
   font-size: 1.6rem;
   padding: 0.5rem 2rem;
   text-align: center;
@@ -322,7 +324,12 @@ strong {
   justify-content: center;
   background: rgb(251,183,63);
   background: radial-gradient(circle, rgba(251,183,63,1) 0%, rgba(252,204,70,1) 100%);
+}
 
+#clickForResults:hover{
+  -webkit-box-shadow: 0 1px 6px 0 rgb(236, 219, 67);
+  box-shadow: 0 1px 6px 0 rgb(236, 219, 67);
+  color: #444444;
 }
 
 footer {
@@ -414,4 +421,3 @@ footer {
     margin-bottom: 80px;
 
 }
-
