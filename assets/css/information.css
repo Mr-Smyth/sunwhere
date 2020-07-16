@@ -73,7 +73,7 @@
 /* WEEKEND WEATHER DISPLAY SECTION */
  .locationsBackgroundContainer{
      background-image: url("../images/road-trip2.jpg");
-     min-height: 100vh;
+     min-height: 95vh;
      background-position: center, center;
      background-repeat: no-repeat;
      background-attachment: fixed;
