@@ -271,7 +271,7 @@ function displayLocationWeather() {
     for (let day of weekend) {
         document.getElementById(`${day}Temp`).innerHTML = ourWeather[day].tempInCelsius + `&#176<span id="tempUnit">C</span>`;
         document.getElementById(`${day}Icon`).src = `http://openweathermap.org/img/wn/${ourWeather[day].icon}.png`;
-        document.getElementById(`${day}WeatherDescription`).innerHTML = ourWeather[day].description;
+        document.getElementById(`${day}WeatherDescription`).innerHTML = ourWeather[day].description.charAt(0).toUpperCase() + ourWeather[day].description.slice(1);
         document.getElementById(`${day}Feels`).innerHTML = `Feels:<br />${ourWeather[day].feelsLike}&#176<span>C</span>`;
         document.getElementById(`${day}Humidity`).innerHTML = `Humidity:<br /> ${ourWeather[day].humidity}%`;
         document.getElementById(`${day}Wind`).innerHTML = `Wind:<br />${ourWeather[day].windSpeed}m/s`;

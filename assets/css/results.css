@@ -10,6 +10,7 @@
      box-sizing: border-box;
 }
  body {
+   color: #444444;
      font-size: 16px;
      font-family: 'Lato', sans-serif;
      background: rgb(175,244,234);
@@ -94,7 +95,7 @@
      font-weight: 800;
      padding: 10px;
      border-radius: 5px;
-     color: rgb(54, 54, 54);
+
      background: rgb(235,238,174);
      background: -o-radial-gradient(circle, rgba(235,238,174,1) 0%, rgba(148,187,233,1) 100%);
      background: radial-gradient(circle, rgba(235,238,174,1) 0%, rgba(148,187,233,1) 100%);

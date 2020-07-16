@@ -97,7 +97,7 @@
 }
  #weatherCurrentInfoContainer {
      padding: 5px;
-     display: flex;
+     display: none;
      -webkit-box-orient: vertical;
      -webkit-box-direction: normal;
      -ms-flex-direction: column;

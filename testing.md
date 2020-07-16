@@ -61,12 +61,24 @@
 * [results.css](#results.css)
 * [information.css](#information.css)
   
-
-
 </li>
 </ul>
 
 ---
+# Layout
+<ul>
+<li>
+
+## HTML
+* [index.html](#index.html)
+* [results.html](#results.html)
+* [information.html](#information.html)
+  
+</li>
+</ul>
+
+---
+
 # Javascript Functions 
 
 ## script.js
@@ -86,10 +98,10 @@
 
   **Known Issues:**
 
-  1. It would only occaisionally return my correct location, on the
-      other occaisions it would return a location which was
-      between 25 and 175 KM's away . After some research i was able to find that this
-      is a problem that can occur in Googles database or Routers, and its ability
+  1. It would only occasionally return my correct location, on the
+      other occasions it would return a location which was
+      between 25 and 175 KM's away. After some research, I was able to find that this
+      is a problem that can occur in Google's database or Routers, and its ability
       to pinpoint the correct one.
 
 **[Back to index](#Table-of-Contents)**
@@ -107,8 +119,8 @@
      * No errors detected.
   2. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
-  3. Set the browsers Geolocation setting to off, to check returned error
-     message to the broser was present.
+  3. Set the browser's Geolocation setting to off, to check returned error
+     message to the browser was present.
      _ Error message was present when required.
      _ This also proved that the function call was being made correctly. \* No errors detected.
 
@@ -166,7 +178,7 @@
 
   1. Passed the function block through JSHint, to check for errors.
      * 1 missing semicolon on displayCurrentIcon assignment * Fixed.
-  2. Checked the index.html rendered page, was displaying correct information.
+  2. Checked the index.html rendered page, was displaying the correct information.
      * Page rendered as expected with all information.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
@@ -174,7 +186,7 @@
 
   **Known Issues:**
 
-  1.  Location was incorrect, but this was due to issue with returned data from geolocation, which is out of my control. However i
+  1.  Location was incorrect, but this was due to an issue with returned data from geolocation, which is out of my control. However i
       do expect this issue to be less obvious on a mobile platform.
 
 **[Back to index](#Table-of-Contents)**
@@ -190,7 +202,7 @@
   1. Passed the function block through JSHint, to check for errors.
      * 1 missing semicolon and parenthesis on the default switch condition * Fixed.
      * Cyclonic complexity was 19, as there were 19 options, will possibly attempt to refactor this function at a later stage.
-  2. Checked the index.html rendered page, was displaying correct information.
+  2. Checked the index.html rendered page, was displaying the correct information.
      * Page rendered with the correct Image to match the current weather icon.
   3. Manually set the weather icon to test all 19 possibilities
      * Page rendered with the correct Image to match the current weather icon, each time.
@@ -202,7 +214,7 @@
 **[Back to index](#Table-of-Contents)**
 
 
-* ### Getting the Location data from user, using google places searchBox:
+* ### Getting the Location data from the user, using google places searchBox:
 
   The following tests were carried out:
 
@@ -222,7 +234,7 @@
 * ### fetchLocationWeather():
 
   The fetchLocationWeather() function, gets the weather for the user entered locations, and
-  will be used to generate a result for best location.
+  will be used to generate a result for the best location.
 
   The following tests were carried out:
 
@@ -259,9 +271,7 @@
 
 * ### fetchWeekendWeather():
 
-  The fetchWeekendWeather() function updates the weekendWeather{} object, with the current
-  weather and the weather from the 4 user entered locations. The weekendWeather{} object stores this
-  information for later use in scoring and weather display.
+  The fetchWeekendWeather() function updates the weekendWeather{} object, with the current weather and the weather from the 4 users entered locations. The weekendWeather{} object stores this information for later use in scoring and weather display.
 
   The following tests were carried out:
 
@@ -305,8 +315,7 @@
 
 * ### getGeolocation() and getLocationsFromUser():
 
-  These 3 functions were setup using existing code. They are to solve the issue of the 
-  code within these functions running on pages where it is not needed.
+  These 3 functions were set up using existing code. They are to solve the issue of the code within these functions running on pages where it is not needed.
   The 2 Functions are called using the window.onload = function(),
   Which checks that the current page is index.html.
 
@@ -314,7 +323,7 @@
 
   1. Passed the functions through JSHint, to check for errors.
      * No errors detected.
-  2. Switched to results.html, to check that it wasnt being called.
+  2. Switched to results.html, to check that it wasn't being called.
         * The functions were not being called in results.html.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
@@ -338,7 +347,7 @@
 
 * ### currentDate():
 
-  This function creates a new date, and converts elements of the current date into a more readable format. then returns the date to the calling function.
+  This function creates a new date and converts elements of the current date into a more readable format. then returns the date to the calling function.
   This function calls 2 helper functions to get Month name and Day name.
 
   The following tests were carried out:
@@ -354,7 +363,7 @@
 
 * ### currentTime():
 
-  This function creates a new Time, and converts elements of the current time into a more readable 12 hour format, adding in the am/pm suffix It then returns the formatted time to the calling function
+  This function creates a new Time, and converts elements of the current time into a more readable 12-hour format, adding in the am/pm suffix It then returns the formatted time to the calling function
 
   The following tests were carried out:
 
@@ -383,7 +392,7 @@
      * 1 warning to wrap the for loop in an if statement to prevent prototype errors.
   2. Ran the page multiple times:
       * console.logged the resulting array
-      * The array always displayed in correct order.
+      * The array always displayed in the correct order.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
@@ -391,7 +400,7 @@
 
 #### displayLocationsResults()
 
-  This function is called from sortLocationScores. It gets the sorted array of scores and the  weekendWeather object passed in.
+  This function is called from sortLocationScores. It gets the sorted array of scores and the weekendWeather object passed in.
   It then outputs the information to the HTML results page.
 
   The following tests were carried out:
@@ -401,7 +410,7 @@
   2. Ran the page multiple times:
       * The results displayed as expected.
       * Tried with no locations selected, the results showed for current location only, as expected.
-      * If user does not select a location from the google searchbox, no location is displayed.
+      * If the user does not select a location from the google search box, no location is displayed.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
   4. All locations display in an ordered list, confirming correct calling of all associated functions.
@@ -416,10 +425,10 @@
 
   1. Passed the functions through JSHint, to check for errors.
      * No errors detected.
-     * A Warning was returned "***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (selection)***" - After researching this warning on stack overflow, i found that using let and const gets around this problem, and as they are all declared and used within the scope of the function, there wont be a problem.
+     * A Warning was returned "***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (selection)***" - After researching this warning on stack overflow, I found that using let and const gets around this problem, and as they are all declared and used within the scope of the function, there won't be a problem.
   2. Made a selection multiple times and logged result to console:
       * The results always matched the selection
-  3. Logged the result in another html page to make sure information was being correctly retrieved from local storage.
+  3. Logged the result in another HTML page to make sure information was being correctly retrieved from local storage.
      * The results always showed as expected.  
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
@@ -444,7 +453,7 @@
 
   1. Passed the functions through JSHint, to check for errors.
      * No errors detected.
-  2. Logged result to console:
+  2. Logged the result to console:
       * The results always matched the selection made from results, and lon and lat matched also.
      * The results always showed as expected.  
   3. Refreshed page multiple times to see if any errors occurred.
@@ -454,7 +463,7 @@
 
 #### createMap()
 
-  This function gets lat and lon for the chosen location and displays a map centered on that chosen location.   
+  This function gets lat and lon for the chosen location and displays a map centred on that chosen location.   
   **Credit Google Documentation** 
 
   The following tests were carried out:
@@ -463,10 +472,10 @@
      * No errors detected.
   2. Changed locations multiple times, viewed map on information.html and logged results of searches to console:
      * The results always displayed as expected. 
-  3. Checked if search results were Bias to chosen location.
+  3. Checked if search results were Bias to the chosen location.
      * Results appeared to be Bias.
-     * If a search for something not in the viewport is performed, the map will still mark that place. So if you are centered on London, and search for Berlin, a pin will be placed on Berlin. However the viewport will not change.
-     * This is my expected and desired behavior.
+     * If a search for something not in the viewport is performed, the map will still mark that place. So if you are centred on London, and search for Berlin, a pin will be placed on Berlin. However, the viewport will not change.
+     * This is my expected and desired behaviour.
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
@@ -557,6 +566,27 @@ Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check
 </li>
 </ul>
 
+I used the following browsers directly on my own PC's to check layouts of the website:
+
+*  Chrome version 81.
+*  Edge version 81.
+*  Opera version 68.
+*  Firefox version 76.
+*  IE 11.
+
+I used SauceLabs to verify the layout and links on Safari version 13.1.  
+Each Browser I performed a simulated visit, Inputting various locations, checked that autocomplete was always present in the location input boxes.  
+Checked the responsiveness using Google Chrome development tools.
+*  The index.HTML page displayed as expected on all breakpoints.
+
+
+I then checked on the devices I have available to me:
+
+A Samsung Galaxy Tab 10":  
+A Samsung S7 and S8:  
+An Apple iPhone 9:  
+
+*  The results.HTML page displayed as expected on all these devices.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -596,8 +626,9 @@ I used the following browsers directly on my own PC's to check layouts of the we
 *  Firefox version 76.
 *  IE 11.
 
-I used SauceLabs to verify the layout and links on Safari version 13.1.
-On Each Browser I performed a simulated visit, Selecting each result.
+I used SauceLabs to verify the layout and links on Safari version 13.1.  
+Each Browser I performed a simulated visit, Selecting each result.  
+Checked the responsiveness using Google Chrome development tools.
 *  The results.HTML page displayed as expected on all breakpoints.
 
 
@@ -656,8 +687,9 @@ I used the following browsers directly on my own PC's to check layouts of the we
 
 All browsers displayed as expected.
 
-I used SauceLabs to verify the layout and links on Safari version 13.1.
-On Each Browser I performed a simulated visit, Entering 2 and then all 4 locations. 
+I used SauceLabs to verify the layout and links on Safari version 13.1.  
+Each Browser I performed a simulated visit, Entering 2 and then all 4 locations.   
+Checked the responsiveness using Google Chrome development tools.
 *  The information.HTML page displayed as expected on all breakpoints.
 
 
@@ -670,3 +702,42 @@ An Apple iPhone 9:
 *  The information.HTML page displayed as expected on all these devices.
 
 **[Back to index](#Table-of-Contents)**
+
+---
+
+# Layout
+
+
+## index.html
+Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
+
+   * Errors displayed relating to misuse of img tag in the logo were all fixed.
+   * 1 warning **"Section lacks heading. Consider using h2-h6 elements"**.  
+     * Searched for information on this error and found it to be unimportant. ***"While it is useful to provide a heading for each sectioning content element, it is not required."*** - (https://stackoverflow.com/questions/24155024/w3c-html-validation-error-section-lacks-heading-consider-using-h2-h6-elements).
+   * Page layout displayed as expected.
+
+**[Back to index](#Table-of-Contents)**
+
+---
+
+## results.html
+Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
+
+   * Errors displayed relating to misuse of img tag in the logo were all fixed.
+   * Page layout displayed as expected.
+
+**[Back to index](#Table-of-Contents)**
+
+---
+
+## information.html
+Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
+
+   * Errors displayed relating to misuse of img tag in the logo were all fixed.
+   * 2 warnings **"Section lacks heading. Consider using h2-h6 elements"**.  
+     * Searched for information on this error and found it to be unimportant. ***"While it is useful to provide a heading for each sectioning content element, it is not required."*** - (https://stackoverflow.com/questions/24155024/w3c-html-validation-error-section-lacks-heading-consider-using-h2-h6-elements).
+   * Page layout displayed as expected. 
+
+**[Back to index](#Table-of-Contents)**
+
+---

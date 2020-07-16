@@ -10,6 +10,7 @@
      box-sizing: border-box;
 }
  body {
+     color: #444444;
      font-size: 16px;
      font-family: 'Lato', sans-serif;
      background: rgb(175,244,234);
