@@ -1,5 +1,8 @@
 # SunWhere?
-![SunWhere logo](https://github.com/Mr-Smyth/sunwhere/blob/master/assets/images/sunwhere-logo.PNG "Site logo")
+
+![SunWhere logo](https://github.com/Mr-Smyth/sunwhere/blob/master/assets/images/sunwhere-logo.png "Site logo")
+
+
 
 SunWhere is a browser based application designed to help the user decide which destination to choose for a weekend away, based on predicted weather.
 
