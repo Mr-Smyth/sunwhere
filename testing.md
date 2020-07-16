@@ -532,77 +532,111 @@ It uses this information to display the resulting weather for the whole weekend.
 
 ## style.css
 
-Setup media queries for the following breakpoints:
+### Code validation:
+Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
+  * No errors found.
+  * Attached validation badge to HTML Page.
+
+
+#### Checked media queries for the following breakpoints:
 <ul>
 <li>
 
-**@media (min-width:480px)** : For smartphones, Android phones, landscape iPhone.  
-</li>
-<li>
-
 **@media (min-width:600px)** : For portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android). 
+  *  Displayed as expected.
 </li>
 <li>
 
 **@media (min-width:801px)** : For tablet, landscape iPad, lo-res laptops ands desktops.  
+  *  Displayed as expected.
 </li>
 <li>
 
 **@media (min-width:1025px)** : For big landscape tablets, laptops, and desktops. 
+  *  Displayed as expected.
 </li>
 </ul>
 
 
 **[Back to index](#Table-of-Contents)**
+
+---
 
 ## results.css
-
-Setup media queries for the following breakpoints:
-<ul>
-<li>
-
-**@media (min-width:480px)** : For smartphones, Android phones, landscape iPhone.  
-</li>
-<li>
-
-**@media (min-width:600px)** : For portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android). 
-</li>
-<li>
-
-**@media (min-width:801px)** : For tablet, landscape iPad, lo-res laptops ands desktops.  
-</li>
-<li>
-
-**@media (min-width:1025px)** : For big landscape tablets, laptops, and desktops. 
-</li>
-</ul>
-
-**[Back to index](#Table-of-Contents)**
-
-## information.css
-
-### Code preparation:
-Used [CSS Formatter](https://www.cleancss.com/css-beautify/) and [Autoprefixer](https://autoprefixer.github.io/) to tidy and remove unwanted spacing left during development, and also add the required vendor prefixes.
-
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
   * No errors found.
-  * Attached badge to HTML Page.
 
-### Setup media queries for the following breakpoints:
+
+#### Checked media queries for the following breakpoints:
 <ul>
 <li>
 
-**@media (min-width:460px)** : For smartphones, Android phones, landscape iPhone. ***Reduced this from 480 to 460 to allow for slightly smaller phones in landscape mode.***
-</li>
-<li>
-
 **@media (min-width:600px)** : For portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android). 
+  *  Displayed as expected.
 </li>
 <li>
 
 **@media (min-width:801px)** : For tablet, landscape iPad, lo-res laptops ands desktops.  
+  *  Displayed as expected.
+</li>
+<li>
+
+**@media (min-width:1025px)** : For big landscape tablets, laptops, and desktops. 
+  *  Displayed as expected.
+</li>
+</ul>
+
+I used the following browsers directly on my own PC's to check layouts of the website:
+
+*  Chrome version 81.
+*  Edge version 81.
+*  Opera version 68.
+*  Firefox version 76.
+*  IE 11.
+
+I used SauceLabs to verify the layout and links on Safari version 13.1.
+On Each Browser I performed a simulated visit, Selecting each result.
+*  The results.HTML page displayed as expected on all breakpoints.
+
+
+I then checked on the devices I have available to me:
+
+A Samsung Galaxy Tab 10":  
+A Samsung S7 and S8:  
+An Apple iPhone 9:  
+
+*  The results.HTML page displayed as expected on all these devices.
+
+**[Back to index](#Table-of-Contents)**
+
+---
+
+## information.css
+
+### Code validation:
+Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
+  * No errors found.
+  * Attached validation badge to HTML Page.
+
+
+### Checked media queries for the following breakpoints:
+<ul>
+<li>
+
+**@media (min-width:460px)** : For smartphones, Android phones, landscape iPhone. ***Reduced this from 480 to 460 to allow for slightly smaller phones in landscape mode.***
+  *  Displayed as expected.
+</li>
+<li>
+
+**@media (min-width:600px)** : For portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android). 
+  *  Displayed as expected.
+</li>
+<li>
+
+**@media (min-width:801px)** : For tablet, landscape iPad, lo-res laptops ands desktops.  
+  *  Displayed as expected.
 </li>
 <li>
 
@@ -620,6 +654,8 @@ I used the following browsers directly on my own PC's to check layouts of the we
 *  Firefox version 76.
 *  IE 11.
 
+All browsers displayed as expected.
+
 I used SauceLabs to verify the layout and links on Safari version 13.1.
 On Each Browser I performed a simulated visit, Entering 2 and then all 4 locations. 
 *  The information.HTML page displayed as expected on all breakpoints.
@@ -630,6 +666,7 @@ I then checked on the devices I have available to me:
 A Samsung Galaxy Tab 10":  
 A Samsung S7 and S8:  
 An Apple iPhone 9:  
+
 *  The information.HTML page displayed as expected on all these devices.
 
 **[Back to index](#Table-of-Contents)**

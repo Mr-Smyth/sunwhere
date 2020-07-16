@@ -10,7 +10,7 @@
      box-sizing: border-box;
 }
  body {
-     color: rgb(15, 15, 15);
+     color: #333333;
      font-size: 16px;
      font-family: 'Lato', sans-serif;
      text-transform: initial;
@@ -28,6 +28,7 @@
 }
  h1, h2, h3, h4 {
      text-align: center;
+     color: #444444;
 }
  .box-shadow {
      -webkit-box-shadow: 0 1px 6px 0 rgb(46,21,27);
@@ -89,24 +90,14 @@
      top: 90px;
      width: 100%;
      height: auto;
-     display: -webkit-box;
-     display: -ms-flexbox;
      display: flex;
-     -webkit-box-align: center;
-     -ms-flex-align: center;
      align-items: center;
-     -webkit-box-orient: vertical;
-     -webkit-box-direction: normal;
-     -ms-flex-direction: column;
-     flex-direction: column;
-     -ms-flex-pack: distribute;
+     flex-direction: row;
      justify-content: space-around;
-     padding-bottom: 20px;
 }
  #weatherCurrentInfoContainer {
      padding: 5px;
-     margin-bottom: 40px;
-     display: none;
+     display: flex;
      -webkit-box-orient: vertical;
      -webkit-box-direction: normal;
      -ms-flex-direction: column;
@@ -156,11 +147,12 @@
      align-items: center;
 }
  #weatherCurrentInfoName {
-     font-size: 1.2rem;
+     font-size: 1.3rem;
      -o-text-overflow: ellipsis;
      text-overflow: ellipsis;
 }
  #weatherCurrentTemp {
+   color: #555555;
      position: relative;
      text-align: center;
      font-size: 3rem;
@@ -169,8 +161,9 @@
 }
  #weatherCurrentDescription {
      text-align: center;
+     color: #444444;
      font-size: 1.8rem;
-     font-weight: 400;
+     font-weight: 700;
      margin-bottom: 20px;
      display: none;
 }
@@ -196,21 +189,38 @@
      display: none;
 }
 /* STYLING FOR - COMPARE THE WEATHER INTRODUCTION BOX */
+#introductionContainer{
+  position: relative;
+  top: 120px;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
  #introduction {
      padding: 10px;
      height: auto;
-     text-align: center;
      width: 80%;
      max-width: 300px;
      min-width: 240px;
      border-radius: 20px;
-     margin-bottom: 20px;
      background-color: rgba(192, 192, 192, 0.65);
      -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
      box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
 }
  #introduction h2{
      margin-bottom: 10px;
+     color: #444444;
 }
  #introduction p{
      font-size: 1.1rem;
@@ -436,8 +446,12 @@
      #introduction{
          max-width: 80%;
     }
+    #introduction h2{
+      font-size: 1.9rem;
+ }
      #introduction p{
-         font-size: 1.1rem;
+         font-size: 1.4rem;
+         line-height: 25px;
     }
      #locationInputContainer p {
          font-size: 1.4rem;
