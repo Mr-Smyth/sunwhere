@@ -2,7 +2,18 @@
 
 ![SunWhere logo](https://github.com/Mr-Smyth/sunwhere/blob/master/assets/images/sunwhere-logo.png "Site logo")
 
+<div align="center">
 
+[View the website on GitHub Pages](https://mr-smyth.github.io/sunwhere/)
+
+
+This is a dynamic user friendly responsive utility project website, for quickly and easily comparing the weather for different locations.
+
+This project will be submitted for my Interactive Frontend Development, and second milestone project, in my Full Stack Software Development course. The project will is a working interactive front-end website, demonstrating the technologies I have learned so far.
+</div>
+
+--- 
+# UX
 
 SunWhere is a browser based application designed to help the user decide which destination to choose for a weekend away, based on predicted weather.
 
@@ -15,7 +26,7 @@ The user can then click on any of the results and will then be directed to an in
 
 The user can also scroll down to view a map with markers highlighting points of interest. The user can also use the predictive searchbox within the map, to search and add further markers to their map. The searches are Bias to, but not confined to, the viewport of the map.
 
-# UX
+
 ## User Stories
 The Application is intended for users of any age who are deciding on a location for their mini break, or even just a day out.
 
@@ -61,17 +72,18 @@ Considering the above user stories, i have decided upon the following UI Structu
 * Home Page:
   * User will be requested to allow geo-location.
   * A clear spacious area with the weather for the users current location displayed, with relevant weather icon.
-  * Below the current weather will be a Introduction and explanation, with an area below this for submitting locations.
+  * Below the current weather will be a Introduction and brief explanation, with an area below this for submitting locations.
 
 * Results Page:
   * Reachable upon submission of the locations.
   * Containing the results from the 4 user locations and the results for the users current location.
 
 * Information Page:
-  * Reachable upon clicking on a result, the page will provide a map of places of interest. 
+  * Reachable upon clicking on a result, the page will weather for that location for the upcoming weekend and also provide a map of places of interest. 
+  * A disclaimer.
 
 * Common:
-  *  A Site logo at the top of the page will provide a link to this home page from subsequent pages, and will represent the only required site navigation.
+  *  A Site logo at the top of the page will provide a link to the home page from subsequent pages, and will represent the only required common site navigation.
   *  The Footer will provide copyright information only.
   
 ### Styling
@@ -89,4 +101,9 @@ Considering the purpose of the site, The following styled theme was decided upon
 
   * [Information Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Information-Page.pdf)
 
-  
+
+## Features
+
+### Home Page
+The home page opens with a full size background image. This background image is dynamic, and will change depending upon the weather in your current location.  
+The weather for the users current location is displayed on top of this background image in a semi transparent container. The weather details displayed depend upon the current screen size and will increase in detail as the screen size increases. 
