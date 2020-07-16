@@ -19,12 +19,12 @@
 * [updateHomeWeather](#updateHomeWeather)
 * [displayCurrentWeather](#displayCurrentWeather)
 * [getBackground](#getBackground)
-* [Getting the Location data from user, using google places searchBox](#Getting*the*Location*data*from*user,*using*google*places*searchBox)
+* [Getting the Location data from user, using google places searchBox](#Getting-the-Location-data-from-the-user,-using-google-places-searchBox)
 * [fetchLocationWeather](#fetchLocationWeather)
-* [findWeatherDayIndex](findWeatherDayIndex)
+* [findWeatherDayIndex](#findWeatherDayIndex)
 * [fetchWeekendWeather](#fetchWeekendWeather)
 * [calculateRating](#calculateRating)
-* [getGeolocation() and getLocationsFromUser()](#getGeolocation()*and*getLocationsFromUser())
+* [getGeolocation() and getLocationsFromUser()](#getGeolocation()-and-getLocationsFromUser())
 * [changeUnit](#changeUnit)
 * [currentDate](#currentDate)
 * [currentTime](#currentTime)
@@ -78,7 +78,16 @@
 </ul>
 
 ---
+# Testing User Stories
 
+<ul>
+<li>
+
+[All user stories tested](#User-Stories-Tested)
+</li>
+</ul>
+
+---
 # Javascript Functions 
 
 ## script.js
@@ -381,7 +390,7 @@
 
 ## results.js
 
-#### sortLocationScores()
+* ### sortLocationScores()
 
   This function is called once the results page has loaded. It gets the weekendWeather object from local storage and sorts the locations depending on their scores. Then it calls displayLocationsResults() and passes in the sorted array and the weekendWeather object.
 
@@ -398,7 +407,7 @@
 
 **[Back to index](#Table-of-Contents)**
 
-#### displayLocationsResults()
+* ### displayLocationsResults()
 
   This function is called from sortLocationScores. It gets the sorted array of scores and the weekendWeather object passed in.
   It then outputs the information to the HTML results page.
@@ -417,7 +426,7 @@
 
 **[Back to index](#Table-of-Contents)**
 
-#### selectLocation()
+* ### selectLocation()
 
   This function grabs which location the user selects, and saves it to local storage.
 
@@ -439,7 +448,7 @@
 
 ## information.js
 
-#### initData()
+* ### initData()
 
   This function gets the data from local storage and then gets the latitude and longitude to hand to the map functions
 
@@ -461,7 +470,7 @@
 
 **[Back to index](#Table-of-Contents)**
 
-#### createMap()
+* ### createMap()
 
   This function gets lat and lon for the chosen location and displays a map centred on that chosen location.   
   **Credit Google Documentation** 
@@ -481,7 +490,7 @@
 
 **[Back to index](#Table-of-Contents)**
 
-#### createMarkers()
+* ### createMarkers()
 
   This function creates the markers for the map search and preset query for tourist attractions.   
   **Credit Google Documentation** 
@@ -497,7 +506,7 @@
 
 **[Back to index](#Table-of-Contents)**
 
-#### getOurWeatherObject()
+* ### getOurWeatherObject()
 
   This function isolates the weather for the chosen location only.  
 
@@ -512,7 +521,7 @@
 
 **[Back to index](#Table-of-Contents)**
 
-#### displayLocationWeather()
+* ### displayLocationWeather()
 
   This function grabs the following data:  
   *  The chosen location.
@@ -539,7 +548,7 @@ It uses this information to display the resulting weather for the whole weekend.
 
 # STYLING
 
-## style.css
+* ## style.css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -592,7 +601,7 @@ An Apple iPhone 9:
 
 ---
 
-## results.css
+* ## results.css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -644,7 +653,7 @@ An Apple iPhone 9:
 
 ---
 
-## information.css
+* ## information.css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -708,7 +717,7 @@ An Apple iPhone 9:
 # Layout
 
 
-## index.html
+* ### index.html
 Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
 
    * Errors displayed relating to misuse of img tag in the logo were all fixed.
@@ -720,7 +729,7 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 
 ---
 
-## results.html
+* ### results.html
 Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
 
    * Errors displayed relating to misuse of img tag in the logo were all fixed.
@@ -730,13 +739,56 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 
 ---
 
-## information.html
+* ### information.html
 Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
 
    * Errors displayed relating to misuse of img tag in the logo were all fixed.
    * 2 warnings **"Section lacks heading. Consider using h2-h6 elements"**.  
      * Searched for information on this error and found it to be unimportant. ***"While it is useful to provide a heading for each sectioning content element, it is not required."*** - (https://stackoverflow.com/questions/24155024/w3c-html-validation-error-section-lacks-heading-consider-using-h2-h6-elements).
    * Page layout displayed as expected. 
+
+**[Back to index](#Table-of-Contents)**
+
+---
+
+* ### User Stories Tested
+
+### 1.  As a user, I want the home screen to be inviting and with information relevant to my location. 
+   * The home screen shows weather relevant to the users current loction.
+   * I believe the home screen to be easy and uncluttered, providing an inviting and pleasant experience.
+   * Being fully responsive, the user experience will be equally enjoyable on all devices.
+
+### 2.  As a user, I want to quickly and easily understand the purpose of the application.
+   *  I used a combination of techniques to subtly achieve this.
+      *  A logo suggesting a search for sun.
+      *  An brief introduction explaining in brief what the goal of the site is. Linking then to a more in-depth explanation of what the site does and how it does it.
+
+### 3.  As a user, I want to easily understand what i have to do.
+   * This is achieved through reading the in-depth explanation in the locations input section. The user can easily get to this by clicking the **Click Here** link in the brief description/welcome section
+
+### 4.  As a user, I want to easily enter my information.
+   * This is achieved, via a clear simple input section. What adds simplicity to this process is the including of google searchbox in the locaction input. The user can type and click to select the suggested location, then simply Tab or click to get to the next input box.
+
+### 5.  As a user, I want to see an obvious and quick way to get my results.
+   * This is achieved by use of a large **Click to see Results** button directly beneath the final location input.
+
+
+### 6.  As a user, I want to be able to see an obvious comparison of predicted weather for my entered locations, including my home or current location.
+   * This is achieved by use of a seperate page displaying only the results. This removes distractions and concentrates the user on seeing clearly defined results, all stacked in order.
+   * The best rated location, is at the top, and highlighted in a different colour for emphasis.
+   * % scores keeps the system simple and easy to understand.
+   * The text at the top of the screen explains what the user is currently looking at, and what to do next.
+
+
+### 7.  As a user, I would like to select my preferred location from the results, and see places of interest for that location.
+   * This is achieved through simply selecting any one of the locations.
+   * A breakdown of the weekends weather, with dates, is displayed in a responsive format.
+   * A deliberate displaying of the top of the map section, invites the user to scroll down to view the map with preloaded markers. These markers pinpoint tourist attractions for the area.
+   * A searchbox then allows the user to search the map further and add their own pins.
+
+
+### 8.  As a user, it would be helpful to get a wildcard location returned, for a place not on the list, but which has a good rating for the next weekend.
+   * Unfortunatly this is not achievable in this release, due to API and time restrictions.
 
 **[Back to index](#Table-of-Contents)**
 

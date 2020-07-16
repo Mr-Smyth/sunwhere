@@ -1,11 +1,20 @@
 # SunWhere?
 
 SunWhere is a browser based application designed to help the user decide which destination to choose for a weekend away, based on predicted weather.
-It returns a weather score or rating for the predicted weather, for each of the user entered locations.
+
+The main objective of this website is to provide the user with a simple way to compare the weather for multiple locations, for the upcoming weekend. Then once this has been achieved it will return those results. The results are formatted in a simple single viewpoint page, in descending order, with the best location highlighted. 
+
+**The results are calculated using rates of rain, sunshine, cloud, humidity, wind and temperature. The score is then combined for the weekend and converted to a percentage.**
+
+ The user can then easily see the best location, with a percentage comparison making the system simple to understand.  
+The user can then click on any of the results and will then be directed to an information page, where the complete weather line up for the weekend will be displayed in a simple, clear responsive style.  
+
+The user can also scroll down to view a map with markers highlighting points of interest. The user can also use the predictive searchbox within the map, to search and add further markers to their map. The searches are Bias to, but not confined to, the viewport of the map.
 
 # UX
 ## User Stories
 The Application is intended for users of any age who are deciding on a location for their mini break, or even just a day out.
+
 
 The following user stories have been identified:
 
@@ -69,5 +78,11 @@ Considering the purpose of the site, The following styled theme was decided upon
   * linear gradient blue/white/orange TBD
 * Wireframes: 
   * [Home Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Home-Page.pdf)
-  * Results Page
+
+
+  * [Results Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Results-Page.pdf)
+  
+  
+  * [Information Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Information-Page.pdf)
+
   
