@@ -13,8 +13,8 @@
      font-size: 16px;
      font-family: 'Lato', sans-serif;
      background: rgb(175,244,234);
-     background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, rgba(175,244,234,1)), color-stop(17%, rgba(68,226,203,1)), color-stop(23%, rgba(58,184,217,1)), color-stop(41%, rgba(80,129,219,1)), color-stop(67%, rgba(77,48,222,1)), color-stop(98%, rgba(41,161,234,1)));
      background: -o-linear-gradient(bottom, rgba(175,244,234,1) 7%, rgba(68,226,203,1) 17%, rgba(58,184,217,1) 23%, rgba(80,129,219,1) 41%, rgba(77,48,222,1) 67%, rgba(41,161,234,1) 98%);
+     background: -webkit-gradient(linear, left bottom, left top, color-stop(7%, rgba(175,244,234,1)), color-stop(17%, rgba(68,226,203,1)), color-stop(23%, rgba(58,184,217,1)), color-stop(41%, rgba(80,129,219,1)), color-stop(67%, rgba(77,48,222,1)), color-stop(98%, rgba(41,161,234,1)));
      background: linear-gradient(0deg, rgba(175,244,234,1) 7%, rgba(68,226,203,1) 17%, rgba(58,184,217,1) 23%, rgba(80,129,219,1) 41%, rgba(77,48,222,1) 67%, rgba(41,161,234,1) 98%);
      height: 100%;
 }
@@ -49,11 +49,11 @@
      display: -ms-flexbox;
      display: flex;
      -webkit-box-pack: center;
-         -ms-flex-pack: center;
-             justify-content: center;
+     -ms-flex-pack: center;
+     justify-content: center;
      -webkit-box-align: center;
-         -ms-flex-align: center;
-             align-items: center;
+     -ms-flex-align: center;
+     align-items: center;
 }
  #logo-image{
      background-image: url("../images/sunwhere-logo.png");
@@ -88,14 +88,14 @@
      display: -ms-flexbox;
      display: flex;
      -ms-flex-wrap: wrap;
-         flex-wrap: wrap;
+     flex-wrap: wrap;
      -webkit-box-orient: vertical;
      -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-             flex-direction: column;
+     -ms-flex-direction: column;
+     flex-direction: column;
      -webkit-box-pack: space-evenly;
-         -ms-flex-pack: space-evenly;
-             justify-content: space-evenly;
+     -ms-flex-pack: space-evenly;
+     justify-content: space-evenly;
      padding-bottom: 20px;
 }
  #ourLocation {
@@ -113,8 +113,8 @@
      display: flex;
      -webkit-box-orient: vertical;
      -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-             flex-direction: column;
+     -ms-flex-direction: column;
+     flex-direction: column;
      margin: 10px auto ;
      border-radius: 10px;
      font-size: 0.7rem;
@@ -131,16 +131,16 @@
      display: flex;
      -webkit-box-orient: horizontal;
      -webkit-box-direction: normal;
-         -ms-flex-direction: row;
-             flex-direction: row;
+     -ms-flex-direction: row;
+     flex-direction: row;
      -webkit-box-pack: center;
-         -ms-flex-pack: center;
-             justify-content: center;
+     -ms-flex-pack: center;
+     justify-content: center;
      -webkit-box-align: center;
-         -ms-flex-align: center;
-             align-items: center;
+     -ms-flex-align: center;
+     align-items: center;
      -ms-flex-wrap: wrap;
-         flex-wrap: wrap;
+     flex-wrap: wrap;
 }
  .locationTemp {
      font-size: 1.4rem;
@@ -152,25 +152,29 @@
      display: none;
      -webkit-box-orient: horizontal;
      -webkit-box-direction: normal;
-         -ms-flex-direction: row;
-             flex-direction: row;
+     -ms-flex-direction: row;
+     flex-direction: row;
      -ms-flex-pack: distribute;
-         justify-content: space-around;
+     justify-content: space-around;
      margin-top: 10px;
 }
 /* MAPS SECTION STYLING */
-#mapIntroductionContainer{
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 0 20px ;
+ #mapIntroductionContainer{
+     margin-top: 50px;
+     width: 100%;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+     padding: 0 20px ;
 }
-#mapIntroduction{
-background: -webkit-linear-gradient(rgb(200, 160, 25), rgb(231, 247, 13));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-font-size: 1.6rem;
+ #mapIntroduction{
+     background: -webkit-linear-gradient(rgb(200, 160, 25), rgb(231, 247, 13));
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     font-size: 1.6rem;
 }
  #mapContainer {
      display: -webkit-box;
@@ -195,7 +199,7 @@ font-size: 1.6rem;
      -webkit-box-shadow: inset 3px 2px 60px 8px rgba(148,187,233, 0.3);
      box-shadow: inset 3px 2px 60px 8px rgba(148,187,233, 0.3);
      -o-text-overflow: ellipsis;
-        text-overflow: ellipsis;
+     text-overflow: ellipsis;
      width: 80%;
 }
  #pac-input:hover {
@@ -223,11 +227,11 @@ font-size: 1.6rem;
      display: flex;
      -webkit-box-orient: vertical;
      -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-             flex-direction: column;
+     -ms-flex-direction: column;
+     flex-direction: column;
      -webkit-box-align: center;
-         -ms-flex-align: center;
-             align-items: center;
+     -ms-flex-align: center;
+     align-items: center;
      padding: 20px;
      margin-left: auto;
      margin-right: auto;
@@ -251,8 +255,8 @@ font-size: 1.6rem;
      display: -ms-flexbox;
      display: flex;
      -webkit-box-pack: center;
-         -ms-flex-pack: center;
-             justify-content: center;
+     -ms-flex-pack: center;
+     justify-content: center;
 }
  #copyright{
      margin: auto;
@@ -267,8 +271,8 @@ font-size: 1.6rem;
          display: flex;
          -webkit-box-orient: horizontal;
          -webkit-box-direction: normal;
-             -ms-flex-direction: row;
-                 flex-direction: row;
+         -ms-flex-direction: row;
+         flex-direction: row;
     }
      .locationDayContainer{
          width: 35%;
@@ -292,7 +296,7 @@ font-size: 1.6rem;
          display: -ms-flexbox;
          display: flex;
          -ms-flex-wrap: nowrap;
-             flex-wrap: nowrap;
+         flex-wrap: nowrap;
     }
      #weekendWeatherContainer{
          position: relative;
@@ -300,7 +304,7 @@ font-size: 1.6rem;
     }
      .locationDayContainer{
          -ms-flex-wrap: nowrap;
-             flex-wrap: nowrap;
+         flex-wrap: nowrap;
          max-width: 30%;
          margin: 10px;
          margin-top: 50px;
@@ -317,7 +321,7 @@ font-size: 1.6rem;
  @media (min-width:1025px) {
      .locationDayContainer{
          -ms-flex-wrap: nowrap;
-             flex-wrap: nowrap;
+         flex-wrap: nowrap;
          width: 30%;
          max-width: 300px;
          margin: 10px;
@@ -327,9 +331,8 @@ font-size: 1.6rem;
      .locationTemp {
          font-size: 4rem;
     }
-    #ourLocation {
-        font-size: 2rem;
-        
+     #ourLocation {
+         font-size: 2rem;
     }
 }
 /* hi-res laptops and desktops */

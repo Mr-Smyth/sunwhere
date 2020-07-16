@@ -1,124 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/information.css" />
-  <title>SunWhere - information</title>
-</head>
-
-<body>
-  <header>
-    <div id="logo-container">
-      <a href="index.html"><img id="logo-image" src="assets/images/sunwhere-logo.png" alt="Sun Where logo image" /></a>
-    </div>
-  </header>
-
-  <section>
-    <div class="locationsBackgroundContainer">
-      <div id="weekendWeatherContainer">
-
-        <h3 id="ourLocation"></h3>
-
-        <div id="FridayWeatherContainer" class="locationDayContainer">
-          <h3 id="FridayDate" class="locationDate">--/--/--</h3>
-          <div class="locationMainDetails">
-            <div id="FridayTemp" class="locationTemp">-- temp</div>
-            <div>
-              <img id="FridayIcon" class="locationIcon" alt="Weather Icon" src="#" />
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="assets/css/information.css" />
+      <title>SunWhere - information</title>
+   </head>
+   <body>
+     <!-- SITE LOGO SECTION -->
+      <header>
+         <div id="logo-container">
+            <a href="index.html"><img id="logo-image" src="assets/images/sunwhere-logo.png" alt="Sun Where logo image" /></a>
+         </div>
+      </header>
+      <!-- HERO IMAGE WITH WEEKEND WEATHER DISPLAYED -->
+      <section>
+         <div class="locationsBackgroundContainer">
+            <div id="weekendWeatherContainer">
+               <h3 id="ourLocation">-</h3>
+               <div id="FridayWeatherContainer" class="locationDayContainer">
+                  <h3 id="FridayDate" class="locationDate">--/--/--</h3>
+                  <div class="locationMainDetails">
+                     <div id="FridayTemp" class="locationTemp">-- temp</div>
+                     <div>
+                        <img id="FridayIcon" class="locationIcon" alt="Weather Icon" src="#" />
+                     </div>
+                  </div>
+                  <div id="FridayWeatherDescription" class="locationDescription">description</div>
+                  <div class="locationSmallDetails">
+                     <div id="FridayFeels"></div>
+                     <div id="FridayHumidity"></div>
+                     <div id="FridayWind"></div>
+                  </div>
+               </div>
+               <div id="SaturdayWeatherContainer" class="locationDayContainer">
+                  <h3 id="SaturdayDate" class="locationDate">--/--/--</h3>
+                  <div class="locationMainDetails">
+                     <div id="SaturdayTemp" class="locationTemp">-- temp</div>
+                     <div>
+                        <img id="SaturdayIcon" class="locationIcon" alt="Weather Icon" src="#" />
+                     </div>
+                  </div>
+                  <div id="SaturdayWeatherDescription" class="locationDescription">description</div>
+                  <div class="locationSmallDetails">
+                     <div id="SaturdayFeels"></div>
+                     <div id="SaturdayHumidity"></div>
+                     <div id="SaturdayWind"></div>
+                  </div>
+               </div>
+               <div id="SundayWeatherContainer" class="locationDayContainer">
+                  <h3 id="SundayDate" class="locationDate">--/--/--</h3>
+                  <div class="locationMainDetails">
+                     <div id="SundayTemp" class="locationTemp">-- temp</div>
+                     <div>
+                        <img id="SundayIcon" class="locationIcon" alt="Weather Icon" src="#" />
+                     </div>
+                  </div>
+                  <div id="SundayWeatherDescription" class="locationDescription">description</div>
+                  <div class="locationSmallDetails">
+                     <div id="SundayFeels"></div>
+                     <div id="SundayHumidity"></div>
+                     <div id="SundayWind"></div>
+                  </div>
+               </div>
             </div>
-          </div>
-          <div id="FridayWeatherDescription" class="locationDescription">description</div>
-
-          <div class="locationSmallDetails">
-            <div id="FridayFeels"></div>
-            <div id="FridayHumidity"></div>
-            <div id="FridayWind"></div>
-          </div>
-        </div>
-
-        <div id="SaturdayWeatherContainer" class="locationDayContainer">
-          <h3 id="SaturdayDate" class="locationDate">--/--/--</h3>
-          <div class="locationMainDetails">
-            <div id="SaturdayTemp" class="locationTemp">-- temp</div>
-            <div>
-              <img id="SaturdayIcon" class="locationIcon" alt="Weather Icon" src="#" />
-            </div>
-          </div>
-          <div id="SaturdayWeatherDescription" class="locationDescription">description</div>
-          <div class="locationSmallDetails">
-            <div id="SaturdayFeels"></div>
-            <div id="SaturdayHumidity"></div>
-            <div id="SaturdayWind"></div>
-          </div>
-        </div>
-
-        <div id="SundayWeatherContainer" class="locationDayContainer">
-          <h3 id="SundayDate" class="locationDate">--/--/--</h3>
-          <div class="locationMainDetails">
-            <div id="SundayTemp" class="locationTemp">-- temp</div>
-            <div>
-              <img id="SundayIcon" class="locationIcon" alt="Weather Icon" src="#" />
-            </div>
-          </div>
-          <div id="SundayWeatherDescription" class="locationDescription">description</div>
-          <div class="locationSmallDetails">
-            <div id="SundayFeels"></div>
-            <div id="SundayHumidity"></div>
-            <div id="SundayWind"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section>
-  <div id="mapIntroductionContainer">
-    <h1 id="mapIntroduction"></h1>
-
-  </div>
-</section>
-
-  <section>
-    <div id="mapContainer">
-      <input id="pac-input" class="shadow" type="text" placeholder="Enter your search here..">
-      <div id="map" class="box-shadow"></div>
-    </div>
-  </section>
-
-  <section>
-    <div id="disclaimContainer">
-      <h1 id="disclaimHeading">We hope you thoroughly enjoy your trip! And we really hope this information has been
-        useful to you.</h1>
-
-      <p id="disclaimBody">
-        The weather is, as we all know, unpredictable! Even armed with the best weather information that science can
-        provide.
-        As a result we do not accept any responsibility for unexpected, sudden or unpredicted weather outcomes.
-        This web site makes no guarantees about nor bears any responsibility or liability concerning the accuracy or
-        timeliness of the weather information published on this website.
-        We will not be liable for any damage, loss or injury sustained by any person as a result of the information
-        accessed or used from this website.
-      </p>
-    </div>
-  </section>
-
-  <section>
-    <p>
-      <a href="http://jigsaw.w3.org/css-validator/check/referer">
-        <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
-          alt="Valid CSS!" />
-      </a>
-    </p>
-  </section>
-
-  <footer>
-    <div id="copyright">copyright SunWhere 2020</div>
-  </footer>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"></script>
-  <script src="assets/js/information.js"></script>
-</body>
-
+         </div>
+      </section>
+      <!-- MAP INTRODUCTION -->
+      <section>
+         <div id="mapIntroductionContainer">
+            <h1 id="mapIntroduction">-</h1>
+         </div>
+      </section>
+      <!-- MAP SECTION -->
+      <section>
+         <div id="mapContainer">
+            <input id="pac-input" class="shadow" type="text" placeholder="Enter your search here..">
+            <div id="map" class="box-shadow"></div>
+         </div>
+      </section>
+      <!-- DISCLAIMER -->
+      <section>
+         <div id="disclaimContainer">
+            <h1 id="disclaimHeading">We hope you thoroughly enjoy your trip! And we really hope this information has been
+               useful to you.
+            </h1>
+            <p id="disclaimBody">
+               The weather is, as we all know, unpredictable! Even armed with the best weather information that science can
+               provide.
+               As a result we do not accept any responsibility for unexpected, sudden or unpredicted weather outcomes.
+               This web site makes no guarantees about nor bears any responsibility or liability concerning the accuracy or
+               timeliness of the weather information published on this website.
+               We will not be liable for any damage, loss or injury sustained by any person as a result of the information
+               accessed or used from this website.
+            </p>
+         </div>
+      </section>
+      <!-- VALIDATION BADGES -->
+      <section>
+         <p>
+            <a href="http://jigsaw.w3.org/css-validator/check/referer">
+            <img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+               alt="Valid CSS!" />
+            </a>
+         </p>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+         <div id="copyright">copyright SunWhere 2020</div>
+      </footer>
+      <!-- SCRIPTS -->
+      <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"></script>
+      <script src="assets/js/information.js"></script>
+   </body>
 </html>

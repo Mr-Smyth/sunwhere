@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="assets/css/results.css" />
-  <title>SunWhere - Results</title>
-</head>
-
-<body>
-  <header>
-    <div id="logo-container">
-      <a href="index.html"><img id="logo-image" src="assets/images/sunwhere-logo.png" alt="Sun Where logo image" /></a>
-    </div>
-  </header>
-
-  <section>
-    <div id="resultsContainer">
-      <h3>From your selected locations we calculated the following scores. 
-      </h3>
-      <h3>Select a location:</h3>
-        <a id="resultLink1" class="box-shadow" href="information.html">The best location is <span class="result" id="nameLocation1"></span> with a rating of: <span
-              id="resultlocation1"></span>
-        </a>
-        <a id="resultLink2" class="box-shadow" href="information.html">The 2nd best location is <span class="result" id="nameLocation2"></span> with a rating of: <span
-              id="resultlocation2"></span>
-        </a>
-        <a id="resultLink3" class="box-shadow" href="information.html">The 3rd best location is <span class="result" id="nameLocation3"></span> with a rating of: <span
-              id="resultlocation3"></span>
-        <a id="resultLink4" class="box-shadow" href="information.html">The 4th best location is <span class="result" id="nameLocation4"></span> with a rating of: <span
-              id="resultlocation4"></span>
-        </a>
-        <a id="resultLink5" class="box-shadow" href="information.html">The 5th best location is <span class="result" id="nameLocation5"></span> with a rating of: <span
-              id="resultlocation5"></span>
-        </a>
-
-    </div>
-  </section>
-
-
-  <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"></script>
-  <script src="assets/js/results.js"></script>
-</body>
-
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="assets/css/results.css" />
+      <title>SunWhere - Results</title>
+   </head>
+   <body>
+     <!-- SITE LOGO AREA -->
+      <header>
+         <div id="logo-container">
+            <a href="index.html"><img id="logo-image" src="assets/images/sunwhere-logo.png" alt="Sun Where logo image" /></a>
+         </div>
+      </header>
+      <!-- LOCATION RESULTS CONTAINER -->
+      <section>
+         <div id="resultsContainer">
+            <h3>From your selected locations we calculated the following scores.
+            </h3>
+            <h3>Select a location:</h3>
+            <a id="resultLink1" class="box-shadow" href="information.html">The best location is <span class="result"
+               id="nameLocation1"></span> with a rating of: <span id="resultlocation1"></span>
+            </a>
+            <a id="resultLink2" class="box-shadow" href="information.html">The 2nd best location is <span class="result"
+               id="nameLocation2"></span> with a rating of: <span id="resultlocation2"></span>
+            </a>
+            <a id="resultLink3" class="box-shadow" href="information.html">The 3rd best location is <span class="result"
+               id="nameLocation3"></span> with a rating of: <span id="resultlocation3"></span>
+            </a>
+            <a id="resultLink4" class="box-shadow" href="information.html">The 4th best location is <span class="result"
+               id="nameLocation4"></span> with a rating of: <span id="resultlocation4"></span>
+            </a>
+            <a id="resultLink5" class="box-shadow" href="information.html">The 5th best location is <span class="result"
+               id="nameLocation5"></span> with a rating of: <span id="resultlocation5"></span>
+            </a>
+         </div>
+      </section>
+      <!-- SCRIPTS -->
+      <script 
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBywmku3Nbv1W5LnltcOECmNw-gjJh4LiQ&libraries=places"></script>
+      <script src="assets/js/results.js"></script>
+   </body>
 </html>
