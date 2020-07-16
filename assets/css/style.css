@@ -345,22 +345,7 @@ footer {
 }
 
 /* MEDIA QUERIES */
-/* smartphones, Android phones, landscape iPhone */
-@media (min-width:460px) {
-  #heroContainer{
-    top: 60px;
-  }
-  #weatherCurrentInfoContainer {
-    margin-bottom: 10px;
-  }
-  #introduction {
-    max-width: 80%
-  }
-  #introduction p{
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-  }
-}
+
 
 /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 @media (min-width:600px){
@@ -368,7 +353,8 @@ footer {
     top: 90px;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 0px 10px;
   }
   #weatherWithYou {
     display: flex;
@@ -377,17 +363,21 @@ footer {
   #weatherCurrentIcon{
     display: none;
   }
+  #weatherCurrentDescription {
+    display: block;
+  }
   #standaloneWeatherIcon{
     width: 250px;
     height: 150px;
   }
   #weatherCurrentInfoContainer {
+    margin-top: 10px;
     margin-bottom: 20px;
-    margin-left: 5%;
     order: 2;
   }
   #introduction {
-    max-width: 80%;
+    width: auto;
+    max-width: 550px;
     order: 3;
   }
   #introduction p{
@@ -396,9 +386,7 @@ footer {
 }
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width:801px) {
-  #weatherCurrentDescription {
-    display: block;
-  }
+
   #weatherSmallDetailsContainer{
     display: flex;
   }
@@ -406,9 +394,22 @@ footer {
     width: 350px;
     height: 300px;
   }
+  #weatherCurrentTemp{
+    font-size: 4rem;
+  }
+  #introduction{
+      width: auto;
+      max-width: 650px;
+  }
   #introduction p{
     font-size: 1.1rem;
   }
+
+  #locationInputContainer p {
+    font-size: 1.1rem;
+    line-height: 23px;
+  }
+
   #weatherCurrentFeelsLike,
 #weatherCurrentHumidity,
 #weatherCurrentWindSpeed {
@@ -419,5 +420,26 @@ footer {
 @media (min-width:1025px) {
   #weatherCurrentInfoContainer {
     margin-bottom: 80px;
+  }
+
+    #standaloneWeatherIcon{
+      width: 400px;
+      height: 350px;
+    }
+    #introduction{
+      max-width: 80%;
+    }
+    #introduction p{
+      font-size: 1.1rem;
+    }
+    #locationInputContainer p {
+      font-size: 1.4rem;
+      line-height: 28px;
+    }
+    #weatherCurrentFeelsLike,
+  #weatherCurrentHumidity,
+  #weatherCurrentWindSpeed {
+    font-size: 1.1rem;
+  }
 
 }

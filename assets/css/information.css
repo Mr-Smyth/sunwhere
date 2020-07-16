@@ -100,8 +100,10 @@
 }
  #ourLocation {
      width: 100%;
+     color: rgba(52, 45, 92, 0.725);
      margin-bottom: 10px;
      padding: 10px;
+     font-size: 1.5rem;
 }
  .locationDayContainer {
      padding: 10px;
@@ -234,9 +236,12 @@ font-size: 1.6rem;
      min-width: 250px;
      max-width: 800px;
      margin-bottom: 40px;
+     color: #555555;
 }
  #disclaimBody {
      font-size: 0.8rem;
+     color: #555555;
+     font-weight: 900;
 }
  footer {
      margin-top: 80px;
@@ -321,6 +326,10 @@ font-size: 1.6rem;
     }
      .locationTemp {
          font-size: 4rem;
+    }
+    #ourLocation {
+        font-size: 2rem;
+        
     }
 }
 /* hi-res laptops and desktops */
