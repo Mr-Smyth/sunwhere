@@ -16,36 +16,41 @@
   </header>
   <section>
     <div id="weatherBackgroundContainer">
-      <div id="weatherCurrentInfoContainer">
-        <div id="informationNotification"></div>
-        <div id="dateTimeContainer">
-          <div id="currentDate"></div>
-          <div id="currentTime"></div>
-        </div>
-        <h1 id="weatherCurrentInfoName">#</h1>
-        <div id="weatherMainDetailsContainer">
-          <div id="weatherCurrentTemp"></div>
-          <div>
-            <img id="weatherCurrentIcon" alt="Weather Icon" src="#" />
+      <div id="heroContainer">
+        <div id="weatherCurrentInfoContainer">
+          <div id="informationNotification"></div>
+          <div id="dateTimeContainer">
+            <div id="currentDate"></div>
+            <div id="currentTime"></div>
+          </div>
+          <h1 id="weatherCurrentInfoName">#</h1>
+          <div id="weatherMainDetailsContainer">
+            <div id="weatherCurrentTemp"></div>
+            <div>
+              <img id="weatherCurrentIcon" alt="Weather Icon" src="#" />
+            </div>
+          </div>
+          <div id="weatherCurrentDescription"></div>
+
+          <div id="weatherSmallDetailsContainer">
+            <div id="weatherCurrentFeelsLike"></div>
+            <div id="weatherCurrentHumidity"></div>
+            <div id="weatherCurrentWindSpeed"></div>
           </div>
         </div>
-        <div id="weatherCurrentDescription"></div>
-
-        <div id="weatherSmallDetailsContainer">
-          <div id="weatherCurrentFeelsLike"></div>
-          <div id="weatherCurrentHumidity"></div>
-          <div id="weatherCurrentWindSpeed"></div>
+        <div id="weatherWithYou">
+          <img id="standaloneWeatherIcon" src="#" alt="">
         </div>
-      </div>
-      <div id="introduction">
-        <h2>Compare the Weather</h2>
-        <p>
-          We help you pick your best weekend away destination, by comparing the weather!
-        </p>
-        <p>
-          Just<a href="#locationInputInformation"><strong> CLICK HERE </strong></a>or scroll down for more
-          information
-        </p>
+        <div id="introduction">
+          <h2>Compare the Weather</h2>
+          <p>
+            We help you pick your best weekend away destination, by comparing the weather!
+          </p>
+          <p>
+            Just<a href="#locationInputInformation"><strong> CLICK HERE </strong></a>or scroll down for more
+            information
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -58,11 +63,12 @@
         </h2>
         <p>
           Hotel ratings can help you pick the right hotel, but what you really
-          want to know is where will have the best weather! 
+          want to know is where will have the best weather!
         </p>
         <p>
           So, you have a few places in mind for your ideal well earned short break.
-          You have done your research, but is that idealistic north-west coast beachside havana going to be as much fun if the weather is also having a weekend off? 
+          You have done your research, but is that idealistic north-west coast beachside havana going to be as much fun
+          if the weather is also having a weekend off?
           Perhaps that city break in the south-west would be a better idea!
         </p>
         <p>
@@ -70,7 +76,7 @@
           hand...
         </p>
         <p>
-          
+
           Simply enter up to 4 locations below, click on
           <strong>"Show Results"</strong>, and hey presto! SunWhere will provide
           you with a clear rating for each location based on the forecasted
@@ -78,7 +84,7 @@
         <p><strong>We include your current location by default:</strong></p>
 
 
-        <form class="locationForm" >
+        <form class="locationForm">
           <input id="location2" role="searchbox" name="location2-name" placeholder="Please Enter Location"
             aria-placeholder="Please Enter Location" type="text" />
           <input id="location3" role="searchbox" name="location3-name" placeholder="Please Enter Location"
