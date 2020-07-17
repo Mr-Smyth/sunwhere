@@ -214,7 +214,7 @@ function weekendHumidityScore(loc) {
     return score;
 }
 
-// CALCULATE WIND SCORE
+// CALCULATE TEMP SCORE
 function weekendTempScore(loc) {
     let score = 0;
     weekend.forEach(function (day, index) {

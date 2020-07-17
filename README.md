@@ -121,8 +121,6 @@ The User can enter up to 4 locations into a small form with integrated google se
 ### Results Page
 The results page opens with the common site logo, and the soothing background linear gradient.
 
-The
-
 The results are displayed in a simple no clutter column, that also responds to all screen sizes. The results are clearly defined, with the best result always highlighted at the top, and in descending order after that.  
 The results are calculated as a percentage which provides a simple easy to understand comparison. The user is invited to select a location, which leads the user simply to the information page.
 
@@ -143,3 +141,65 @@ A final message and a disclaimer completes the site layout.
 
 It may be worth noting that the user can navigate back to choose a different location, as the search results remain, until the user returns to the home page by clicking the site logo.
 
+
+## Development
+
+### Technologies used
+
+* **HTML and CSS** programming languages were used as the core building language of this website.
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used to write the logic for this website.
+* [VS Studio code](https://code.visualstudio.com/) was used alongside [Gitpod](https://www.gitpod.io/) to develop this website.
+* [Google Fonts](https://fonts.google.com/) was used as the source of fonts for this website.
+* [Favicon](https://favicon.io/) Was used to create the tab page icon for each web page.
+
+### Resources used
+
+* [OpenWeather Current Weather API](https://openweathermap.org/current) was used for the weather call for the current location.
+* [OpenWeather One call API](https://openweathermap.org/api/one-call-api) was used to get the users locations weather, for the upcoming weekend.
+* [Google Places Searchbox API](https://developers.google.com/maps/documentation/javascript/examples/place-search) was used to conduct the searches.
+* [Google maps API](https://developers.google.com/maps/documentation/javascript/overview) was used for the location map.
+
+### logic Walkthrough
+
+* Get the users current location using geolocation.
+* Call the openweather API for the current weather, passing in the lat and lon.
+* Store the information received to a current weather object.
+* Call the openweather 7 day API with the same users current location.
+* Save this information to the weekend weather object.
+* get current date and time and convert to a readable format.
+* Display the current weather, with the necessary conversions in temp.
+* Get the (up to) 4 locations from the user, and use google places searchbox to get the locations details (lat and lon).
+* Call the openweather 7 day API with the same users current location.
+* Update the information to the weekend weather object.
+* Calculate the score for each of the locations:
+  * This was calculated from the following weather elements:
+    * **Rain**
+    * **Clouds**
+    * **Wind**
+    * **Humidity**
+    * **Temp**
+
+
+    * A plus and minus system of scores were applied to the rating for each location as you can see from the example code from the rain calculation as follows:
+    * **Rain**
+      *     if (rain <= 0) {
+            score += 20;
+            } else if (rain > 0 && rain <= 1) {
+            score += 10;
+            } else if (rain > 1 && rain <= 3) {
+            score += 0;
+            } else if (rain > 3 && rain <= 8) {
+            score -= 10;
+            } else if (rain > 8 && rain <= 16) {
+            score -= 20;
+            } else if (rain > 16) {
+            score -= 40;
+            } else {
+            score += 0;
+            }
+  * The temperature in fahrenheit is also added to the score, to decrease the chance of duplicate scores.
+  * The percentage score is then calculated against my calculated highest possible score of 702.
+
+* The score is then added to the weekendWeather object.
+* The weekendWeather object is added to local storage for cross site access.
+* 
