@@ -229,7 +229,7 @@ function displayLocationWeather() {
 
     console.log(ourWeather);
 
-    for (let i = 1; i < daysToWeekend.length;i++) {
+    for (let i = 0; i < daysToWeekend.length;i++) {
         weekendDates.push(getWeekendDates(daysToWeekend[i]));
         console.log(weekendDates);
     }
