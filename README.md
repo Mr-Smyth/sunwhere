@@ -105,5 +105,41 @@ Considering the purpose of the site, The following styled theme was decided upon
 ## Features
 
 ### Home Page
-The home page opens with a full size background image. This background image is dynamic, and will change depending upon the weather in your current location.  
-The weather for the users current location is displayed on top of this background image in a semi transparent container. The weather details displayed depend upon the current screen size and will increase in detail as the screen size increases. 
+The home page opens with a common site logo top center, styled to a matching theme, and also provides the sites only common required navigation, returning the user to the home page once clicked.
+
+The background image is dynamic, and will change depending upon the weather in your current location.  
+The weather for the users current location is displayed on top of this background image in a semi transparent container. The weather details displayed depend upon the current screen size and will increase in detail as the screen size increases.
+
+The user can also click on the temp, to convert it to fahrenheit.
+
+A brief introduction, invites the user to scroll down or "click here" to get more information. Once the user does this, they get a full explanation of what the site does and how to proceed.
+The User can enter up to 4 locations into a small form with integrated google searchbox, to help with the location names.
+
+"Click for Results leads the user easily to the results page.
+
+
+### Results Page
+The results page opens with the common site logo, and the soothing background linear gradient.
+
+The
+
+The results are displayed in a simple no clutter column, that also responds to all screen sizes. The results are clearly defined, with the best result always highlighted at the top, and in descending order after that.  
+The results are calculated as a percentage which provides a simple easy to understand comparison. The user is invited to select a location, which leads the user simply to the information page.
+
+
+
+### Information page
+The Information page opens with the common site logo, and a static image background.  
+The weekends weather for the selected location is then displayed in 3 containers, on top of the background image. The weather details displayed depend upon the current screen size and will increase in detail as the screen size increases. 
+
+The background image is set to 95vh, to allow the user to notice the top end of the map section, inviting them to scroll down to investigate further.
+
+The map area displays a map centered above the user selected location. It uses google places to provide a preloaded set of markers which mark out points that may be of interest to the user.  
+The user can also use the searchbox, inside the map, which has google searchbox integrated, to provide a simple user experience. Any searches done will helpfully post new styled markers to the map.
+
+The searchbox is also Bias to, but not restricted to the current viewport.
+
+A final message and a disclaimer completes the site layout.
+
+It may be worth noting that the user can navigate back to choose a different location, as the search results remain, until the user returns to the home page by clicking the site logo.
+
