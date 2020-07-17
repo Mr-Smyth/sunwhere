@@ -1,32 +1,4 @@
 /*jshint esversion: 6 */
-
-
-// GLOBAL VARIABLES
-/* const FridayDate = document.getElementById("fridayDate");
-const SaturdayDate = document.getElementById("saturdayDate");
-const SundayDate = document.getElementById("sundayDate");
-const fridayTemp = document.getElementById("fridayTemp");
-const saturdayTemp = document.getElementById("saturdayTemp");
-const sundayTemp = document.getElementById("sundayTemp");
-const fridayIcon = document.getElementById("fridayIcon");
-const saturdayIcon = document.getElementById("saturdayIcon");
-const sundayIcon = document.getElementById("sundayIcon");
-const fridayFeels = document.getElementById("fridayFeels");
-const saturdayFeels = document.getElementById("saturdayFeels");
-const sundayFeels = document.getElementById("sundayFeels");
-const fridayRain = document.getElementById("fridayRain");
-const saturdayRain = document.getElementById("saturdayRain");
-const sundayRain = document.getElementById("sundayRain");
-const fridayWind = document.getElementById("fridayWind");
-const saturdayWind = document.getElementById("saturdayWind");
-const sundayWind = document.getElementById("sundayWind");
-const fridayHumidity = document.getElementById("fridayHumidity");
-const saturdayHumidity = document.getElementById("saturdayHumidity");
-const sundayHumidity = document.getElementById("sundayHumidity");
-const fridayDescription = document.getElementById("fridayDescription");
-const saturdayDescription = document.getElementById("saturdayDescription");
-const sundayDescription = document.getElementById("sundayDescription"); */
-
 // GETTING THE LAT AND LON OF THE CHOSEN LOCATION
 function initData() {
     let latitude = 0;

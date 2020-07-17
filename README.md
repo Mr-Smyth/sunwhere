@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[View the website on GitHub Pages](https://mr-smyth.github.io/sunwhere/)
+[View the website on GitHub Pages](https://mr-smyth.github.io/sunwhere/index.html)
 
 
 This is a dynamic user friendly responsive utility project website, for quickly and easily comparing the weather for different locations.
