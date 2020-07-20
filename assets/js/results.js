@@ -1,27 +1,27 @@
 /*jshint esversion: 6 */
 
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
-    if (weekendWeatherDeserialized[loc[0]].Saturday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[0]].Sunday.hasOwnProperty("placeName")) {
         document.getElementById("resultLink1").style.display = "block";
         document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Saturday.placeName;
         document.getElementById('resultlocation1').innerHTML = `${weekendWeatherDeserialized[loc[0]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[1]].Saturday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[1]].Sunday.hasOwnProperty("placeName")) {
         document.getElementById("resultLink2").style.display = "block";
         document.getElementById('nameLocation2').innerHTML = weekendWeatherDeserialized[loc[1]].Saturday.placeName;
         document.getElementById('resultlocation2').innerHTML = `${weekendWeatherDeserialized[loc[1]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[2]].Saturday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[2]].Sunday.hasOwnProperty("placeName")) {
         document.getElementById("resultLink3").style.display = "block";
         document.getElementById('nameLocation3').innerHTML = weekendWeatherDeserialized[loc[2]].Saturday.placeName;
         document.getElementById('resultlocation3').innerHTML = `${weekendWeatherDeserialized[loc[2]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[3]].Saturday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[3]].Sunday.hasOwnProperty("placeName")) {
         document.getElementById("resultLink4").style.display = "block";
         document.getElementById('nameLocation4').innerHTML = weekendWeatherDeserialized[loc[3]].Saturday.placeName;
         document.getElementById('resultlocation4').innerHTML = `${weekendWeatherDeserialized[loc[3]].score}%`;
     }
-    if (weekendWeatherDeserialized[loc[4]].Saturday.hasOwnProperty("placeName")) {
+    if (weekendWeatherDeserialized[loc[4]].Sunday.hasOwnProperty("placeName")) {
         document.getElementById("resultLink5").style.display = "block";
         document.getElementById('nameLocation5').innerHTML = weekendWeatherDeserialized[loc[4]].Saturday.placeName;
         document.getElementById('resultlocation5').innerHTML = `${weekendWeatherDeserialized[loc[4]].score}%`;

@@ -38,6 +38,11 @@ function getIndexArray() {
     let index = JSON.parse(localStorage.getItem("dayIndexesArray"));
     return index;
 }
+// GET LENGTH OF WEEKEND
+function getLengthOfWeekend() {
+    let weekend = JSON.parse(localStorage.getItem("weekendLength"));
+    return weekend;
+}
 
 // CREATE A MAP FOR THE SELECTED LOCATION
 function createMap() {
@@ -200,7 +205,7 @@ function getMonthName(month) {
 
 // GET AND FORMAT CURRENT DATE
 function getWeekendDates(dayOffset) {
-    if (dayOffset !== 0) {
+    if (dayOffset !== null) {
         const today = new Date();
         const currDate = today.getDate() + dayOffset;
         const currMonth = getMonthName(today.getMonth());
@@ -225,7 +230,8 @@ function displayLocationWeather() {
     let daysToWeekend = getIndexArray();
     let weekendDates = [];
 
-    let weekend = ["Friday","Saturday","Sunday"];
+    let weekend = getLengthOfWeekend();
+    console.log(weekend);
 
     console.log(ourWeather);
 
@@ -233,14 +239,16 @@ function displayLocationWeather() {
         weekendDates.push(getWeekendDates(daysToWeekend[i]));
         console.log(weekendDates);
     }
-
+    // THIS IS THE LOCATION NAME AND HEADER
     document.getElementById('ourLocation').innerText = `So, ${location} it is then!\n Lets just take a look at the weather line up before you go..`;
+    // THIS IS HOW WE GET THE DATES
 
-    document.getElementById("FridayDate").innerHTML = `Friday ${weekendDates[0]}`;
-    document.getElementById("SaturdayDate").innerHTML = `Saturday ${weekendDates[1]}`;
-    document.getElementById("SundayDate").innerHTML = `Sunday ${weekendDates[2]}`;
 
     for (let day of weekend) {
+        console.log(day);   
+        document.getElementById("FridayDate").innerHTML = `Friday ${weekendDates[0]}`;
+        document.getElementById("SaturdayDate").innerHTML = `Saturday ${weekendDates[1]}`;
+        document.getElementById("SundayDate").innerHTML = `Sunday ${weekendDates[2]}`;
         document.getElementById(`${day}Temp`).innerHTML = ourWeather[day].tempInCelsius + `&#176<span id="tempUnit">C</span>`;
         document.getElementById(`${day}Icon`).src = `http://openweathermap.org/img/wn/${ourWeather[day].icon}.png`;
         document.getElementById(`${day}WeatherDescription`).innerHTML = ourWeather[day].description.charAt(0).toUpperCase() + ourWeather[day].description.slice(1);

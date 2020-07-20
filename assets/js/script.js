@@ -76,7 +76,7 @@ function updateHomeWeather(data, id) {
 function findWeatherDayIndex() {
     /*     const today = new Date();
         const dayToday = today.getDay(); */
-    const dayToday = 0;
+    const dayToday = 6;
     let WeatherDayIndexs = [];
     WeatherDayIndexs.push(dayToday);
 
@@ -101,15 +101,12 @@ function findWeatherDayIndex() {
 
 }
 
-// HERE WE UPDATE THE WEEKENDWEATHER OBJECT
-function updateWeekendWeather(lat, lon, data, thisLocation, id) {
+// HERE WE FIND OUT LENGTH OF WEEKEND IF ITS SAT OR SUNDAY
+function getLengthOfWeekend(){
     let getIndex = findWeatherDayIndex();
-    let weekend;
-    const dayIndexes = getIndex[1];
+    let weekend = [];
     let getDay = getIndex[0];
-    window.localStorage.setItem('dayIndexesArray', JSON.stringify(dayIndexes));
 
-    data = data.daily;
     if (getDay === 6){
         weekend = twoDayWeekend;
     } else if (getDay === 0){
@@ -117,6 +114,19 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     } else {
          weekend = threeDayWeekend;
     }
+    window.localStorage.setItem('weekendLength', JSON.stringify(weekend));
+    return weekend;
+}
+
+// HERE WE UPDATE THE WEEKENDWEATHER OBJECT
+function updateWeekendWeather(lat, lon, data, thisLocation, id) {
+    let getIndex = findWeatherDayIndex();
+    let weekend = getLengthOfWeekend();
+    const dayIndexes = getIndex[1];
+    window.localStorage.setItem('dayIndexesArray', JSON.stringify(dayIndexes));
+    console.log(dayIndexes);
+
+    data = data.daily;
  
     for (let i = 0;i < weekend.length ; i++) {
 
@@ -148,6 +158,7 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
 // CALCULATE RAIN SCORE
 function weekendRainScore(loc) {
     let score = 0;
+    let weekend = getLengthOfWeekend();
     weekend.forEach(function (day, index) {
         let rain = weekendWeather[loc][day].rain;
         if (rain <= 0) {
@@ -172,6 +183,7 @@ function weekendRainScore(loc) {
 // CALCULATE CLOUDS SCORE
 function weekendCloudsScore(loc) {
     let score = 0;
+    let weekend = getLengthOfWeekend();
     weekend.forEach(function (day, index) {
         let clouds = weekendWeather[loc][day].clouds;
         if (clouds === 0) {
@@ -194,6 +206,7 @@ function weekendCloudsScore(loc) {
 // CALCULATE WIND SCORE
 function weekendWindScore(loc) {
     let score = 0;
+    let weekend = getLengthOfWeekend();
     weekend.forEach(function (day, index) {
         let wind = weekendWeather[loc][day].windSpeed;
         if (wind >= 0.5 && wind <= 5) {
@@ -216,6 +229,7 @@ function weekendWindScore(loc) {
 // CALCULATE HUMIDITY SCORE
 function weekendHumidityScore(loc) {
     let score = 0;
+    let weekend = getLengthOfWeekend();
     weekend.forEach(function (day, index) {
         let humidity = weekendWeather[loc][day].humidity;
         if (humidity > 0 && humidity <= 30) {
@@ -236,6 +250,7 @@ function weekendHumidityScore(loc) {
 // CALCULATE TEMP SCORE
 function weekendTempScore(loc) {
     let score = 0;
+    let weekend = getLengthOfWeekend();
     weekend.forEach(function (day, index) {
         let temp = weekendWeather[loc][day].tempInCelsius;
         // add tempInFahrenheit to score to help eliminate duplicate scores
@@ -258,16 +273,26 @@ function weekendTempScore(loc) {
             score += 0;
         }
     });
+    console.log(score);
     return score;
 }
-
+// GET THE PERCENTAGE SCORE, CHECK LENGTH OF WEEKEND FIRST
 function calculatePercent(score) {
-    let result = (score / 702) * 100;
+    let weekend = getLengthOfWeekend();
+    let maxScore = 702;
+    if (weekend.length === 2){
+        maxScore = (702/3)*2;
+    } else if (weekend.length === 1){
+        maxScore = (702/3);
+    }
+    console.log("This is the max score " + maxScore);
+    let result = (score / maxScore) * 100;
     return result;
 }
 
 // CALCULATE EACH LOCATIONS SCORE
 function calculateRating() {
+    console.log("Were in calculate rating");
     const allLocations = [
         "location1",
         "location2",
