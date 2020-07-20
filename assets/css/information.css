@@ -73,6 +73,11 @@
      box-shadow: 0px 0px 3px 5px #ecdb43;
 }
 /* WEEKEND WEATHER DISPLAY SECTION STYLING */
+#FridayWeatherContainer,
+#SaturdayWeatherContainer,
+#SundayWeatherContainer {
+    display: none;
+}
  .locationsBackgroundContainer{
      background-image: url("../images/road-trip2.jpg");
      min-height: 95vh;
@@ -160,6 +165,7 @@
      justify-content: space-around;
      margin-top: 10px;
 }
+
 /* MAPS SECTION STYLING */
  #mapIntroductionContainer{
      margin-top: 50px;

@@ -74,9 +74,8 @@ function updateHomeWeather(data, id) {
 /* THIS FUNCTION RETURNS AN ARRAY OF THE DAYS WE NEED TO TARGET IN THE , 
 7 DAY WEATHER API RESPONSE - TO GET THE NEXT WEEKEND. */
 function findWeatherDayIndex() {
-    /*     const today = new Date();
-        const dayToday = today.getDay(); */
-    const dayToday = 6;
+    const today = new Date();
+    const dayToday = today.getDay();
     let WeatherDayIndexs = [];
     WeatherDayIndexs.push(dayToday);
 
@@ -86,7 +85,7 @@ function findWeatherDayIndex() {
         THE API RESPONSE DATA WILL BE NEEDED.
         IF THE CURRENT DAY IS FRIDAY OR SATURDAY - WE WILL STILL
         RETURN AN ARRAY TO TARGET CURRENT WEEKEND. */
-        "0": [5, 6, 7],
+        "0": [0],
         "1": [4, 5, 6],
         "2": [3, 4, 5],
         "3": [2, 3, 4],
@@ -102,17 +101,17 @@ function findWeatherDayIndex() {
 }
 
 // HERE WE FIND OUT LENGTH OF WEEKEND IF ITS SAT OR SUNDAY
-function getLengthOfWeekend(){
+function getLengthOfWeekend() {
     let getIndex = findWeatherDayIndex();
     let weekend = [];
     let getDay = getIndex[0];
 
-    if (getDay === 6){
+    if (getDay === 6) {
         weekend = twoDayWeekend;
-    } else if (getDay === 0){
-         weekend = oneDayWeekend;
+    } else if (getDay === 0) {
+        weekend = oneDayWeekend;
     } else {
-         weekend = threeDayWeekend;
+        weekend = threeDayWeekend;
     }
     window.localStorage.setItem('weekendLength', JSON.stringify(weekend));
     return weekend;
@@ -127,8 +126,8 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     console.log(dayIndexes);
 
     data = data.daily;
- 
-    for (let i = 0;i < weekend.length ; i++) {
+
+    for (let i = 0; i < weekend.length; i++) {
 
         weekendWeather[id][weekend[i]].placeName = thisLocation;
         weekendWeather[id][weekend[i]].tempInCelsius = Math.floor(
@@ -280,10 +279,10 @@ function weekendTempScore(loc) {
 function calculatePercent(score) {
     let weekend = getLengthOfWeekend();
     let maxScore = 702;
-    if (weekend.length === 2){
-        maxScore = (702/3)*2;
-    } else if (weekend.length === 1){
-        maxScore = (702/3);
+    if (weekend.length === 2) {
+        maxScore = (702 / 3) * 2;
+    } else if (weekend.length === 1) {
+        maxScore = (702 / 3);
     }
     console.log("This is the max score " + maxScore);
     let result = (score / maxScore) * 100;

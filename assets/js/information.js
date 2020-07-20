@@ -31,6 +31,7 @@ function getLocationChoice() {
 // GET WEEKEND WEATHER OBJECT FROM LOCAL STORAGE
 function getWeatherObj() {
     let obj = JSON.parse(localStorage.getItem("weekendWeather"));
+    console.log(obj);
     return obj;
 }
 // GET DAY INDEX FROM LOCAL STORAGE
@@ -190,7 +191,7 @@ function getOurWeatherObject() {
     let ourWeather;
 
     for (let loc in weekendWeather) {
-        if (location === weekendWeather[loc].Saturday.placeName) {
+        if (location === weekendWeather[loc].Sunday.placeName) {
             ourWeather = weekendWeather[loc];
             return ourWeather;
 
@@ -235,20 +236,18 @@ function displayLocationWeather() {
 
     console.log(ourWeather);
 
-    for (let i = 0; i < daysToWeekend.length;i++) {
+    for (let i = 0; i < daysToWeekend.length; i++) {
         weekendDates.push(getWeekendDates(daysToWeekend[i]));
         console.log(weekendDates);
     }
     // THIS IS THE LOCATION NAME AND HEADER
     document.getElementById('ourLocation').innerText = `So, ${location} it is then!\n Lets just take a look at the weather line up before you go..`;
-    // THIS IS HOW WE GET THE DATES
-
 
     for (let day of weekend) {
-        console.log(day);   
-        document.getElementById("FridayDate").innerHTML = `Friday ${weekendDates[0]}`;
-        document.getElementById("SaturdayDate").innerHTML = `Saturday ${weekendDates[1]}`;
-        document.getElementById("SundayDate").innerHTML = `Sunday ${weekendDates[2]}`;
+        document.getElementById(`${day}WeatherContainer`).style.display = "block";
+        for (let i = 0; i < weekendDates.length; i++) { // THIS LOOP ASSIGNS THE DAY NAME AND DATE TO THE SCREEN 
+            document.getElementById(`${weekend[i]}Date`).innerHTML = `${weekend[i]} ${weekendDates[i]}`;
+        }
         document.getElementById(`${day}Temp`).innerHTML = ourWeather[day].tempInCelsius + `&#176<span id="tempUnit">C</span>`;
         document.getElementById(`${day}Icon`).src = `http://openweathermap.org/img/wn/${ourWeather[day].icon}.png`;
         document.getElementById(`${day}WeatherDescription`).innerHTML = ourWeather[day].description.charAt(0).toUpperCase() + ourWeather[day].description.slice(1);
@@ -259,7 +258,7 @@ function displayLocationWeather() {
     }
 
     document.getElementById("mapIntroduction").innerText = ` We really hope you enjoy your time in ${location}.\nTo help you make the most of your time there here is a handy map with some points of interest. \n\nEnjoy!`
-    
+
 }
 
 // CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
