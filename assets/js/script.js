@@ -15,7 +15,9 @@ const displayCurrentFeelsLike = document.getElementById("weatherCurrentFeelsLike
 const displayCurrentDate = document.getElementById("currentDate");
 const displayCurrentTime = document.getElementById("currentTime");
 const locationInputArray = ["location2", "location3", "location4", "location5"];
-const weekend = ["Friday", "Saturday", "Sunday"];
+const threeDayWeekend = ["Friday", "Saturday", "Sunday"];
+const twoDayWeekend = ["Saturday", "Sunday"];
+const oneDayWeekend = ["Sunday"];
 
 // GLOBAL OBJECTS
 /* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
@@ -72,8 +74,11 @@ function updateHomeWeather(data, id) {
 /* THIS FUNCTION RETURNS AN ARRAY OF THE DAYS WE NEED TO TARGET IN THE , 
 7 DAY WEATHER API RESPONSE - TO GET THE NEXT WEEKEND. */
 function findWeatherDayIndex() {
-    const today = new Date();
-    const dayToday = today.getDay();
+    /*     const today = new Date();
+        const dayToday = today.getDay(); */
+    const dayToday = 0;
+    let WeatherDayIndexs = [];
+    WeatherDayIndexs.push(dayToday);
 
     const daysToNextWeekend = {
 
@@ -86,22 +91,35 @@ function findWeatherDayIndex() {
         "2": [3, 4, 5],
         "3": [2, 3, 4],
         "4": [1, 2, 3],
-        "5": [1, 2, 3],
-        "6": [1, 2]
+        "5": [0, 1, 2],
+        "6": [0, 1]
     };
 
-    const dayResult = daysToNextWeekend[dayToday];
-    return dayResult;
+    const ourIndex = daysToNextWeekend[dayToday];
+    WeatherDayIndexs.push(ourIndex);
+    return WeatherDayIndexs; // ** i should return this with the day num then check if day num === 6 
+
 }
 
 // HERE WE UPDATE THE WEEKENDWEATHER OBJECT
 function updateWeekendWeather(lat, lon, data, thisLocation, id) {
-    const dayIndexes = findWeatherDayIndex();
+    let getIndex = findWeatherDayIndex();
+    let weekend;
+    const dayIndexes = getIndex[1];
+    let getDay = getIndex[0];
     window.localStorage.setItem('dayIndexesArray', JSON.stringify(dayIndexes));
 
     data = data.daily;
+    if (getDay === 6){
+        weekend = twoDayWeekend;
+    } else if (getDay === 0){
+         weekend = oneDayWeekend;
+    } else {
+         weekend = threeDayWeekend;
+    }
+ 
+    for (let i = 0;i < weekend.length ; i++) {
 
-    for (let i = 0; i < 3; i++) {
         weekendWeather[id][weekend[i]].placeName = thisLocation;
         weekendWeather[id][weekend[i]].tempInCelsius = Math.floor(
             data[dayIndexes[i]].temp.day - kelvin
@@ -121,8 +139,9 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
         weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
         weekendWeather[id].lat = lat;
         weekendWeather[id].lon = lon;
-    }
 
+    }
+    console.log(weekendWeather);
 }
 
 
@@ -242,8 +261,8 @@ function weekendTempScore(loc) {
     return score;
 }
 
-function calculatePercent(score){
-    let result = (score/702)*100;
+function calculatePercent(score) {
+    let result = (score / 702) * 100;
     return result;
 }
 
