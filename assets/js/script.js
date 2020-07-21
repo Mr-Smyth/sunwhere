@@ -147,10 +147,8 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
         weekendWeather[id][weekend[i]].icon = data[dayIndexes[i]].weather[0].icon;
         weekendWeather[id].lat = lat;
         weekendWeather[id].lon = lon;
-
     }
 }
-
 
 // CALCULATE RAIN SCORE
 function weekendRainScore(loc) {
@@ -494,7 +492,6 @@ function getLocationsFromUser() {
     });
 }
 
-
 // GET AND FORMAT CURRENT DATE
 function currentDate() {
     const today = new Date();
@@ -538,8 +535,6 @@ function getMonthName(month) {
     return months[month];
 }
 
-
-
 // CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
 // EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
 let lastScrollTop = 10;
@@ -558,8 +553,6 @@ window.addEventListener("scroll", function () {
     }
 });
 
-
-
 // CHANGES THE TEMPERATURE UNIT
 function changeUnit() {
     let tempUnit = document.getElementById("tempUnit").innerText;
@@ -571,13 +564,10 @@ function changeUnit() {
         displayCurrentTemp.innerHTML = homeWeather.tempInCelsius + `&#176<span id="tempUnit">C</span>`;
     }
 }
-
-
+// DO THIS FIRST
 window.onload = function () {
-    if (document.URL.includes('index.html')) {
         getGeolocation();
         getLocationsFromUser();
         // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
         document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
-    }
 };

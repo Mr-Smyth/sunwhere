@@ -194,6 +194,7 @@ function getOurWeatherObject() {
     }
 }
 
+// HELPER FUNCTION TO GRAB MONTH NAME FOR getWeekendDates()
 function getMonthName(month) {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return months[month];
@@ -235,6 +236,7 @@ function displayLocationWeather() {
     // THIS IS THE LOCATION NAME AND HEADER
     document.getElementById('ourLocation').innerText = `So, ${location} it is then!\n Lets just take a look at the weather line up before you go..`;
 
+    /* I WANT TO USE THE DAY TO ACCESS BOTH THE HTML ELEMENT AND THE OURWEATHER OBJECT */
     for (let day of weekend) {
         document.getElementById(`${day}WeatherContainer`).style.display = "block";
         for (let i = 0; i < weekendDates.length; i++) { // THIS LOOP ASSIGNS THE DAY NAME AND DATE TO THE SCREEN 
@@ -274,6 +276,6 @@ window.addEventListener("scroll", function () {
 window.onload = function () {
     displayLocationWeather();
     createMap();
-}
+};
 
 

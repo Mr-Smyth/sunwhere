@@ -165,6 +165,7 @@ It may be worth noting that the user can navigate back to choose a different loc
 * Call the openweather API for the current weather, passing in the lat and lon.
 * Store the information received to a current weather object.
 * Call the openweather 7 day API with the same users current location.
+* Pick out the days that are for next weekend.
 * Save this information to the weekend weather object.
 * get current date and time and convert to a readable format.
 * Display the current weather, with the necessary conversions in temp.
@@ -202,4 +203,14 @@ It may be worth noting that the user can navigate back to choose a different loc
 
 * The score is then added to the weekendWeather object.
 * The weekendWeather object is added to local storage for cross site access.
-* 
+* Once the user clicks to see results, the user is taken to the results.html.
+* The results for all locations are displayed.
+* The user selects a location.
+* results.js gets the name of the location from a click listener, and stores the name to local storage.
+* Information.js gets the lat and lon for the selected location and the createMap function gets it to create a map centered on that specific location.
+* displayLocationWeather() gets the dates for the weekend, and uses for loops, variables and template literal to dynamically populate each of the html elements, with the weather details for the weekend.
+
+
+## Testing
+
+A full documentation of my testing procedure can be found [here](testing.md#SunWhere-Manual-Testing)

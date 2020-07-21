@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
 
+/* DISPLAY THE RESULTS HERE */
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
     let weekend = JSON.parse(localStorage.getItem("weekendLength"));
     if (weekend.length === 1) {
@@ -35,7 +36,8 @@ function displayLocationsResults(loc, weekendWeatherDeserialized) {
     }
 }
 
-
+/* HERE I NEED TO SORT THE LOCATION SCORES INTO AND ARRAY LARGEST FIRST
+THIS IS SO I CAN EASILY ARRANGE THEM IN THE REQUIRED DESCENDING ORDER */
 function sortLocationScores() {
     const weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
     let resultsArray = [];
@@ -71,7 +73,7 @@ function selectLocation() {
     // LISTEN OUT FOR WHICH OF THE RESULTS IS CLICKED
     for (let i = 0; i < selection.length; i++) {
         selection[i].addEventListener("click", function () {
-            let clicked = selection[i].id;
+            clicked = selection[i].id;
             selected = document.getElementById(clicked).children[0].innerHTML;
             window.localStorage.setItem('selectedLocation', JSON.stringify(selected));
         }, true);
