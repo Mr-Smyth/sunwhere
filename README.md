@@ -210,13 +210,15 @@ It may be worth noting that the user can navigate back to choose a different loc
 * Information.js gets the lat and lon for the selected location and the createMap function gets it to create a map centered on that specific location.
 * displayLocationWeather() gets the dates for the weekend, and uses for loops, variables and template literal to dynamically populate each of the html elements, with the weather details for the weekend.
 
+---  
 
-## Testing
+# Testing
 
 ![Responsive](https://github.com/Mr-Smyth/sunwhere/blob/master/assets/images/responsive.png "Responsive image")
 
 A full documentation of my testing procedure can be found [here](https://github.com/Mr-Smyth/sunwhere/blob/master/testing.md#SunWhere-Manual-Testing)
 
+---
 
 # Deployment
 
