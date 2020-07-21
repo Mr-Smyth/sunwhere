@@ -213,4 +213,6 @@ It may be worth noting that the user can navigate back to choose a different loc
 
 ## Testing
 
-A full documentation of my testing procedure can be found [here](testing.md#SunWhere-Manual-Testing)
+![Responsive](https://github.com/Mr-Smyth/sunwhere/blob/master/assets/images/responsive.png "Responsive image")
+
+A full documentation of my testing procedure can be found [here](https://github.com/Mr-Smyth/sunwhere/blob/master/testing.md#SunWhere-Manual-Testing)
