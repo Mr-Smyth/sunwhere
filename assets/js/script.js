@@ -123,7 +123,6 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     let weekend = getLengthOfWeekend();
     const dayIndexes = getIndex[1];
     window.localStorage.setItem('dayIndexesArray', JSON.stringify(dayIndexes));
-    console.log(dayIndexes);
 
     data = data.daily;
 
@@ -150,7 +149,6 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
         weekendWeather[id].lon = lon;
 
     }
-    console.log(weekendWeather);
 }
 
 
@@ -272,7 +270,6 @@ function weekendTempScore(loc) {
             score += 0;
         }
     });
-    console.log(score);
     return score;
 }
 // GET THE PERCENTAGE SCORE, CHECK LENGTH OF WEEKEND FIRST
@@ -284,14 +281,12 @@ function calculatePercent(score) {
     } else if (weekend.length === 1) {
         maxScore = (702 / 3);
     }
-    console.log("This is the max score " + maxScore);
     let result = (score / maxScore) * 100;
     return result;
 }
 
 // CALCULATE EACH LOCATIONS SCORE
 function calculateRating() {
-    console.log("Were in calculate rating");
     const allLocations = [
         "location1",
         "location2",

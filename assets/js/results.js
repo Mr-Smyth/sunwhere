@@ -38,7 +38,6 @@ function displayLocationsResults(loc, weekendWeatherDeserialized) {
 
 function sortLocationScores() {
     const weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
-    console.log(weekendWeatherDeserialized);
     let resultsArray = [];
     let locArray = [];
 
@@ -74,7 +73,6 @@ function selectLocation() {
         selection[i].addEventListener("click", function () {
             let clicked = selection[i].id;
             selected = document.getElementById(clicked).children[0].innerHTML;
-            console.log(selected);
             window.localStorage.setItem('selectedLocation', JSON.stringify(selected));
         }, true);
 

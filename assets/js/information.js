@@ -6,10 +6,8 @@ function initData() {
 
     // GET THE LOCATION THE USER SELECTED
     let selectedLoc = getLocationChoice();
-    console.log(selectedLoc);
     // GET THE WEEKEND WEATHER OBJECT
     const weekendWeather = getWeatherObj();
-    console.log(weekendWeather);
 
     // FIND THE LOCATION THAT MATCHES THE LOCATION CHOSEN AND PICK OUT THE LAT AND LON.
     for (let location in weekendWeather) {
@@ -31,7 +29,6 @@ function getLocationChoice() {
 // GET WEEKEND WEATHER OBJECT FROM LOCAL STORAGE
 function getWeatherObj() {
     let obj = JSON.parse(localStorage.getItem("weekendWeather"));
-    console.log(obj);
     return obj;
 }
 // GET DAY INDEX FROM LOCAL STORAGE
@@ -111,7 +108,6 @@ function createMap() {
     // THEN WE RETRIEVE DETAILS FOR THAT RESULT
     searchBox.addListener("places_changed", function () {
         let places = searchBox.getPlaces();
-        console.log(places);
         if (places.length == 0) {
             return;
         }
@@ -144,7 +140,6 @@ function createMarkers(places) {
     // GET THE PLACES FROM THE NEW SEARCH
     let bounds = new google.maps.LatLngBounds();
     places.forEach(function (place) {
-        console.log(places);
         if (!place.geometry) {
             console.log("Returned place contains no geometry");
             return;
@@ -232,13 +227,10 @@ function displayLocationWeather() {
     let weekendDates = [];
 
     let weekend = getLengthOfWeekend();
-    console.log(weekend);
 
-    console.log(ourWeather);
 
     for (let i = 0; i < daysToWeekend.length; i++) {
         weekendDates.push(getWeekendDates(daysToWeekend[i]));
-        console.log(weekendDates);
     }
     // THIS IS THE LOCATION NAME AND HEADER
     document.getElementById('ourLocation').innerText = `So, ${location} it is then!\n Lets just take a look at the weather line up before you go..`;
