@@ -216,3 +216,65 @@ It may be worth noting that the user can navigate back to choose a different loc
 ![Responsive](https://github.com/Mr-Smyth/sunwhere/blob/master/assets/images/responsive.png "Responsive image")
 
 A full documentation of my testing procedure can be found [here](https://github.com/Mr-Smyth/sunwhere/blob/master/testing.md#SunWhere-Manual-Testing)
+
+
+# Deployment
+
+## GitHub Pages:
+
+#### To deploy this website using GitHub pages:
+
+1.  Log in to the GitHub account.
+2.  Select the [sunwhere](https://github.com/Mr-Smyth/sunwhere) Repository.
+3.  Select settings from the menu at the top of the page.
+4.  Scroll down to the section titled **GitHub Pages.**
+5.  Under the source subheading, click the drop-down menu labeled **None** and select **Master Branch.**
+6.  The page will re-load.
+7.  Scroll back down the GitHub Pages section and the deployed website link will be displayed.
+8.  The website may take some time to become active, as GitHub does not update changes immediately.
+
+<br>
+
+## Local Branch:
+
+
+#### It is possible to run a clone of this website on your own local machine:
+
+1.  Go to the repository page for sunwhere. ([Click Here](https://github.com/Mr-Smyth/sunwhere))
+2.  Above the file area, click on the green **Clone or Download** link.
+3.  Click on the copy symbol to the right of the [URL](https://github.com/Mr-Smyth/sunwhere.git).
+4.  On your local computer, navigate to the desired containing folder, you want to clone the project to, and right-click and open [Git Bash](https://git-scm.com/downloads) *(or similar command prompt)*.
+5.  Type `git clone` then right-click and paste the URL.
+6.  The line should look something like this: `$ git clone https://github.com/Mr-Smyth/sunwhere.git`.
+7.  Press Return or Enter and your clone will be created.
+
+---
+<br>
+
+# Credits
+
+## Content and code
+
+* [Google documentation](https://developers.google.com/maps/documentation) - For all map and searchbox related code, accredited within code also.
+* [Open weather map API](https://openweathermap.org/) - For both current and 7 day weather information.
+* [The Code Institute Slack community](https://code-institute-room.slack.com/home) - For quick helpful advice when needed on best practice concerns.
+* [MDN Web Docs](https://developer.mozilla.org/en-US/) - Learning resource.
+* [W3 Schools.com](https://www.w3schools.com/) - Learning resource.
+
+
+## Media
+
+* The photos used in this site were royalty-free and obtained from Unsplash
+* Logo was designed and created by me, using [Gimp](https://www.gimp.org/) 
+
+
+## Acknowledgments
+
+* I received inspiration for this project from the process i often endure of looking at the weather to help me choose a destination for a weekend away. Being someone who loves the outdoors, the weather is always a big factor in choosing where i go.
+
+
+## Disclaimer
+
+The content of this Website is for educational purposes only.
+
+I do not accept any responsibility for unexpected, sudden or unpredicted weather outcomes. This web site makes no guarantees about nor bears any responsibility or liability concerning the accuracy or timeliness of the weather information published on this website. I will not be liable for any damage, loss or injury sustained by any person as a result of the information accessed or used from this website.
