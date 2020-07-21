@@ -1,6 +1,13 @@
 /*jshint esversion: 6 */
 
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
+    let weekend = JSON.parse(localStorage.getItem("weekendLength"));
+    if (weekend.length === 1) {
+        document.getElementById('resultsMessage').innerText = `Ok so it is Sunday already!\n It does'nt mean the weekends over! Get going and if you can get there ${weekendWeatherDeserialized[loc[0]].Sunday.placeName} looks like your best bet!!`;
+    } else {
+        document.getElementById('resultsMessage').innerText = `Ok so we've looked at your locations and it looks like ${weekendWeatherDeserialized[loc[0]].Sunday.placeName} is the best option, but the choice is yours!!`;
+    }
+
     if (weekendWeatherDeserialized[loc[0]].Sunday.hasOwnProperty("placeName")) {
         document.getElementById("resultLink1").style.display = "block";
         document.getElementById('nameLocation1').innerHTML = weekendWeatherDeserialized[loc[0]].Sunday.placeName;
@@ -65,12 +72,12 @@ function selectLocation() {
     // LISTEN OUT FOR WHICH OF THE RESULTS IS CLICKED
     for (let i = 0; i < selection.length; i++) {
         selection[i].addEventListener("click", function () {
-            clicked = selection[i].id;
+            let clicked = selection[i].id;
             selected = document.getElementById(clicked).children[0].innerHTML;
             console.log(selected);
             window.localStorage.setItem('selectedLocation', JSON.stringify(selected));
         }, true);
-        
+
     }
 
 }
@@ -96,5 +103,5 @@ window.addEventListener("scroll", function () {
 window.onload = function () {
     sortLocationScores();
     selectLocation();
-}
+};
 

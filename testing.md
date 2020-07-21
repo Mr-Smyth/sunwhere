@@ -275,6 +275,9 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Objects always displayed as expected.
+  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Output to console always displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -319,21 +322,26 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * console results always displayed as expected.
+  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Output to console always displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
 * ### getGeolocation() and getLocationsFromUser():
 
-  These 3 functions were set up using existing code. They are to solve the issue of the code within these functions running on pages where it is not needed.
+  These functions were set up to wrap existing code in a function. They are to solve the issue of the code within these functions automatically running on pages where it is not needed.
   The 2 Functions are called using the window.onload = function(),
   Which checks that the current page is index.html.
+  Problem no longer relevant since deciding to use seperate script files, for each page. Simplified viewing and i felt was a lot tidier.
+
 
   The following tests were carried out:
 
   1. Passed the functions through JSHint, to check for errors.
      * No errors detected.
   2. Switched to results.html, to check that it wasn't being called.
-        * The functions were not being called in results.html.
+      * The functions were not being called in results.html.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
 
@@ -404,13 +412,16 @@
       * The array always displayed in the correct order.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
+  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Output displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
 * ### displayLocationsResults()
 
   This function is called from sortLocationScores. It gets the sorted array of scores and the weekendWeather object passed in.
-  It then outputs the information to the HTML results page.
+  It then outputs the information to the results.html page.
 
   The following tests were carried out:
 
@@ -423,6 +434,9 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
   4. All locations display in an ordered list, confirming correct calling of all associated functions.
+  5. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Output displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -435,12 +449,17 @@
   1. Passed the functions through JSHint, to check for errors.
      * No errors detected.
      * A Warning was returned "***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (selection)***" - After researching this warning on stack overflow, I found that using let and const gets around this problem, and as they are all declared and used within the scope of the function, there won't be a problem.
+      Warning: line 38	***The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.***
+      Warning: line 67	***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (clicked, selection, i, selected)***
   2. Made a selection multiple times and logged result to console:
       * The results always matched the selection
   3. Logged the result in another HTML page to make sure information was being correctly retrieved from local storage.
      * The results always showed as expected.  
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
+  5. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Selected location displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -467,6 +486,9 @@
      * The results always showed as expected.  
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
+  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Output always displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -541,6 +563,9 @@ It uses this information to display the resulting weather for the whole weekend.
      * The page displayed with the correct information  
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
+  5. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+     * No errors detected.
+     * Output always displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
