@@ -820,3 +820,16 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 **[Back to index](#Table-of-Contents)**
 
 ---
+
+# Unresolved issues
+
+* Information.js - JSHint returned warnings about undefined variables, map, google and marker. I found that defining them led to issues in map loading. I was unable to fin a satisfactory resolution to this issue.
+* results.js - sortLocationScores() returned these warnings from jsHint.   
+ 
+   * The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.   
+
+   * Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (clicked, selection, i, selected).
+
+   I was unable to get the function to work, in any other format. I will continue to search for an answer, as i progress in my coding, im sure i will find a solution.   
+
+* script.js - One undefined variable : google. 

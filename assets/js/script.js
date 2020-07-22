@@ -539,7 +539,7 @@ function getMonthName(month) {
 // EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
-let headerMessage = document.getElementById("headerMessage");
+/* let headerMessage = document.getElementById("headerMessage"); */
 window.addEventListener("scroll", function () {
     let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
