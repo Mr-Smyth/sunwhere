@@ -134,7 +134,14 @@ Considering the above user stories, i have decided upon the following UI Structu
 Considering the purpose of the site, The following styled theme was decided upon.
 
 * Colours:
-  * linear gradient blue/white/orange TBD
+  * linear gradient shades of blue, mimick a early morning blue sky.
+  * Font color ranged from black to dark grey and whites/Silver, when needed. Due to backgrounds changing and gradient colours, these were adjusted to get the best contrast for easy reading.
+
+* Style:
+  * I considered this to be something most people would look at on the go, with the mobile phone being the most likely platform. Therefore mobile first, clutter free design.
+  * No site navigation required, except for the logo home page link, common on each page. I may add a contact page in future version, which will then require some navigation.
+
+
 * Wireframes: 
   * [Home Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Home-Page.pdf)
 
