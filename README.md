@@ -25,7 +25,8 @@ This project will be submitted for my Interactive Frontend Development, and seco
 * [Features](#Features)
   * [Home Page](#Home-Page)
   * [Results Page](#Results-Page)
-  * [Information Page](#Information-Page)   
+  * [Information Page](#Information-Page)  
+  * [Features considering implementing in future releases](###Features-considering-implementing-in-future-releases)
  
 * [Development](#Development)
   * [Technologies Used](#Technologies-Used)
@@ -153,6 +154,7 @@ Considering the purpose of the site, The following styled theme was decided upon
 
 [Back to Index](#Index)
 
+---
 
 # Features
 
@@ -197,6 +199,16 @@ It may be worth noting that the user can navigate back to choose a different loc
 
 [Back to Index](#Index)
 
+
+## Features considering implementing in future releases
+
+* A user choice of this weekend or next weekend. Would require a 14 day API, and downside is long term weather accuracy.
+* A choice for the user to be more specific about when the weekend starts and ends. Possibly a simple 2day or 3 day weekend option.
+* Use a more detailed scoring system, will require some research into the lesser known contributing factors which contribute to weather.
+
+[Back to Index](#Index)
+
+---
 
 # Development
 
