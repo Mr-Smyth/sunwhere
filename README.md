@@ -12,6 +12,39 @@ This is a dynamic user friendly responsive utility project website, for quickly 
 This project will be submitted for my Interactive Frontend Development, and second milestone project, in my Full Stack Software Development course. The project will is a working interactive front-end website, demonstrating the technologies I have learned so far.
 </div>
 
+---
+# Index
+
+* [UX](#UX)
+  * [User Stories](#user-stories)
+  * [Opportunities arising from user stories](#Opportunities-arising-from-user-stories)
+  * [UI Structure](#UI-Structure)
+    * [Structure](#Structure)
+    * [Styling](#Styling)    
+   
+* [Features](#Features)
+  * [Home Page](#Home-Page)
+  * [Results Page](#Results-Page)
+  * [Information Page](#Information-Page)   
+ 
+* [Development](#Development)
+  * [Technologies Used](#Technologies-Used)
+  * [Resources used](#Resources-Used)
+  * [Logic Walkthrough](#Logic-Walkthrough)   
+   
+* [Testing](#Testing)
+
+* [Deployment](#Deployment)
+  * [Github Pages](#Github-Pages)
+  * [Local Branch](#Local-Branch)  
+
+* [Credits](#Credits)
+  * [Content and Code](#content-and-code)
+  * [Media](#Media)
+  * [Acknowledgments](#Acknowledgments)
+  * [Disclaimer](#Disclaimer)
+
+
 --- 
 # UX
 
@@ -26,6 +59,7 @@ The user can then click on any of the results and will then be directed to an in
 
 The user can also scroll down to view a map with markers highlighting points of interest. The user can also use the predictive searchbox within the map, to search and add further markers to their map. The searches are Bias to, but not confined to, the viewport of the map.
 
+[Back to Index](#Index)
 
 ## User Stories
 The Application is intended for users of any age who are deciding on a location for their mini break, or even just a day out.
@@ -42,7 +76,11 @@ The following user stories have been identified:
 7.  As a user, I would like to select my preferred location from the results, and see places of interest for that location.
 8.  As a user, it would be helpful to get a wildcard location returned, for a place not on the list, but which has a good rating for the next weekend.
 
+
+[Back to Index](#Index)
+
 <br>
+
 
 ## Opportunities arising from user stories:
 
@@ -60,6 +98,8 @@ The following user stories have been identified:
 |**Return WildCard Location** | 2 | 3 |
 
 </div>
+
+[Back to Index](#Index)
 
 <br>
 
@@ -85,6 +125,9 @@ Considering the above user stories, i have decided upon the following UI Structu
 * Common:
   *  A Site logo at the top of the page will provide a link to the home page from subsequent pages, and will represent the only required common site navigation.
   *  The Footer will provide copyright information only.
+
+[Back to Index](#Index)
+
   
 ### Styling
 
@@ -101,10 +144,12 @@ Considering the purpose of the site, The following styled theme was decided upon
 
   * [Information Page](https://github.com/Mr-Smyth/sunwhere/blob/master/wireframes/SunWhere%20-%20Information-Page.pdf)
 
+[Back to Index](#Index)
 
-## Features
 
-### Home Page
+# Features
+
+## Home Page
 The home page opens with a common site logo top center, styled to a matching theme, and also provides the sites only common required navigation, returning the user to the home page once clicked.
 
 The background image is dynamic, and will change depending upon the weather in your current location.  
@@ -117,16 +162,18 @@ The User can enter up to 4 locations into a small form with integrated google se
 
 "Click for Results leads the user easily to the results page.
 
+[Back to Index](#Index)
 
-### Results Page
+## Results Page
 The results page opens with the common site logo, and the soothing background linear gradient.
 
 The results are displayed in a simple no clutter column, that also responds to all screen sizes. The results are clearly defined, with the best result always highlighted at the top, and in descending order after that.  
 The results are calculated as a percentage which provides a simple easy to understand comparison. The user is invited to select a location, which leads the user simply to the information page.
 
+[Back to Index](#Index)
 
 
-### Information page
+## Information page
 The Information page opens with the common site logo, and a static image background.  
 The weekends weather for the selected location is then displayed in 3 containers, on top of the background image. The weather details displayed depend upon the current screen size and will increase in detail as the screen size increases. 
 
@@ -141,10 +188,12 @@ A final message and a disclaimer completes the site layout.
 
 It may be worth noting that the user can navigate back to choose a different location, as the search results remain, until the user returns to the home page by clicking the site logo.
 
+[Back to Index](#Index)
 
-## Development
 
-### Technologies used
+# Development
+
+## Technologies used
 
 * **HTML and CSS** programming languages were used as the core building language of this website.
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) was used to write the logic for this website.
@@ -152,14 +201,19 @@ It may be worth noting that the user can navigate back to choose a different loc
 * [Google Fonts](https://fonts.google.com/) was used as the source of fonts for this website.
 * [Favicon](https://favicon.io/) Was used to create the tab page icon for each web page.
 
-### Resources used
+[Back to Index](#Index)
+
+
+## Resources used
 
 * [OpenWeather Current Weather API](https://openweathermap.org/current) was used for the weather call for the current location.
 * [OpenWeather One call API](https://openweathermap.org/api/one-call-api) was used to get the users locations weather, for the upcoming weekend.
 * [Google Places Searchbox API](https://developers.google.com/maps/documentation/javascript/examples/place-search) was used to conduct the searches.
 * [Google maps API](https://developers.google.com/maps/documentation/javascript/overview) was used for the location map.
 
-### logic Walkthrough
+[Back to Index](#Index)
+
+## logic Walkthrough
 
 * Get the users current location using geolocation.
 * Call the openweather API for the current weather, passing in the lat and lon.
@@ -210,6 +264,8 @@ It may be worth noting that the user can navigate back to choose a different loc
 * Information.js gets the lat and lon for the selected location and the createMap function gets it to create a map centered on that specific location.
 * displayLocationWeather() gets the dates for the weekend, and uses for loops, variables and template literal to dynamically populate each of the html elements, with the weather details for the weekend.
 
+[Back to Index](#Index)
+
 ---  
 
 # Testing
@@ -218,13 +274,15 @@ It may be worth noting that the user can navigate back to choose a different loc
 
 A full documentation of my testing procedure can be found [here](https://github.com/Mr-Smyth/sunwhere/blob/master/testing.md#SunWhere-Manual-Testing)
 
+[Back to Index](#Index)
+
 ---
 
 # Deployment
 
 ## GitHub Pages:
 
-#### To deploy this website using GitHub pages:
+### To deploy this website using GitHub pages:
 
 1.  Log in to the GitHub account.
 2.  Select the [sunwhere](https://github.com/Mr-Smyth/sunwhere) Repository.
@@ -235,12 +293,14 @@ A full documentation of my testing procedure can be found [here](https://github.
 7.  Scroll back down the GitHub Pages section and the deployed website link will be displayed.
 8.  The website may take some time to become active, as GitHub does not update changes immediately.
 
+[Back to Index](#Index)
+
 <br>
 
 ## Local Branch:
 
 
-#### It is possible to run a clone of this website on your own local machine:
+### It is possible to run a clone of this website on your own local machine:
 
 1.  Go to the repository page for sunwhere. ([Click Here](https://github.com/Mr-Smyth/sunwhere))
 2.  Above the file area, click on the green **Clone or Download** link.
@@ -250,8 +310,9 @@ A full documentation of my testing procedure can be found [here](https://github.
 6.  The line should look something like this: `$ git clone https://github.com/Mr-Smyth/sunwhere.git`.
 7.  Press Return or Enter and your clone will be created.
 
+[Back to Index](#Index)
+
 ---
-<br>
 
 # Credits
 
@@ -263,12 +324,14 @@ A full documentation of my testing procedure can be found [here](https://github.
 * [MDN Web Docs](https://developer.mozilla.org/en-US/) - Learning resource.
 * [W3 Schools.com](https://www.w3schools.com/) - Learning resource.
 
+[Back to Index](#Index)
 
 ## Media
 
 * The photos used in this site were royalty-free and obtained from Unsplash
 * Logo was designed and created by me, using [Gimp](https://www.gimp.org/) 
 
+[Back to Index](#Index)
 
 ## Acknowledgments
 
@@ -280,3 +343,5 @@ A full documentation of my testing procedure can be found [here](https://github.
 The content of this Website is for educational purposes only.
 
 I do not accept any responsibility for unexpected, sudden or unpredicted weather outcomes. This web site makes no guarantees about nor bears any responsibility or liability concerning the accuracy or timeliness of the weather information published on this website. I will not be liable for any damage, loss or injury sustained by any person as a result of the information accessed or used from this website.
+
+[Back to Index](#Index)
