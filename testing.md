@@ -80,7 +80,7 @@
 </ul>
 
 ---
-# Testing User Stories
+# General Testing
 
 <ul>
 <li>
@@ -89,7 +89,15 @@
 </li>
 </ul>
 
+<ul>
+<li>
+
+[Unresolved issues](#Unresolved-issues)
+</li>
+</ul>
+
 ---
+
 # Javascript Functions 
 
 ## script.js
@@ -833,3 +841,6 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
    I was unable to get the function to work, in any other format. I will continue to search for an answer, as i progress in my coding, im sure i will find a solution.   
 
 * script.js - One undefined variable : google. 
+
+
+**[Back to index](#Table-of-Contents)**
