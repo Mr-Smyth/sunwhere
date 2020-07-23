@@ -1,15 +1,15 @@
-/*jshint esversion: 6 */
-// GETTING THE LAT AND LON OF THE CHOSEN LOCATION
+
+/** GETTING THE LAT AND LON OF THE CHOSEN LOCATION*/
 function initData() {
     let latitude = 0;
     let longitude = 0;
 
-    // GET THE LOCATION THE USER SELECTED
+    /**GET THE LOCATION THE USER SELECTED*/
     let selectedLoc = getLocationChoice();
-    // GET THE WEEKEND WEATHER OBJECT
+    /**GET THE WEEKEND WEATHER OBJECT*/
     const weekendWeather = getWeatherObj();
 
-    // FIND THE LOCATION THAT MATCHES THE LOCATION CHOSEN AND PICK OUT THE LAT AND LON.
+    /**FIND THE LOCATION THAT MATCHES THE LOCATION CHOSEN AND PICK OUT THE LAT AND LON.*/
     for (let location in weekendWeather) {
         if (weekendWeather.hasOwnProperty(location)) {
             if (selectedLoc === weekendWeather[location].Friday.placeName) {
@@ -21,32 +21,32 @@ function initData() {
     return { "lat": latitude, "lng": longitude };
 }
 
-// GET THE CHOSEN LOCATION FROM LOCAL STORAGE
+/**GET THE CHOSEN LOCATION FROM LOCAL STORAGE*/
 function getLocationChoice() {
     let loc = JSON.parse(window.localStorage.getItem('selectedLocation'));
     return loc;
 }
-// GET WEEKEND WEATHER OBJECT FROM LOCAL STORAGE
+/**GET WEEKEND WEATHER OBJECT FROM LOCAL STORAGE*/
 function getWeatherObj() {
     let obj = JSON.parse(localStorage.getItem("weekendWeather"));
     return obj;
 }
-// GET DAY INDEX FROM LOCAL STORAGE
+/**GET DAY INDEX FROM LOCAL STORAGE*/
 function getIndexArray() {
     let index = JSON.parse(localStorage.getItem("dayIndexesArray"));
     return index;
 }
-// GET LENGTH OF WEEKEND
+/**GET LENGTH OF WEEKEND*/
 function getLengthOfWeekend() {
     let weekend = JSON.parse(localStorage.getItem("weekendLength"));
     return weekend;
 }
 
-// CREATE A MAP FOR THE SELECTED LOCATION
+/**CREATE A MAP FOR THE SELECTED LOCATION*/
 function createMap() {
 
 
-    /* CREDIT GOOGLE PLACES DOCUMENTATION FOR FOLLOWING CODE
+    /** CREDIT GOOGLE PLACES DOCUMENTATION FOR FOLLOWING CODE
     WHICH RENDERS THE MAP WITH THE SEARCH BOX AND MARKERS.
    THE GOOGLE PLACES DOCUMENTATION CODE EXAMPLES HAVE BEEN
    REFACTORED TO SUIT THE NEEDS OF THIS APPLICATION */
@@ -56,7 +56,7 @@ function createMap() {
     map = new google.maps.Map(document.getElementById("map"), {
         center: coords,
         zoom: 13,
-        disableDefaultUI: true // REMOVE THE DEFAULT BOXES FROM THE MAP
+        disableDefaultUI: true 
     });
     marker = new google.maps.Marker({
         position: coords,
@@ -71,14 +71,14 @@ function createMap() {
     });
 
 
-    // CREATE THE SEARCH BOX AND POP IT ONTO THE MAP
+    /**CREATE THE SEARCH BOX AND POP IT ONTO THE MAP*/
     const input = document.getElementById("pac-input");
     const searchBox = new google.maps.places.SearchBox(input);
 
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
 
-    // DO A NEARBY DEFAULT SEARCH FOR ATTRACTIONS
+    /**DO A NEARBY DEFAULT SEARCH FOR ATTRACTIONS*/
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(
         {
@@ -94,8 +94,8 @@ function createMap() {
     );
 
 
-    // CREDIT GOOGLE DOCUMENTATION.
-    // BIAS THE SEARCHBOX RESULTS TO THE CURRENT MAPS VIEWPORT
+    /**CREDIT GOOGLE DOCUMENTATION.
+    BIAS THE SEARCHBOX RESULTS TO THE CURRENT MAPS VIEWPORT*/
     map.addListener("bounds_changed", function () {
         searchBox.setBounds(map.getBounds());
     });
@@ -103,17 +103,17 @@ function createMap() {
 
 
 
-    // CREDIT GOOGLE DOCUMENTATION.
-    // HERE WE LISTEN FOR THE USER TO SELECT A PREDICTED RESULT FROM THE SEARCHBOX
-    // THEN WE RETRIEVE DETAILS FOR THAT RESULT
+    /**CREDIT GOOGLE DOCUMENTATION.
+    HERE WE LISTEN FOR THE USER TO SELECT A PREDICTED RESULT FROM THE SEARCHBOX
+    THEN WE RETRIEVE DETAILS FOR THAT RESULT*/
     searchBox.addListener("places_changed", function () {
         let places = searchBox.getPlaces();
         if (places.length == 0) {
             return;
         }
 
-        // CREDIT GOOGLE DOCUMENTATION.
-        // CLEAR OLD MARKERS IF ANY
+        /**CREDIT GOOGLE DOCUMENTATION.
+        CLEAR OLD MARKERS IF ANY*/
         markers.forEach(function (marker) {
             marker.setMap(null);
         });
@@ -123,21 +123,21 @@ function createMap() {
     });
 }
 
-// HERE WE PLACE THE MARKERS ON THE MAP
+/**HERE WE PLACE THE MARKERS ON THE MAP*/
 function createMarkers(places) {
 
 
     let markers = [];
 
-    // CREDIT GOOGLE DOCUMENTATION.
-    // CLEAR OLD MARKERS IF ANY
+    /**CREDIT GOOGLE DOCUMENTATION.
+    CLEAR OLD MARKERS IF ANY*/
     markers.forEach(function (marker) {
         marker.setMap(null);
     });
     markers = [];
 
-    // CREDIT GOOGLE DOCUMENTATION
-    // GET THE PLACES FROM THE NEW SEARCH
+    /**CREDIT GOOGLE DOCUMENTATION
+    GET THE PLACES FROM THE NEW SEARCH*/
     let bounds = new google.maps.LatLngBounds();
     places.forEach(function (place) {
         if (!place.geometry) {
@@ -145,8 +145,8 @@ function createMarkers(places) {
             return;
         }
 
-        // CREDIT GOOGLE DOCUMENTATION
-        // CONVERT MARKER IMAGE OBJECTS TO TYPE ICON.
+        /**CREDIT GOOGLE DOCUMENTATION
+        CONVERT MARKER IMAGE OBJECTS TO TYPE ICON.*/
         let icon = {
             url: place.icon,
             size: new google.maps.Size(71, 71),
@@ -155,8 +155,8 @@ function createMarkers(places) {
             scaledSize: new google.maps.Size(25, 25)
         };
 
-        // CREDIT GOOGLE DOCUMENTATION
-        // PUSH MARKERS ONTO THE MAP
+        /**CREDIT GOOGLE DOCUMENTATION
+        PUSH MARKERS ONTO THE MAP*/
         markers.push(
             new google.maps.Marker({
                 map: map,
@@ -166,10 +166,10 @@ function createMarkers(places) {
             })
         );
 
-        // CREDIT GOOGLE DOCUMENTATION
-        // SET THE BOUNDS WITHIN THE VIEWPORT, ELSE OUTSIDE
+        /**CREDIT GOOGLE DOCUMENTATION
+        SET THE BOUNDS WITHIN THE VIEWPORT, ELSE OUTSIDE*/
         if (place.geometry.viewport) {
-            // Only geocodes have viewport.
+            /**Only geocodes have viewport.*/
             bounds.union(place.geometry.viewport);
         } else {
             bounds.extend(place.geometry.location);
@@ -179,7 +179,7 @@ function createMarkers(places) {
 
 }
 
-// GET THE WEATHER OBJECT FOR THE LOCATION WE ARE INTERESTED IN ONLY
+/**GET THE WEATHER OBJECT FOR THE LOCATION WE ARE INTERESTED IN ONLY*/
 function getOurWeatherObject() {
     const weekendWeather = getWeatherObj();
     const location = getLocationChoice();
@@ -194,13 +194,13 @@ function getOurWeatherObject() {
     }
 }
 
-// HELPER FUNCTION TO GRAB MONTH NAME FOR getWeekendDates()
+/**HELPER FUNCTION TO GRAB MONTH NAME FOR getWeekendDates()*/
 function getMonthName(month) {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return months[month];
 }
 
-// GET AND FORMAT CURRENT DATE
+/**GET AND FORMAT CURRENT DATE*/
 function getWeekendDates(dayOffset) {
     if (dayOffset !== null) {
         const today = new Date();
@@ -221,6 +221,7 @@ function getWeekendDates(dayOffset) {
     }
 }
 
+/**DISPLAY THE LOCATION SELECTED WEATHER */
 function displayLocationWeather() {
     const location = getLocationChoice();
     let ourWeather = getOurWeatherObject();
@@ -233,13 +234,13 @@ function displayLocationWeather() {
     for (let i = 0; i < daysToWeekend.length; i++) {
         weekendDates.push(getWeekendDates(daysToWeekend[i]));
     }
-    // THIS IS THE LOCATION NAME AND HEADER
+    /**THIS IS THE LOCATION NAME AND HEADER*/
     document.getElementById('ourLocation').innerText = `So, ${location} it is then!\n Lets just take a look at the weather line up before you go..`;
 
-    /* I WANT TO USE THE DAY TO ACCESS BOTH THE HTML ELEMENT AND THE OURWEATHER OBJECT */
+    /**I WANT TO USE THE DAY TO ACCESS BOTH THE HTML ELEMENT AND THE OURWEATHER OBJECT */
     for (let day of weekend) {
         document.getElementById(`${day}WeatherContainer`).style.display = "block";
-        for (let i = 0; i < weekendDates.length; i++) { // THIS LOOP ASSIGNS THE DAY NAME AND DATE TO THE SCREEN 
+        for (let i = 0; i < weekendDates.length; i++) { /**THIS LOOP ASSIGNS THE DAY NAME AND DATE TO THE SCREEN */
             document.getElementById(`${weekend[i]}Date`).innerHTML = `${weekend[i]} ${weekendDates[i]}`;
         }
         document.getElementById(`${day}Temp`).innerHTML = ourWeather[day].tempInCelsius + `&#176<span id="tempUnit">C</span>`;
@@ -255,8 +256,8 @@ function displayLocationWeather() {
 
 }
 
-// CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
-// EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
+/**CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
+EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
 window.addEventListener("scroll", function () {
@@ -272,7 +273,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// DO THIS FIRST
+/**DO THIS FIRST*/
 window.onload = function () {
     displayLocationWeather();
     createMap();

@@ -1,6 +1,5 @@
-/*jshint esversion: 6 */
 
-// GLOBAL VARIABLES
+/**  GLOBAL VARIABLES*/
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
 const displayBackgroundImage = document.getElementById("weatherBackgroundContainer");
@@ -19,8 +18,8 @@ const threeDayWeekend = ["Friday", "Saturday", "Sunday"];
 const twoDayWeekend = ["Saturday", "Sunday"];
 const oneDayWeekend = ["Sunday"];
 
-// GLOBAL OBJECTS
-/* USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
+/** GLOBAL OBJECTS
+USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
 MORE THAN ONCE FROM MORE THAN ONE FUNCTION  */
 const homeWeather = {};
 const weekendWeather = {
@@ -51,7 +50,7 @@ const weekendWeather = {
     }
 };
 
-/* THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, 
+/** THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, 
 TO UPDATE THE homeWeather{} OBJECT. */
 function updateHomeWeather(data, id) {
     homeWeather.latitude = data.coord.lat;
@@ -71,7 +70,7 @@ function updateHomeWeather(data, id) {
     homeWeather.score = 0;
 }
 
-/* THIS FUNCTION RETURNS AN ARRAY OF THE DAYS WE NEED TO TARGET IN THE , 
+/** THIS FUNCTION RETURNS AN ARRAY OF THE DAYS WE NEED TO TARGET IN THE , 
 7 DAY WEATHER API RESPONSE - TO GET THE NEXT WEEKEND. */
 function findWeatherDayIndex() {
     const today = new Date();
@@ -100,7 +99,7 @@ function findWeatherDayIndex() {
 
 }
 
-// HERE WE FIND OUT LENGTH OF WEEKEND IF ITS SAT OR SUNDAY
+/** HERE WE FIND OUT LENGTH OF WEEKEND IF ITS SAT OR SUNDAY*/
 function getLengthOfWeekend() {
     let getIndex = findWeatherDayIndex();
     let weekend = [];
@@ -117,7 +116,7 @@ function getLengthOfWeekend() {
     return weekend;
 }
 
-// HERE WE UPDATE THE WEEKENDWEATHER OBJECT
+/**HERE WE UPDATE THE WEEKENDWEATHER OBJECT*/
 function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     let getIndex = findWeatherDayIndex();
     let weekend = getLengthOfWeekend();
@@ -150,7 +149,7 @@ function updateWeekendWeather(lat, lon, data, thisLocation, id) {
     }
 }
 
-// CALCULATE RAIN SCORE
+/** CALCULATE RAIN SCORE*/
 function weekendRainScore(loc) {
     let score = 0;
     let weekend = getLengthOfWeekend();
@@ -175,7 +174,7 @@ function weekendRainScore(loc) {
     return score;
 }
 
-// CALCULATE CLOUDS SCORE
+/** CALCULATE CLOUDS SCORE*/
 function weekendCloudsScore(loc) {
     let score = 0;
     let weekend = getLengthOfWeekend();
@@ -198,7 +197,7 @@ function weekendCloudsScore(loc) {
     return score;
 }
 
-// CALCULATE WIND SCORE
+/** CALCULATE WIND SCORE*/
 function weekendWindScore(loc) {
     let score = 0;
     let weekend = getLengthOfWeekend();
@@ -221,7 +220,7 @@ function weekendWindScore(loc) {
     return score;
 }
 
-// CALCULATE HUMIDITY SCORE
+/** CALCULATE HUMIDITY SCORE*/
 function weekendHumidityScore(loc) {
     let score = 0;
     let weekend = getLengthOfWeekend();
@@ -242,13 +241,13 @@ function weekendHumidityScore(loc) {
     return score;
 }
 
-// CALCULATE TEMP SCORE
+/** CALCULATE TEMP SCORE*/
 function weekendTempScore(loc) {
     let score = 0;
     let weekend = getLengthOfWeekend();
     weekend.forEach(function (day, index) {
         let temp = weekendWeather[loc][day].tempInCelsius;
-        // add tempInFahrenheit to score to help eliminate duplicate scores
+        /** add tempInFahrenheit to score to help eliminate duplicate scores*/
         score += weekendWeather[loc][day].tempInFahrenheit;
         if (temp > 0 && temp <= 15) {
             score += 0;
@@ -270,7 +269,7 @@ function weekendTempScore(loc) {
     });
     return score;
 }
-// GET THE PERCENTAGE SCORE, CHECK LENGTH OF WEEKEND FIRST
+/**GET THE PERCENTAGE SCORE, CHECK LENGTH OF WEEKEND FIRST*/
 function calculatePercent(score) {
     let weekend = getLengthOfWeekend();
     let maxScore = 702;
@@ -283,7 +282,7 @@ function calculatePercent(score) {
     return result;
 }
 
-// CALCULATE EACH LOCATIONS SCORE
+/** CALCULATE EACH LOCATIONS SCORE*/
 function calculateRating() {
     const allLocations = [
         "location1",
@@ -292,7 +291,7 @@ function calculateRating() {
         "location4",
         "location5"
     ];
-    // ITERATE LOCATIONS OVER THESE FUNCTIONS TO RETURN EACH SCORE
+    /** ITERATE LOCATIONS OVER THESE FUNCTIONS TO RETURN EACH SCORE*/
     for (let loc of allLocations) {
         let score = 0;
         score += weekendRainScore(loc);
@@ -302,14 +301,14 @@ function calculateRating() {
         score += weekendTempScore(loc);
         weekendWeather[loc].score = Math.floor(calculatePercent(score));
     }
-    /* HIGHEST ACHIEVABLE SCORE BASED ON A TEMP OF 40 DEG CELSIUS IS 702
+    /** HIGHEST ACHIEVABLE SCORE BASED ON A TEMP OF 40 DEG CELSIUS IS 702
     tEMPS IN EXCESS OF 40 ARE SUBJECT TO DEDUCTIONS AND AS A RESULT
     DO NOT EXCEED THIS SCORE OR 702*/
     const weekendWeatherSerial = JSON.stringify(weekendWeather);
     localStorage.setItem("weekendWeather", weekendWeatherSerial);
 }
 
-// DISPLAYS THE WEATHER BACKGROUND IMAGE
+/** DISPLAYS THE WEATHER BACKGROUND IMAGE*/
 function getBackground() {
     switch (homeWeather.weatherIcon) {
         case "01d":
@@ -372,7 +371,7 @@ function getBackground() {
     }
 }
 
-// THIS FUNCTION DISPLAYS THE CURRENT LOCATIONS WEATHER TO HOME SCREEN
+/** THIS FUNCTION DISPLAYS THE CURRENT LOCATIONS WEATHER TO HOME SCREEN*/
 function displayCurrentWeather(homeWeather) {
     getBackground();
     displayCurrentLocation.innerText = homeWeather.name;
@@ -389,8 +388,8 @@ function displayCurrentWeather(homeWeather) {
     document.getElementById("weatherCurrentInfoContainer").style.display = "flex";
 }
 
-/* HERE WE GET CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather 
-OBJECT AND PASSES ONTO displayHomeWeather() */
+/** HERE WE GET CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather
+OBJECT AND PASSES ONTO displayHomeWeather()*/
 function fetchCurrentWeather(lat, lon, id) {
     const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`;
     fetch(apiCurrent)
@@ -431,8 +430,8 @@ function fetchWeekendWeather(lat, lon, thisLocation, id) {
         });
 }
 
-// FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
-// WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER
+/** FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
+ WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER*/
 function getGeolocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(getCoords, geolocationError);
@@ -444,7 +443,7 @@ function getGeolocation() {
     }
 }
 
-/* RECEIVE THE GEOLOCATION POSITION OBJECT AS INPUT, UPDATE OBJECT AND GET THE 
+/** RECEIVE THE GEOLOCATION POSITION OBJECT AS INPUT, UPDATE OBJECT AND GET THE 
 WEATHER. */
 function getCoords(location) {
     const latitude = location.coords.latitude;
@@ -454,12 +453,12 @@ function getCoords(location) {
     fetchCurrentWeather(latitude, longitude, id);
 }
 
-// IF THINGS GO WRONG WITH GEOLOCATION, GO HERE
+/** IF THINGS GO WRONG WITH GEOLOCATION, GO HERE*/
 function geolocationError(error) {
     infoMessageElement.innerHTML = `<p> ${error.message} </p>`;
 }
 
-// HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX
+/** HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX*/
 function getLocationsFromUser() {
     locationInputArray.forEach(function (location) {
         let id = document.getElementById(location).attributes.id.value;
@@ -483,7 +482,7 @@ function getLocationsFromUser() {
             const latitude = location.geometry.location.lat();
             const longitude = location.geometry.location.lng();
 
-            /*  SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME, AND ID to 
+            /**  SEND THE LAT AND LONG, BUT ALSO THE LOCATIONS NAME, AND ID to 
             fetchLocationWeather(). THIS WILL BE USED TO BUILD AN OBJECT OF WEATHER 
             INFORMATION FOR EACH LOCATION.*/
 
@@ -492,7 +491,7 @@ function getLocationsFromUser() {
     });
 }
 
-// GET AND FORMAT CURRENT DATE
+/** GET AND FORMAT CURRENT DATE*/
 function currentDate() {
     const today = new Date();
     const currDate = today.getDate();
@@ -511,7 +510,7 @@ function currentDate() {
     return date;
 }
 
-// GET AND FORMAT CURRENT TIME
+/** GET AND FORMAT CURRENT TIME*/
 function currentTime() {
     const today = new Date();
     let hours = today.getHours();
@@ -529,17 +528,17 @@ function currentTime() {
     return time;
 }
 
-// HELPER FUNCTION TO PROVIDE MONTH NAME
+/** HELPER FUNCTION TO PROVIDE MONTH NAME*/
 function getMonthName(month) {
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     return months[month];
 }
 
-// CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
-// EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
+/** CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
+EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
-/* let headerMessage = document.getElementById("headerMessage"); */
+/** let headerMessage = document.getElementById("headerMessage"); */
 window.addEventListener("scroll", function () {
     let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
     if (scrollTop > lastScrollTop) {
@@ -553,7 +552,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// CHANGES THE TEMPERATURE UNIT
+/** CHANGES THE TEMPERATURE UNIT*/
 function changeUnit() {
     let tempUnit = document.getElementById("tempUnit").innerText;
     if (tempUnit === null) {
@@ -564,10 +563,10 @@ function changeUnit() {
         displayCurrentTemp.innerHTML = homeWeather.tempInCelsius + `&#176<span id="tempUnit">C</span>`;
     }
 }
-// DO THIS FIRST
+/** DO THIS FIRST*/
 window.onload = function () {
         getGeolocation();
         getLocationsFromUser();
-        // LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT
+        /** LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT*/
         document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
 };

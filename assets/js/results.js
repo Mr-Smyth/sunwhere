@@ -1,6 +1,4 @@
-/*jshint esversion: 6 */
-
-/* DISPLAY THE RESULTS HERE */
+/**DISPLAY THE RESULTS HERE */
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
     let weekend = JSON.parse(localStorage.getItem("weekendLength"));
     if (weekend.length === 1) {
@@ -36,7 +34,7 @@ function displayLocationsResults(loc, weekendWeatherDeserialized) {
     }
 }
 
-/* HERE I NEED TO SORT THE LOCATION SCORES INTO AND ARRAY LARGEST FIRST
+/**HERE I NEED TO SORT THE LOCATION SCORES INTO AND ARRAY LARGEST FIRST
 THIS IS SO I CAN EASILY ARRANGE THEM IN THE REQUIRED DESCENDING ORDER */
 function sortLocationScores() {
     const weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
@@ -65,7 +63,7 @@ function sortLocationScores() {
     displayLocationsResults(locArray, weekendWeatherDeserialized);
 }
 
-// HERE WE GET THE NAME OF THE LOCATION THE USER CLICKS
+/**HERE WE GET THE NAME OF THE LOCATION THE USER CLICKS*/
 function selectLocation() {
     let clicked;
     let selected;
@@ -82,8 +80,8 @@ function selectLocation() {
 
 }
 
-// CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
-// EDITED TO HAVE MY OWN CUSTOM FADE EFFECT
+/**CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
+EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
 window.addEventListener("scroll", function () {
@@ -99,7 +97,7 @@ window.addEventListener("scroll", function () {
     }
 });
 
-// DO THIS FIRST
+/**DO THIS FIRST*/
 window.onload = function () {
     sortLocationScores();
     selectLocation();
