@@ -789,9 +789,8 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 * ### User Stories Tested
 
 ### 1.  As a user, I want the home screen to be inviting and with information relevant to my location. 
-   * The home screen shows weather relevant to the users current loction.
-   * I believe the home screen to be easy and uncluttered, providing an inviting and pleasant experience.
-   * Being fully responsive, the user experience will be equally enjoyable on all devices.
+   * I made a dummy visit to the site. Once i allowed geolocation on my browser i was able to view weather and location details relevant to my current position. I found that when i viewed from a PC, google could not place me correctly due to Google's database and how they locate routers. But from mobile phone, the location was perfect.  
+   * The background was relevant to my current locations current weather, and i was able to click on the temperature, to change the unit. The current date and time was also displayed which was very useful, and showed i was getting current information.
 
 ### 2.  As a user, I want to quickly and easily understand the purpose of the application.
    *  I used a combination of techniques to subtly achieve this.
