@@ -80,23 +80,6 @@ function selectLocation() {
 
 }
 
-/**CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
- * EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
-let lastScrollTop = 10;
-let logo = document.getElementById("logo-container");
-window.addEventListener("scroll", function () {
-    let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        logo.style.backgroundColor = '#d0ecfd';
-        logo.style.opacity = "0.96";
-        logo.style.boxShadow = '0 1px 6px 0 rgb(236,219,65)';
-    } else {
-        logo.style.backgroundColor = 'transparent';
-        logo.style.boxShadow = 'none';
-        logo.style.opacity = "1";
-    }
-});
-
 /**DO THIS FIRST*/
 window.onload = function () {
     sortLocationScores();

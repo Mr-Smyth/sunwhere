@@ -26,16 +26,19 @@ function getLocationChoice() {
     let loc = JSON.parse(window.localStorage.getItem('selectedLocation'));
     return loc;
 }
+
 /**GET WEEKEND WEATHER OBJECT FROM LOCAL STORAGE*/
 function getWeatherObj() {
     let obj = JSON.parse(localStorage.getItem("weekendWeather"));
     return obj;
 }
+
 /**GET DAY INDEX FROM LOCAL STORAGE*/
 function getIndexArray() {
     let index = JSON.parse(localStorage.getItem("dayIndexesArray"));
     return index;
 }
+
 /**GET LENGTH OF WEEKEND*/
 function getLengthOfWeekend() {
     let weekend = JSON.parse(localStorage.getItem("weekendLength"));
@@ -194,12 +197,6 @@ function getOurWeatherObject() {
     }
 }
 
-/**HELPER FUNCTION TO GRAB MONTH NAME FOR getWeekendDates()*/
-function getMonthName(month) {
-    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    return months[month];
-}
-
 /**GET AND FORMAT CURRENT DATE*/
 function getWeekendDates(dayOffset) {
     if (dayOffset !== null) {
@@ -255,23 +252,6 @@ function displayLocationWeather() {
     document.getElementById("mapIntroduction").innerText = ` We really hope you enjoy your time in ${location}.\nTo help you make the most of your time there here is a handy map with some points of interest. \n\nEnjoy!`;
 
 }
-
-/**CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
- * EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
-let lastScrollTop = 10;
-let logo = document.getElementById("logo-container");
-window.addEventListener("scroll", function () {
-    let scrollTop = window.pageYoffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-        logo.style.backgroundColor = '#d0ecfd';
-        logo.style.opacity = "0.96";
-        logo.style.boxShadow = '0 1px 6px 0 rgb(236,219,65)';
-    } else {
-        logo.style.backgroundColor = 'transparent';
-        logo.style.boxShadow = 'none';
-        logo.style.opacity = "1";
-    }
-});
 
 /**DO THIS FIRST*/
 window.onload = function () {
