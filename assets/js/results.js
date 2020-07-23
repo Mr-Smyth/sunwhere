@@ -35,7 +35,7 @@ function displayLocationsResults(loc, weekendWeatherDeserialized) {
 }
 
 /**HERE I NEED TO SORT THE LOCATION SCORES INTO AND ARRAY LARGEST FIRST
-THIS IS SO I CAN EASILY ARRANGE THEM IN THE REQUIRED DESCENDING ORDER */
+ * THIS IS SO I CAN EASILY ARRANGE THEM IN THE REQUIRED DESCENDING ORDER */
 function sortLocationScores() {
     const weekendWeatherDeserialized = JSON.parse(localStorage.getItem("weekendWeather"));
     let resultsArray = [];
@@ -81,7 +81,7 @@ function selectLocation() {
 }
 
 /**CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
-EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
+ * EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
 window.addEventListener("scroll", function () {

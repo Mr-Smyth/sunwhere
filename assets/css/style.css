@@ -114,9 +114,12 @@
      box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
 }
  #informationNotification {
-     font-size: 0.8rem;
+     display: none;
+     font-size: 1.4rem;
+     font-weight: 900;
+     line-height: 40px;
      text-align: center;
-     color: rgb(49, 2, 2);
+     color: rgb(143, 23, 23);
 }
  #dateTimeContainer {
      width: 80%;

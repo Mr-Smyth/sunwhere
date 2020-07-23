@@ -257,7 +257,7 @@ function displayLocationWeather() {
 }
 
 /**CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
-EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
+ * EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
 window.addEventListener("scroll", function () {

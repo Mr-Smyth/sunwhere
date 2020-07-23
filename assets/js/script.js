@@ -19,7 +19,7 @@ const twoDayWeekend = ["Saturday", "Sunday"];
 const oneDayWeekend = ["Sunday"];
 
 /** GLOBAL OBJECTS
-USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
+ * USING OBJECTS AS I WILL NEED TO ACCESS THE INFORMATION
 MORE THAN ONCE FROM MORE THAN ONE FUNCTION  */
 const homeWeather = {};
 const weekendWeather = {
@@ -51,7 +51,7 @@ const weekendWeather = {
 };
 
 /** THIS GETS CALLED AFTER THE CURRENT WEATHER FETCH, 
-TO UPDATE THE homeWeather{} OBJECT. */
+ * TO UPDATE THE homeWeather{} OBJECT. */
 function updateHomeWeather(data, id) {
     homeWeather.latitude = data.coord.lat;
     homeWeather.longitude = data.coord.lon;
@@ -389,7 +389,7 @@ function displayCurrentWeather(homeWeather) {
 }
 
 /** HERE WE GET CURRENT WEATHER FROM GEOLOCATION, CALLS TO UPDATE homeWeather
-OBJECT AND PASSES ONTO displayHomeWeather()*/
+ OBJECT AND PASSES ONTO displayHomeWeather()*/
 function fetchCurrentWeather(lat, lon, id) {
     const apiCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f195187b93a30f3dfcbe6e136431d58b`;
     fetch(apiCurrent)
@@ -431,15 +431,15 @@ function fetchWeekendWeather(lat, lon, thisLocation, id) {
 }
 
 /** FIRST WE GET CURRENT LOCATION, LATITUDE AND LONGITUDE
- WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER*/
+ * WE NEED TO CHECK IF GEOLOCATION IS ALLOWED IN THE BROWSER*/
 function getGeolocation() {
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(getCoords, geolocationError);
     } else {
-        // IF NOT, SEND AN ERROR NOTIFICATION TO WEATHER WINDOW
-        infoMessageElement.innerHTML =
-            `<p>Your Browser does not support Geolocation, please allow 
-    Geolocation and reload the page.</p>`;
+        /**IF NOT, SEND AN ERROR NOTIFICATION TO WEATHER WINDOW*/
+        document.getElementById("weatherCurrentInfoContainer").style.display = "flex";
+        infoMessageElement.style.display = "flex";
+        infoMessageElement.innerHTML = "<p>Your Browser does not support Geolocation</p>";
     }
 }
 
@@ -455,6 +455,8 @@ function getCoords(location) {
 
 /** IF THINGS GO WRONG WITH GEOLOCATION, GO HERE*/
 function geolocationError(error) {
+    document.getElementById("weatherCurrentInfoContainer").style.display = "flex";
+    infoMessageElement.style.display = "flex";
     infoMessageElement.innerHTML = `<p> ${error.message} </p>`;
 }
 
@@ -535,7 +537,7 @@ function getMonthName(month) {
 }
 
 /** CODE TO FADE OUT ELEMENT - CREDIT ONLINE TUTORIALS YOUTUBE.
-EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
+ * EDITED TO HAVE MY OWN CUSTOM FADE EFFECT*/
 let lastScrollTop = 10;
 let logo = document.getElementById("logo-container");
 /** let headerMessage = document.getElementById("headerMessage"); */

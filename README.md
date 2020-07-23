@@ -7,7 +7,7 @@
 [View the website on GitHub Pages](https://mr-smyth.github.io/sunwhere/index.html)
 
 
-This is a dynamic user-friendly responsive utility project website, for quickly and easily compare the weather for different locations.
+This is a dynamic user-friendly responsive utility project website, to quickly and easily compare the weather for different locations.
 
 This project will be submitted for my Interactive Frontend Development, and second milestone project, in my Full Stack Software Development course. The project will is a working interactive front-end website, demonstrating the technologies I have learned so far.
 </div>
@@ -26,7 +26,7 @@ This project will be submitted for my Interactive Frontend Development, and seco
   * [Home Page](#Home-Page)
   * [Results Page](#Results-Page)
   * [Information Page](#Information-Page)  
-  * [Features considering implementing in future releases](###Features-considering-implementing-in-future-releases)
+  * [Features considering implementing in future releases](#Features-considering-implementing-in-future-releases)
  
 * [Development](#Development)
   * [Technologies Used](#Technologies-Used)
