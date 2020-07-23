@@ -375,8 +375,8 @@ function getBackground() {
 function displayCurrentWeather(homeWeather) {
     getBackground();
     displayCurrentLocation.innerText = homeWeather.name;
-    displayCurrentIcon.src = `http://openweathermap.org/img/wn/${homeWeather.weatherIcon}@2x.png`;
-    displayStandaloneIcon.src = `http://openweathermap.org/img/wn/${homeWeather.weatherIcon}@4x.png`;
+    displayCurrentIcon.src = `https://openweathermap.org/img/wn/${homeWeather.weatherIcon}@2x.png`;
+    displayStandaloneIcon.src = `https://openweathermap.org/img/wn/${homeWeather.weatherIcon}@4x.png`;
     displayCurrentTemp.innerHTML = homeWeather.tempInCelsius + `&#176<span id="tempUnit">C</span>`;
     displayCurrentDesc.innerText = homeWeather.description.charAt(0).toUpperCase() +
         homeWeather.description.slice(1); // SET FIRST LETTER TO UPPERCASE
