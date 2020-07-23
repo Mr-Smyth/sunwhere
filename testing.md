@@ -796,30 +796,26 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 ### 2.  As a user, I want to quickly and easily understand the purpose of the application.
    *  I used a combination of techniques to subtly achieve this.
       *  A logo suggesting a search for sun.
-      *  An brief introduction explaining in brief what the goal of the site is. Linking then to a more in-depth explanation of what the site does and how it does it.
+      *  I made a dummy visit to the site, and was able to read an introduction explaining in brief what the goal of the site is. Linking then to a more in-depth explanation of what the site does and how it does it. I felt informed on what was the goal of the site, and how to achieve it.
 
 ### 3.  As a user, I want to easily understand what i have to do.
    * This is achieved through reading the in-depth explanation in the locations input section. The user can easily get to this by clicking the **Click Here** link in the brief description/welcome section
 
 ### 4.  As a user, I want to easily enter my information.
-   * This is achieved, via a clear simple input section. What adds simplicity to this process is the including of google searchbox in the locaction input. The user can type and click to select the suggested location, then simply Tab or click to get to the next input box.
+   * I made a dummy visit to the site, and after scrolling to the clear introduction. I found the form clear and it was very obvious what the function of the inputs were. What added simplicity to this process is the including of google searchbox in the locaction input. I started typing KIL, and the result i wanted - KILKEE was automatically at the top of the list
 
 ### 5.  As a user, I want to see an obvious and quick way to get my results.
-   * This is achieved by use of a large **Click to see Results** button directly beneath the final location input.
+   * I made a dummy visit to the site, and after inputting the locations a large **Click to see Results** button directly beneath the final location input, made it obvious how to get my results.
 
 
 ### 6.  As a user, I want to be able to see an obvious comparison of predicted weather for my entered locations, including my home or current location.
-   * This is achieved by use of a seperate page displaying only the results. This removes distractions and concentrates the user on seeing clearly defined results, all stacked in order.
-   * The best rated location, is at the top, and highlighted in a different colour for emphasis.
-   * % scores keeps the system simple and easy to understand.
-   * The text at the top of the screen explains what the user is currently looking at, and what to do next.
+   * I made a dummy visit to the site, and after clicking to see the results of my locations, i was taken to a results page. The page was displayed with full focus on the results, which were stacked in descending order and clear easy to understand % scoring.
+   * It also invited me to select my preferred location.
 
 
 ### 7.  As a user, I would like to select my preferred location from the results, and see places of interest for that location.
-   * This is achieved through simply selecting any one of the locations.
-   * A breakdown of the weekends weather, with dates, is displayed in a responsive format.
-   * A deliberate displaying of the top of the map section, invites the user to scroll down to view the map with preloaded markers. These markers pinpoint tourist attractions for the area.
-   * A searchbox then allows the user to search the map further and add their own pins.
+   * I made a dummy visit to the site, and after viewing the results, i clicked on my preferred location as instructed.
+   * I was then taken to a clear layout of the full weekends weather for that location. After scrolling down the page i was presented with a map for the location KILKEE showing me places of interest. I then searched for restaurants, which were all clearly marked on the map for me.
 
 
 ### 8.  As a user, it would be helpful to get a wildcard location returned, for a place not on the list, but which has a good rating for the next weekend.

@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */ 
 /**  GLOBAL VARIABLES*/
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");

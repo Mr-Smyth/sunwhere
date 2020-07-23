@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */ 
 /**FOR COMMON FUNCTIONS */
 
 /** HELPER FUNCTION TO PROVIDE MONTH NAME*/

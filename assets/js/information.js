@@ -1,4 +1,4 @@
-
+/*jshint esversion: 6 */ 
 /** GETTING THE LAT AND LON OF THE CHOSEN LOCATION*/
 function initData() {
     let latitude = 0;

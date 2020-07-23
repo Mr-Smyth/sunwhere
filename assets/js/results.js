@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */ 
 /**DISPLAY THE RESULTS HERE */
 function displayLocationsResults(loc, weekendWeatherDeserialized) {
     let weekend = JSON.parse(localStorage.getItem("weekendLength"));
