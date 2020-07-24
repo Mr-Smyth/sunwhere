@@ -57,8 +57,8 @@
 
 ## utility.js Testing
 
-* [getMonthName function](#getMonthName())
-* [fadeLogo function](#fadeLogo())
+* [getMonthName](#getMonthName)
+* [fadeLogo](#fadeLogo)
 
 </li>
 </ul>
@@ -68,10 +68,10 @@
 <li>
 
 ## CSS
-* [utility.css styling](#utility.css)
-* [style.css styling](#style.css)
-* [results.css styling](#results.css)
-* [information.css styling](#information.css)
+* [utility.css](#utility-css)
+* [style.css](#style-css)
+* [results.css](#results-css)
+* [information.css](#information-css)
   
 </li>
 </ul>
@@ -82,9 +82,9 @@
 <li>
 
 ## HTML
-* [index.html](#index.html)
-* [results.html](#results.html)
-* [information.html](#information.html)
+* [index.html](#index-html)
+* [results.html](#results-html)
+* [information.html](#information-html)
   
 </li>
 </ul>
@@ -600,7 +600,7 @@ It uses this information to display the resulting weather for the whole weekend.
 ---
 ## utility.js
 
-* ### getMonthName()
+* ### getMonthName
 
   This function is called to get the month name from the getDate() function
 
@@ -612,7 +612,7 @@ It uses this information to display the resulting weather for the whole weekend.
 
 **[Back to index](#Table-of-Contents)**
 
-* ### fadeLogo()
+* ### fadeLogo
 
   This is a function that automatically runs to set the logo to a semi transparent background when the page is scrolled down.
 
@@ -624,7 +624,7 @@ It uses this information to display the resulting weather for the whole weekend.
 
 # STYLING
 
-* ## utility.css
+* ## utility css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -635,7 +635,7 @@ Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check
 ---
 
 
-* ## style.css
+* ## style css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -688,7 +688,7 @@ An Apple iPhone 9:
 
 ---
 
-* ## results.css
+* ## results css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -740,7 +740,7 @@ An Apple iPhone 9:
 
 ---
 
-* ## information.css
+* ## information css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
@@ -804,7 +804,7 @@ An Apple iPhone 9:
 # Layout
 
 
-* ### index.html
+* ### index html
 Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
 
    * Errors displayed relating to misuse of img tag in the logo were all fixed.
@@ -816,7 +816,7 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 
 ---
 
-* ### results.html
+* ### results html
 Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
 
    * Errors displayed relating to misuse of img tag in the logo were all fixed.
@@ -826,7 +826,7 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 
 ---
 
-* ### information.html
+* ### information html
 Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for errors.
 
    * Errors displayed relating to misuse of img tag in the logo were all fixed.
