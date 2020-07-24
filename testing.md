@@ -57,8 +57,8 @@
 
 ## utility.js Testing
 
-* [getMonthName()](#getMonthName())
-* [fadeLogo()](#fadeLogo())
+* [getMonthName](#getMonthName())
+* [fadeLogo](#fadeLogo())
 
 </li>
 </ul>
