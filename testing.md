@@ -52,6 +52,15 @@
 * [getOurWeatherObject](#getOurWeatherObject)
 
 </li>
+
+<li>
+
+## utility.js Testing
+
+* [getMonthName()](#getMonthName())
+* [fadeLogo()](#fadeLogo())
+
+</li>
 </ul>
 
 # Styling
@@ -59,6 +68,7 @@
 <li>
 
 ## CSS
+* [utility.css](#utility.css)
 * [style.css](#style.css)
 * [results.css](#results.css)
 * [information.css](#information.css)
@@ -588,15 +598,49 @@ It uses this information to display the resulting weather for the whole weekend.
 **[Back to index](#Table-of-Contents)**
 
 ---
+## utility.js
+
+* ### getMonthName()
+
+  This function is called to get the month name from the getDate() function
+
+  The following tests were carried out:
+
+  1. Passed the functions through JSHint, to check for errors.
+     * No errors detected.
+  2. Repeated refreshing of page and month name always showed as expected
+
+**[Back to index](#Table-of-Contents)**
+
+* ### fadeLogo()
+
+  This is a function that automatically runs to set the logo to a semi transparent background when the page is scrolled down.
+
+  1.  Repeated loading of page on different screen resolutions:
+  2.  Refreshed page multiple times at different stages
+       * Logo fade effect worked as expected.
+
+---
 
 # STYLING
+
+* ## utility.css
+
+### Code validation:
+Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
+  * No errors found.
+
+**[Back to index](#Table-of-Contents)**
+
+---
+
 
 * ## style.css
 
 ### Code validation:
 Used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) to check information.css.
   * No errors found.
-  * Attached validation badge to HTML Page.
+
 
 
 #### Checked media queries for the following breakpoints:
