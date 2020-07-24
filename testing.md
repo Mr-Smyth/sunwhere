@@ -895,5 +895,6 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
   
   After searching for information on the above cookie related warning i found the following response on stack overflow: ***"This console warning is not an error or an actual problem — Chrome is just spreading the word about this new standard to increase developer adoption."***
 
+* Links in my table of contents in my testing and readme, seemed to stop working on github, even though they worked at an earlier stage and they currently work on VSCode.
 
 **[Back to index](#Table-of-Contents)**
