@@ -80,10 +80,9 @@ function findWeatherDayIndex() {
 
     const daysToNextWeekend = {
 
-        /* "0": [5, 6, 7],: IF TODAY IS SUNDAY, DAYS 5,6 AND 7 FROM 
-        THE API RESPONSE DATA WILL BE NEEDED.
-        IF THE CURRENT DAY IS FRIDAY OR SATURDAY - WE WILL STILL
-        RETURN AN ARRAY TO TARGET CURRENT WEEKEND. */
+        /** "0": [0],: IF TODAY IS SUNDAY, DAY 0 FROM 
+           THE API RESPONSE DATA WILL BE NEEDED.
+         * IF THE CURRENT DAY IS THURSDAY, DAYS 1, 2 AND 3 WILL BE NEEDED */
         "0": [0],
         "1": [4, 5, 6],
         "2": [3, 4, 5],
@@ -501,11 +500,11 @@ function currentDate() {
     const currYear = today.getUTCFullYear();
     const suffixArray = ["st", "nd", "rd", "th"];
     let suffix = suffixArray[3];
-    if (currDate === 1) {
+    if (currDate === 1 || currDate === 21 || currDate === 31) {
         suffix = suffixArray[0];
-    } else if (currDate === 2) {
+    } else if (currDate === 2 || currDate === 22) {
         suffix = suffixArray[1];
-    } else if (currDate === 3) {
+    } else if (currDate === 3 || currDate === 23) {
         suffix = suffixArray[2];
     }
     let date = currDate + suffix + ' of ' + currMonth + '  ' + currYear;
