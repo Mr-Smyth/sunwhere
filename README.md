@@ -9,7 +9,7 @@
 
 This is a dynamic user-friendly responsive utility project website, to quickly and easily compare the weather for different locations.
 
-This project will be submitted for my Interactive Frontend Development, and second milestone project, in my Full Stack Software Development course. The project will is a working interactive front-end website, demonstrating the technologies I have learned so far.
+This project will be submitted for my Interactive Frontend Development, and second milestone project, in my Full Stack Software Development course. The project is a working interactive front-end website, demonstrating the technologies I have learned so far.
 </div>
 
 ---
@@ -365,6 +365,7 @@ Full documentation of my testing procedure can be found [here](https://github.co
 ## Acknowledgments
 
 * I received inspiration for this project from the process I often endure of looking at the weather to help me choose a destination for a weekend away. Being someone who loves the outdoors, the weather is always a big factor in choosing where I go.
+* I want to include a big thank you to Aaron, my mentor on my full stack development course, he gave me some great advice, and kept me on the right path.
 
 
 ## Disclaimer

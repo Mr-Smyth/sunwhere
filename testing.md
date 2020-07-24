@@ -285,7 +285,7 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Objects always displayed as expected.
-  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  4. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Output to console always displayed as expected.
 
@@ -332,7 +332,7 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * console results always displayed as expected.
-  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  4. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Output to console always displayed as expected.
 
@@ -343,7 +343,7 @@
   These functions were set up to wrap existing code in a function. They are to solve the issue of the code within these functions automatically running on pages where it is not needed.
   The 2 Functions are called using the window.onload = function(),
   Which checks that the current page is index.html.
-  Problem no longer relevant since deciding to use seperate script files, for each page. Simplified viewing and i felt was a lot tidier.
+  Problem no longer relevant since deciding to use separate script files, for each page. Simplified viewing and I felt was a lot tidier.
 
 
   The following tests were carried out:
@@ -374,7 +374,7 @@
 
 * ### currentDate():
 
-  This function creates a new date and converts elements of the current date into a more readable format. then returns the date to the calling function.
+  This function creates a new date and converts elements of the current date into a more readable format. then returns the data to the calling function.
   This function calls 2 helper functions to get Month name and Day name.
 
   The following tests were carried out:
@@ -422,7 +422,7 @@
       * The array always displayed in the correct order.
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
-  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  4. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Output displayed as expected.
 
@@ -444,7 +444,7 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
   4. All locations display in an ordered list, confirming correct calling of all associated functions.
-  5. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  5. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Output displayed as expected.
 
@@ -459,15 +459,15 @@
   1. Passed the functions through JSHint, to check for errors.
      * No errors detected.
      * A Warning was returned "***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (selection)***" - After researching this warning on stack overflow, I found that using let and const gets around this problem, and as they are all declared and used within the scope of the function, there won't be a problem.
-      Warning: line 38	***The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.***
-      Warning: line 67	***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (clicked, selection, i, selected)***
+      Warning: line 38  ***The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.***
+      Warning: line 67  ***Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (clicked, selection, I, selected)***
   2. Made a selection multiple times and logged result to console:
       * The results always matched the selection
   3. Logged the result in another HTML page to make sure information was being correctly retrieved from local storage.
      * The results always showed as expected.  
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
-  5. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  5. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Selected location displayed as expected.
 
@@ -496,7 +496,7 @@
      * The results always showed as expected.  
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
-  4. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  4. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Output always displayed as expected.
 
@@ -573,7 +573,7 @@ It uses this information to display the resulting weather for the whole weekend.
      * The page displayed with the correct information  
   4. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
-  5. Re-ran above tests following refactored code to allow for Sat,Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
+  5. Re-ran above tests following refactored code to allow for Sat, Sun & Sunday only weekends. Set current day to both Saturday and Sunday.
      * No errors detected.
      * Output always displayed as expected.
 
@@ -789,36 +789,36 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 * ### User Stories Tested
 
 ### 1.  As a user, I want the home screen to be inviting and with information relevant to my location. 
-   * I made a dummy visit to the site. Once i allowed geolocation on my browser i was able to view weather and location details relevant to my current position. I found that when i viewed from a PC, google could not place me correctly due to Google's database and how they locate routers. But from mobile phone, the location was perfect.  
-   * The background was relevant to my current locations current weather, and i was able to click on the temperature, to change the unit. The current date and time was also displayed which was very useful, and showed i was getting current information.
+   * I made a dummy visit to the site. Once I allowed geolocation on my browser I was able to view weather and location details relevant to my current position. I found that when I viewed from a PC, google could not place me correctly due to Google's database and how they locate routers. But from a mobile phone, the location was perfect.  
+   * The background was relevant to my current locations current weather, and I was able to click on the temperature, to change the unit. The current date and time were also displayed which was very useful, and showed I was getting current information.
 
 ### 2.  As a user, I want to quickly and easily understand the purpose of the application.
    *  I used a combination of techniques to subtly achieve this.
-      *  A logo suggesting a search for sun.
-      *  I made a dummy visit to the site, and was able to read an introduction explaining in brief what the goal of the site is. Linking then to a more in-depth explanation of what the site does and how it does it. I felt informed on what was the goal of the site, and how to achieve it.
+      *  A logo suggesting a search for the sun.
+      *  I made a dummy visit to the site and was able to read an introduction explaining in brief what the goal of the site is. Linking then to a more in-depth explanation of what the site does and how it does it. I felt informed about what was the goal of the site, and how to achieve it.
 
-### 3.  As a user, I want to easily understand what i have to do.
+### 3.  As a user, I want to easily understand what I have to do.
    * This is achieved through reading the in-depth explanation in the locations input section. The user can easily get to this by clicking the **Click Here** link in the brief description/welcome section
 
 ### 4.  As a user, I want to easily enter my information.
-   * I made a dummy visit to the site, and after scrolling to the clear introduction. I found the form clear and it was very obvious what the function of the inputs were. What added simplicity to this process is the including of google searchbox in the locaction input. I started typing KIL, and the result i wanted - KILKEE was automatically at the top of the list
+   * I made a dummy visit to the site, and after scrolling to the clear introduction. I found the form clear and it was very obvious what the function of the inputs was. What added simplicity to this process is the including of google search box in the location input. I started typing KIL, and the result I wanted - KILKEE was automatically at the top of the list
 
 ### 5.  As a user, I want to see an obvious and quick way to get my results.
    * I made a dummy visit to the site, and after inputting the locations a large **Click to see Results** button directly beneath the final location input, made it obvious how to get my results.
 
 
 ### 6.  As a user, I want to be able to see an obvious comparison of predicted weather for my entered locations, including my home or current location.
-   * I made a dummy visit to the site, and after clicking to see the results of my locations, i was taken to a results page. The page was displayed with full focus on the results, which were stacked in descending order and clear easy to understand % scoring.
+   * I made a dummy visit to the site, and after clicking to see the results of my locations, I was taken to a results page. The page was displayed with full focus on the results, which were stacked in descending order and clear easy to understand % scoring.
    * It also invited me to select my preferred location.
 
 
-### 7.  As a user, I would like to select my preferred location from the results, and see places of interest for that location.
-   * I made a dummy visit to the site, and after viewing the results, i clicked on my preferred location as instructed.
-   * I was then taken to a clear layout of the full weekends weather for that location. After scrolling down the page i was presented with a map for the location KILKEE showing me places of interest. I then searched for restaurants, which were all clearly marked on the map for me.
+### 7.  As a user, I would like to select my preferred location from the results and see places of interest for that location.
+   * I made a dummy visit to the site, and after viewing the results, I clicked on my preferred location as instructed.
+   * I was then taken to a clear layout of the full weekends' weather for that location. After scrolling down the page I was presented with a map for the location KILKEE showing me places of interest. I then searched for restaurants, which were all clearly marked on the map for me.
 
 
 ### 8.  As a user, it would be helpful to get a wildcard location returned, for a place not on the list, but which has a good rating for the next weekend.
-   * Unfortunatly this is not achievable in this release, due to API and time restrictions.
+   * Unfortunately this is not achievable in this release, due to API and time restrictions.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -826,14 +826,16 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 
 # Unresolved issues
 
-* Information.js - JSHint returned warnings about undefined variables, map, google and marker. I found that defining them led to issues in map loading. I was unable to fin a satisfactory resolution to this issue.
-* results.js - sortLocationScores() returned these warnings from jsHint.   
+* Information.js - JSHint returned warnings about undefined variables, map, google and marker. I found that defining them led to issues in map loading. I was unable to find a satisfactory resolution to this issue.
+* results.js - sortLocationScores() returned this warnings from jsHint.   
  
    * The body of a for in should be wrapped in an if statement to filter unwanted properties from the prototype.   
 
-   * Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (clicked, selection, i, selected).
+* results.js - selectLocation()  returned this warnings from jsHint.   
 
-   I was unable to get the function to work, in any other format. I will continue to search for an answer, as i progress in my coding, im sure i will find a solution.   
+   * Functions declared within loops referencing an outer scoped variable may lead to confusing semantics. (clicked, selection, I, selected).
+
+   I was unable to get the functions to work, in any other format. I will continue to search for an answer, as I progress in my coding, I'm sure I will find a solution.   
 
 * script.js - One undefined variable : google. 
 
