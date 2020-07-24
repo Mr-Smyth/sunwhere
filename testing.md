@@ -57,8 +57,8 @@
 
 ## utility.js Testing
 
-* [getMonthName](#getMonthName())
-* [fadeLogo](#fadeLogo())
+* [getMonthName function](#getMonthName())
+* [fadeLogo function](#fadeLogo())
 
 </li>
 </ul>
@@ -68,10 +68,10 @@
 <li>
 
 ## CSS
-* [utility.css](#utility.css)
-* [style.css](#style.css)
-* [results.css](#results.css)
-* [information.css](#information.css)
+* [utility.css styling](#utility.css)
+* [style.css styling](#style.css)
+* [results.css styling](#results.css)
+* [information.css styling](#information.css)
   
 </li>
 </ul>
