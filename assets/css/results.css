@@ -1,4 +1,8 @@
 /* RESULTS AREA STYLING */
+h3 {
+  font-size: 1.4rem;
+  color: #c0c0c0;
+}
  #resultsContainer {
      padding: 0px 20px;
      display: -webkit-box;
