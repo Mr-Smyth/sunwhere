@@ -845,7 +845,11 @@ Used the [W3C Markup Validator](https://validator.w3.org/) to check my code for 
 
    I was unable to get the functions to work, in any other format. I will continue to search for an answer, as I progress in my coding, I'm sure I will find a solution.   
 
-* script.js - One undefined variable : google. 
+* script.js - One undefined variable : google.    
+  
+* **A console warning on information.html:** A cookie associated with a cross-site resource at http://openweathermap.org/ was set without the `SameSite` attribute. A future release of Chrome will only deliver cookies with cross-site requests if they are set with `SameSite=None` and `Secure`. You can review cookies in developer tools under Application>Storage>Cookies and see more details at https://www.chromestatus.com/feature/5088147346030592 and https://www.chromestatus.com/feature/5633521622188032.
+  
+  After searching for information on the above cookie related warning i found the following response on stack overflow: ***"This console warning is not an error or an actual problem — Chrome is just spreading the word about this new standard to increase developer adoption."***
 
 
 **[Back to index](#Table-of-Contents)**
