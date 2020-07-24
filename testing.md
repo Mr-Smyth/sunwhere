@@ -142,6 +142,10 @@
      message to the browser was present.
      _ Error message was present when required.
      _ This also proved that the function call was being made correctly. \* No errors detected.
+   4. Retested after changes made to improve the look of the homescreen when no geolocation services were enabled in the users browser.
+      * Background appeared as expected.
+      * Error displayed as expected.
+      * After multiple refreshes, everything displayed as expected.
 
 **[Back to index](#Table-of-Contents)**
 
@@ -202,6 +206,10 @@
   3. Refreshed page multiple times to see if any errors occurred.
      * No errors detected.
      * Page always displayed as expected.
+  4. Retested after changes made to improve look of homescreen if no geolocation is enabled.
+      * Switched off geolocation and resized screens to ensure breakpoints did not effect look, and that none of the current weather display items were displayed.
+      * Refreshed page multiple times, display still only showed error and default weather background image of man looking at the sky.
+      * Enabled location services in browser and everything displayed as expected.
 
   **Known Issues:**
 

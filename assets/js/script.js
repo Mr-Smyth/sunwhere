@@ -365,7 +365,7 @@ function getBackground() {
             displayBackgroundImage.style.backgroundImage = 'url("assets/images/mistn.jpg")';
             break;
         default:
-            displayBackgroundImage.style.backgroundImage = 'url("assets/images/clear-skyd1.jpg")';
+            displayBackgroundImage.style.backgroundImage = 'url("assets/images/default.jpg")';
             break;
         
     }
