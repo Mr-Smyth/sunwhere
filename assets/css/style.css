@@ -113,7 +113,7 @@
      -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
      box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
 }
-/* ERROR NOTIFICATION */
+/* GEOLOCATION ERROR NOTIFICATION */
  #informationNotification {
      display: none;
      margin: 20px;

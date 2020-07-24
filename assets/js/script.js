@@ -367,6 +367,7 @@ function getBackground() {
         default:
             displayBackgroundImage.style.backgroundImage = 'url("assets/images/clear-skyd1.jpg")';
             break;
+        
     }
 }
 
@@ -458,6 +459,7 @@ function getCoords(location) {
 
 /** IF THINGS GO WRONG WITH GEOLOCATION, GO HERE*/
 function geolocationError(error) {
+    getBackground();
     infoMessageElement.style.display = "flex";
     infoMessageElement.innerHTML = `<p> ${error.message} </p> <p>Please Enable Location services in you browser for the best possible experience.</p>`;
 }
