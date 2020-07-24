@@ -113,11 +113,13 @@
      -webkit-box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
      box-shadow: inset 3px 2px 60px 8px rgba(0, 0, 0, 0.57);
 }
+/* ERROR NOTIFICATION */
  #informationNotification {
      display: none;
+     margin: 20px;
+     flex-direction: column;
      font-size: 1.4rem;
      font-weight: 900;
-     line-height: 40px;
      text-align: center;
      color: rgb(143, 23, 23);
 }

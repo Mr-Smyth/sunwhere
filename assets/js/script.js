@@ -458,9 +458,8 @@ function getCoords(location) {
 
 /** IF THINGS GO WRONG WITH GEOLOCATION, GO HERE*/
 function geolocationError(error) {
-    document.getElementById("weatherCurrentInfoContainer").style.display = "flex";
     infoMessageElement.style.display = "flex";
-    infoMessageElement.innerHTML = `<p> ${error.message} </p>`;
+    infoMessageElement.innerHTML = `<p> ${error.message} </p> <p>Please Enable Location services in you browser for the best possible experience.</p>`;
 }
 
 /** HERE WE GET THE 4 LOCATIONS FROM THE USER, USING GOOGLE PLACES SEARCHBOX*/
