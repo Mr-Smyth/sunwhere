@@ -1,4 +1,4 @@
-/*jshint esversion: 6 */ 
+/*jshint esversion: 6 */
 /**  GLOBAL VARIABLES*/
 const kelvin = 273;
 const infoMessageElement = document.getElementById("informationNotification");
@@ -375,7 +375,11 @@ function displayCurrentWeather(homeWeather) {
     getBackground();
     displayCurrentLocation.innerText = homeWeather.name;
     displayCurrentIcon.src = `https://openweathermap.org/img/wn/${homeWeather.weatherIcon}@2x.png`;
-    displayStandaloneIcon.src = `https://openweathermap.org/img/wn/${homeWeather.weatherIcon}@4x.png`;
+    /** CHECK IF LOGO INFO IS PRESENT */
+    if (homeWeather.weatherIcon) {
+        displayStandaloneIcon.style = "display: block";
+        displayStandaloneIcon.src = `https://openweathermap.org/img/wn/${homeWeather.weatherIcon}@4x.png`;
+    }
     displayCurrentTemp.innerHTML = homeWeather.tempInCelsius + `&#176<span id="tempUnit">C</span>`;
     displayCurrentDesc.innerText = homeWeather.description.charAt(0).toUpperCase() +
         homeWeather.description.slice(1); // SET FIRST LETTER TO UPPERCASE
@@ -543,8 +547,8 @@ function changeUnit() {
 
 /** DO THIS FIRST*/
 window.onload = function () {
-        getGeolocation();
-        getLocationsFromUser();
-        /** LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT*/
-        document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
+    getGeolocation();
+    getLocationsFromUser();
+    /** LISTENER FOR CLICK ON TEMPERATURE, TO CALL CHANGE UNIT*/
+    document.getElementById('weatherCurrentTemp').addEventListener('click', changeUnit);
 };

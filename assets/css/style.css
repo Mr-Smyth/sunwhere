@@ -162,6 +162,9 @@
      font-weight: 900;
      cursor: pointer;
 }
+#standaloneWeatherIcon{
+    display: none;
+}
  #weatherCurrentDescription {
      text-align: center;
      color: #444444;
