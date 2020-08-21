@@ -469,13 +469,13 @@ function getLocationsFromUser() {
     locationInputArray.forEach(function (location) {
         let id = document.getElementById(location).attributes.id.value;
 
-        // SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION
+        /** SEARCHBOX CODE TAKEN FROM GOOGLE PLACES DOCUMENTATION */
 
-        /* TARGET AND STORE THE LOCATION IN INPUT */
+        /** TARGET AND STORE THE LOCATION IN INPUT */
         const input = document.getElementById(location);
-        // PASS THE SEARCH INTO GOOGLE PLACES:
+        /** PASS THE SEARCH INTO GOOGLE PLACES:*/
         const searchRes = new google.maps.places.SearchBox(input);
-        /* WE JUST NEED INDEX 0, getPlaces()
+        /** WE JUST NEED INDEX 0, getPlaces()
          RETURNS THE DETAILS OF THE LOCATION SELECTED BY THE USER. */
         searchRes.addListener("places_changed", function () {
             const location = searchRes.getPlaces()[0];

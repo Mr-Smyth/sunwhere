@@ -12,7 +12,7 @@ function initData() {
     /**FIND THE LOCATION THAT MATCHES THE LOCATION CHOSEN AND PICK OUT THE LAT AND LON.*/
     for (let location in weekendWeather) {
         if (weekendWeather.hasOwnProperty(location)) {
-            if (selectedLoc === weekendWeather[location].Friday.placeName) {
+            if (selectedLoc === weekendWeather[location].Sunday.placeName) {
                 latitude = weekendWeather[location].lat;
                 longitude = weekendWeather[location].lon;
             }
